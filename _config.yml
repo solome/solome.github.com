@@ -1,0 +1,27 @@
+title: 掬一捧
+email: solome@outlook.com
+description: "发现互联网最美的领域"
+baseurl: ""
+url: "http://i.juyipeng.com"
+twitter_username: juyipeng
+github_username:  solome
+
+markdown: kramdown
+highlighter : pygments
+
+source: src
+destination: _site
+sass:
+  sass_dir: _sass
+  style: compressed # expanded
+
+navbar:
+  - slug: about
+    title: about
+  - slug: blog
+    title: blog
+  - slug: resume
+    title: resume
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
+
