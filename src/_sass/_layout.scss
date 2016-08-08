@@ -145,6 +145,21 @@
     width:         calc(30% - (#{$spacing-unit} / 2));
 }
 
+.GoTop {
+  position: fixed;
+  bottom: 4em;
+  right: calc(10% - (30px * 2));
+  color: #666;
+  display: none;
+  background-color: rgba(0,0,0,0.1);
+  padding: .68em 1.2em;
+  cursor: pointer;
+    &:hover {
+      color: #eee;
+      background-color: rgba(0,0,0,0.6);
+  }
+}
+
 @include media-query($on-laptop) {
     .footer-col-1,
     .footer-col-2 {
