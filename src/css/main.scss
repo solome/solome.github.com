@@ -5,7 +5,7 @@
 
 
 
-$base-font-family: Cambria, Georgia, serif;
+$base-font-family: ocaml, Cambria, Georgia, serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -21,7 +21,7 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$content-width:    800px;
+$content-width:    960px;
 
 $on-palm:          600px;
 $on-laptop:        800px;

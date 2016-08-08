@@ -2,17 +2,10 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
+        <h2 class="footer-heading">Social Networking</h2>
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -25,14 +18,27 @@
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
+          <li>
+            <a href="/feed.xml">
+              <span class="icon fa fa-rss-square" aria-hidden="true" style="color: darkcyan"></span>
+              <span class="username">via RSS</span></a>
+          </li>
         </ul>
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
+      <div class="footer-col footer-col-2">
+        <h2 class="footer-heading">Blogroll</h2>
+      </div>
+      <div class="footer-col footer-col-3" style="text-align: right;">
+        <ul class="contact-list">
+          <li>
+      © 2014 - 2016 <a href="mailto:{{ site.email }}">{{ site.title }}</a>
+          </li>
+        </ul>
       </div>
     </div>
 
   </div>
+  <script src="https://use.fontawesome.com/14d053f92c.js"></script>
 
 </footer>
