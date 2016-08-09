@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>掬一捧</title>
+    <description>发现互联网最美的领域</description>
+    <link>http://i.juyipeng.com/</link>
+    <atom:link href="http://i.juyipeng.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 09 Aug 2016 16:02:40 +0800</pubDate>
+    <lastBuildDate>Tue, 09 Aug 2016 16:02:40 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 05 Aug 2016 15:26:12 +0800</pubDate>
+        <link>http://i.juyipeng.com/jekyll/update/2016/08/05/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://i.juyipeng.com/jekyll/update/2016/08/05/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>The Zen of Python</title>
+        <description>&lt;p&gt;Beautiful is better than ugly.&lt;/p&gt;
+
+&lt;p&gt;Explicit is better than implicit.&lt;/p&gt;
+
+&lt;p&gt;Simple is better than complex.&lt;/p&gt;
+
+&lt;p&gt;Complex is better than complicated.&lt;/p&gt;
+
+&lt;p&gt;Flat is better than nested.&lt;/p&gt;
+
+&lt;p&gt;Sparse is better than dense.&lt;/p&gt;
+
+&lt;p&gt;Readability counts.&lt;/p&gt;
+
+&lt;p&gt;Special cases aren’t special enough to break the rules.&lt;/p&gt;
+
+&lt;p&gt;Although practicality beats purity.&lt;/p&gt;
+
+&lt;p&gt;Errors should never pass silently.&lt;/p&gt;
+
+&lt;p&gt;Unless explicitly silenced.&lt;/p&gt;
+
+&lt;p&gt;In the face of ambiguity, refuse the temptation to guess.&lt;/p&gt;
+
+&lt;p&gt;There should be one– and preferably only one –obvious way to do it.&lt;/p&gt;
+
+&lt;p&gt;Although that way may not be obvious at first unless you’re Dutch.&lt;/p&gt;
+
+&lt;p&gt;Now is better than never.&lt;/p&gt;
+
+&lt;p&gt;Although never is often better than &lt;em&gt;right&lt;/em&gt; now.&lt;/p&gt;
+
+&lt;p&gt;If the implementation is hard to explain, it’s a bad idea.&lt;/p&gt;
+
+&lt;p&gt;If the implementation is easy to explain, it may be a good idea.&lt;/p&gt;
+
+&lt;p&gt;Namespaces are one honking great idea – let’s do more of those!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 05 Aug 2016 15:26:12 +0800</pubDate>
+        <link>http://i.juyipeng.com/2016/08/05/the-zen-of-python.html</link>
+        <guid isPermaLink="true">http://i.juyipeng.com/2016/08/05/the-zen-of-python.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>编写css需注意的三个细节</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;编写css源码也有一段时间了，大都过于随意；但是随着接触的css源码的量越大，涉及的页面模块越多，之前不愿意关注的许许多多的细节又要重新进入自己的思考视野。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;css&quot;&gt;强调复用，不要陷入css“黑洞”&lt;/h3&gt;
+
+&lt;p&gt;每遇到一个新需求（或者设计师提供新页面），前端开发者在编写css时第一要考虑的是否可以直接使用现有的css样式集（或者对现有的样式集进行优化以满足需求），而不建议重新引入新的css源码。&lt;/p&gt;
+
+&lt;p&gt;样式应该是慢慢迭代的，如果在开发过程中不断引入新的css类且当css类的数目扩充到万级别的时候，大都会陷入这样的痛苦中——旧的css怎么办？大部分相关的涉及到的页面或都迭代更新了，或都沦为“僵尸”页面，用户无法直接访问，或干脆前端模块都已经清理掉了？&lt;/p&gt;
+
+&lt;p&gt;好吧，这块css源码也要清理掉。但哪些旧css源码需要清理呢？你不得不&lt;code class=&quot;highlighter-rouge&quot;&gt;git grep&lt;/code&gt;页面模板来确认。真正的问题在于前端工程师写了一大堆的css源码最后都是要被清理的，不能做出很好的开发积累。所以，熟悉已有的css样式集，开发时擅长基于已有的css样式集慢慢迭代是编写css的的好习惯。典型的一些css开源框架如&lt;a href=&quot;http://purecss.io/&quot;&gt;pure&lt;/a&gt;，&lt;a href=&quot;http://getbootstrap.com/&quot;&gt;Bootstrap&lt;/a&gt;等就很出色，基于已有的样式进行开发，就会避免css“黑洞”——不要让之前开发的css源码浪费掉。&lt;/p&gt;
+
+&lt;h3 id=&quot;idclasstag&quot;&gt;重视ID选择器和class选择器，远离tag（标签）选择器&lt;/h3&gt;
+
+&lt;p&gt;通常容易看到类似如下的一段源码：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.wrapper-content&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.items&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;li&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这段源码的槽点在于使用了元素选择器。浏览器在剖析css选择器时是&lt;strong&gt;从右往左&lt;/strong&gt;的。以上面的源码为例，具体的过程是先在整个HTML标签树中找到所有的&lt;code class=&quot;highlighter-rouge&quot;&gt;li&lt;/code&gt;标签集合，然后再在找到&lt;code class=&quot;highlighter-rouge&quot;&gt;li&lt;/code&gt;标签集合中筛选出其父标签class属性包含为&lt;code class=&quot;highlighter-rouge&quot;&gt;items&lt;/code&gt;的标签集合，然后再基于从筛选的标签集合中继续筛选父标签的class属性为&lt;code class=&quot;highlighter-rouge&quot;&gt;wrapper-content&lt;/code&gt;的标签集合。&lt;/p&gt;
+
+&lt;p&gt;换言之，css样式解析过程其实就是从一个个集合中慢慢筛选出符合要求的元素的过程。其中，我们可以从两个方面来进行优化：&lt;/p&gt;
+
+&lt;p&gt;1.降低集合域。特别是HTML中的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt;等占比大的标签，或者说不要在css源码中出现任何的元素选择器。&lt;/p&gt;
+
+&lt;p&gt;2.减少筛选过程。css解析是从一个集合中筛选出子集合，然后继续筛选子集合直到没有了其它的筛选条件为止，所以css的嵌套层级要尽量短。&lt;/p&gt;
+
+&lt;p&gt;特别是sass这类css预处理语言很容易写出嵌套很深的css源码。如scss源码检查工具&lt;a href=&quot;&quot;&gt;scss-lint&lt;/a&gt;就存在这&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectorDepth&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;NestingDepth&lt;/code&gt;两个检查项来避免css源码的嵌套层级过深。&lt;/p&gt;
+
+&lt;p&gt;降低浏览器对css源码解析的计算量，会加快页面渲染速度。特别是当针对首页进行性能优化达到瓶颈时，降低css的计算量往往也能取得意想不到的效果。&lt;/p&gt;
+
+&lt;h3 id=&quot;imagesfonts&quot;&gt;属性值中涉及到的images,fonts等外部资源需统一管理&lt;/h3&gt;
+
+&lt;p&gt;css属性中通常也会涉及到一些外部资源：如图标，字体资源等。
+具体的web页面图标使用策略详细分析见&lt;em&gt;&lt;a href=&quot;http://ocaml.juyipeng.net/i/#/Tech/offal/web页面上的那些图标.md&quot;&gt;web頁面上的那些圖標&lt;/a&gt;&lt;/em&gt;。具体要讲究的是这些css源码之外的资源管理需实现模块化统一管理。&lt;/p&gt;
+
+&lt;p&gt;最典型的使用策略是web-font的应用。在实际使用的过程中，一般按照如下的模式（&lt;a href=&quot;http://fortawesome.github.io/Font-Awesome/&quot;&gt;Font-Awesome&lt;/a&gt;）：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fa fa-camera-retro fa-2x&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;首先，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fa&lt;/code&gt;来获取资源（或者说提供资源的完整信息），然后通过&lt;code class=&quot;highlighter-rouge&quot;&gt;fa-camera-retro&lt;/code&gt;来选择资源我们需要的那一部分，最后通过&lt;code class=&quot;highlighter-rouge&quot;&gt;fa-2x&lt;/code&gt;来对我们需要的那一部分进行特性优化（如大小等）。&lt;/p&gt;
+
+&lt;p&gt;同样的策略也可以应用在Sprite图中，类似源码如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sp-login sp-login-user&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;sp-login&lt;/code&gt;表示我们要使用的是一张名为&lt;code class=&quot;highlighter-rouge&quot;&gt;sp-login&lt;/code&gt;的Sprite图（通常仅提供这张Sprite图的资源路径），通过&lt;code class=&quot;highlighter-rouge&quot;&gt;sp-login-user&lt;/code&gt;来选择这张大Sprite图表示用户的那个部分（一般提供position属性相关的坐标值）。这样的好处就是将Sprite图的应用与具体的CSS源码实现解耦，复用性更强。&lt;/p&gt;
+
+&lt;p&gt;简单来说，css源码中不应该涉及引用外部资源如图标，字体等；如果要使用应该采用一些方式实现统一管理，降低偶合度。&lt;/p&gt;
+
+&lt;p&gt;这样无论是资源复用，代码升级都会方便很多，减少了不必要的维护成本。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;总结&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;强调复用，不要陷入css“黑洞”&lt;/li&gt;
+  &lt;li&gt;重视ID选择器和class选择器，远离tag（标签）选择器&lt;/li&gt;
+  &lt;li&gt;属性值中涉及到的images,fonts等外部资源需统一管理&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 15 May 2015 15:26:12 +0800</pubDate>
+        <link>http://i.juyipeng.com/css/2015/05/15/three-details-about-css.html</link>
+        <guid isPermaLink="true">http://i.juyipeng.com/css/2015/05/15/three-details-about-css.html</guid>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
+        <title>web頁面上的那些圖標</title>
+        <description>&lt;p&gt;一個網頁不會是由純字符組成的，需要些些訏訏的&lt;strong&gt;圖標&lt;/strong&gt;去點綴；最早的前端的工作主要是多數人不屑的&lt;strong&gt;切圖&lt;/strong&gt;，這與&lt;strong&gt;編程&lt;/strong&gt;耦合太弱。
+不過話說要是絕大多數的網頁沒有那些圖標的點綴會變得多麼地慘白。&lt;/p&gt;
+
+&lt;p&gt;在一個HTML結構的頁面中，使用圖標最常接觸的是標籤&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;和css屬性&lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt;。&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;純粹是為了顯示圖片而添加的標籤，適用於尺寸大的圖片，強調圖片的信息，不屬於頁面圖標的範疇（在web設計中，圖標和圖片是兩種概念：圖標在某種程度可有可惡，起到修飾點綴的效果，本身沒有什麼信息量；而圖片不同，圖片也是頁面欲展示給用戶的信息）；因此，依賴&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;標籤實現的點綴圖標的作用的，都是不那麼合理的，因為&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;不是幹這種事情的，對搜索引擎亦是不友好的。&lt;/p&gt;
+
+&lt;p&gt;下面討論下，如何給一個web頁面添加修飾點綴用途的圖標的方式。&lt;/p&gt;
+
+&lt;h3 id=&quot;cssbackground-image&quot;&gt;方式一：css屬性&lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; background-image&lt;/code&gt;主要用來設定塊級標籤的背景圖片，一般的使用形式如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.selector&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;url( &#39;/* 要顯示的圖片網址 */&#39; )&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;no-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* 背景顏色 */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;這種方式不會將圖片的信息放在HTML結構中，而是通過css來維護管理的；實現方式最大的缺陷是如果一個頁面中存在好多些類似的圖標，那麼用戶客戶端的每次訪問就必須為了那些點綴增加許許多多的HTTP請求。&lt;/p&gt;
+
+&lt;p&gt;當然，最好的方式是將多個小圖標軿湊成一張大圖片來避免不必要的HTTP請求。&lt;/p&gt;
+
+&lt;h3 id=&quot;background-positionsprite&quot;&gt;方式二：依賴&lt;code class=&quot;highlighter-rouge&quot;&gt;background-position&lt;/code&gt;實現的Sprite圖&lt;/h3&gt;
+
+&lt;p&gt;將多張小圖標合併成一張大圖片，頁面元素使用時只選擇其中的一部分顯示，這樣一堆小圖標合成的大圖片一般稱作Sprite圖（精靈圖，雪碧圖等）。
+除了使用css屬性&lt;code class=&quot;highlighter-rouge&quot;&gt;background-image&lt;/code&gt;之外，還要利用&lt;code class=&quot;highlighter-rouge&quot;&gt;background-position&lt;/code&gt;來定位大圖中小圖標的坐標位置；通常情況下，還要指定小圖標的長寬信息，即&lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;屬性。一般的使用形式如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.selector&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(/* 要顯示的圖片網址 */)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;no-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-63px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sprite圖避免了多次HTTP請求問題，但是難點在於Sprite圖的手動生成是一件極其繁瑣的事情，每次更新圖標都需要重新繪製Sprite圖；
+小圖標在Sprite圖中的坐標位置在寫入css&lt;code class=&quot;highlighter-rouge&quot;&gt;background-position&lt;/code&gt;屬性中時也要注意。&lt;/p&gt;
+
+&lt;p&gt;Sprite手動生成的確繁瑣，但是Sprite圖的自動化生成方面的技術也趨於成熟，典型的有&lt;a href=&quot;http://compass-style.org/help/tutorials/spriting/&quot;&gt;Spriting with Compass&lt;/a&gt;和&lt;a href=&quot;https://github.com/jorgebastida/glue&quot;&gt;glue&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;如果你的css框架是基於Compass(sass)的話，Sprite圖的合併並不是什麼要耗費經歷的事情；倘若不是，善用&lt;a href=&quot;https://github.com/jorgebastida/glue&quot;&gt;glue&lt;/a&gt;也會讓你從在折騰圖像處理軟件的非編程工作中解脫出來。&lt;/p&gt;
+
+&lt;p&gt;Compass 在使用Sprite圖時直接通過&lt;code class=&quot;highlighter-rouge&quot;&gt;@include icon-sprite(&#39;/* 小圖標路徑 */&#39;)&lt;/code&gt;即可，最後編譯成css文件時也會自動編譯生成對應的Sprite圖，你不必考慮坐標關係；即使要換個圖標，也只是更換圖標後重新編譯即可。&lt;/p&gt;
+
+&lt;p&gt;使用&lt;a href=&quot;https://github.com/jorgebastida/glue&quot;&gt;glue&lt;/a&gt;則更加強大了，不僅可以生成CSS也可以生成SCSS，甚至更底層地你可以生成一系列的hash映射數據自己動手來處理Sprite圖的使用邏輯；Sprite圖中的圖標的坐標位置全部在一個hash表中，完全可以自由定製。&lt;/p&gt;
+
+&lt;p&gt;最後，Sprite圖的軿湊還有個比較費神的問題就是：那麼多的小圖標，有些頁面在用而有些頁面不用那怎麼進行軿湊Sprite圖呢？&lt;/p&gt;
+
+&lt;p&gt;全部圖標都軿湊成一張大圖片？沒有必要吧，因為有些圖標在這個頁面中沒有使用到憑什麼要拼在一起呢？一般情況下Sprite圖的軿湊邏輯如下：
+- 頁面區分：軿湊的Sprite圖涉及的小圖只在某種類型的頁面（模塊使用）。
+- 類型區分：同種類型的圖標軿湊在一塊組成Sprite圖。&lt;/p&gt;
+
+&lt;h3 id=&quot;base64&quot;&gt;方式三：圖片數字化BASE64&lt;/h3&gt;
+&lt;p&gt;Sprite圖是使用圖標點綴頁面最好的解決方案之一，接近完美，但還是有一個問題需要解決：
+對圖標的重複性不友好，即不太兼容&lt;code class=&quot;highlighter-rouge&quot;&gt;background-repeat&lt;/code&gt;屬性（通常情況下都設定為&lt;code class=&quot;highlighter-rouge&quot;&gt;no-repeat&lt;/code&gt;）；
+典型的如評分五角星，如果有五顆五角星來表示100%，但要表示80%時，就必須依賴&lt;code class=&quot;highlighter-rouge&quot;&gt;repeat&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;width:80%&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;還有就是電商網站熱衷使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;hot&lt;/code&gt;等促銷提示小圖標。這些圖標是微型的，而且需出現的時機無規律；拼在Sprite圖中總是讓人覺得&lt;strong&gt;彆扭&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;此外，Sprite圖的使用CSS要依賴外部的圖片，要是圖片信息直接在CSS文件中就好了。而BASE64格式的圖片可以以字符串的形式嵌入到CSS文件中。
+因此，復用一個CSS文件直接拷貝CSS文件即可，無需再考慮外部依賴的圖標數據。&lt;/p&gt;
+
+&lt;p&gt;BASE64的解碼和編碼算法也是很容易的，如 https://docs.python.org/2/library/base64.html 。通過Compass實現BASE編碼直接使用&lt;code class=&quot;highlighter-rouge&quot;&gt;@include inline-image(/* 圖標路徑 */)&lt;/code&gt;，和前面提到的生成Sprite圖一樣簡單。&lt;/p&gt;
+
+&lt;p&gt;總之，前面提到的重複的評分五角星和電商網站熱衷使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;hot&lt;/code&gt;小圖標均可以採用BASE64的格式。可惜的，在低端瀏覽器（IE6）是不支持這種寫法的。&lt;/p&gt;
+
+&lt;h3 id=&quot;webfont&quot;&gt;方式四：圖標也是字體webfont&lt;/h3&gt;
+
+&lt;p&gt;前面提到的圖標都是位圖，在手機屏幕動不動就是1080像素的瀏覽器來說位圖在高分辨率情況下容易出現&lt;strong&gt;鋸齒&lt;/strong&gt;。如果使用&lt;code class=&quot;highlighter-rouge&quot;&gt;svg&lt;/code&gt;矢量圖的話，就無法進行Sprite化處理。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;webfont&lt;/code&gt;就是一種將圖標當作字體來使用（在某種程度上也可以理解成矢量圖標的Sprite化）；將一系列的矢量圖標轉換成矢量字體集文件（如&lt;code class=&quot;highlighter-rouge&quot;&gt;woff&lt;/code&gt;格式）和正常字體一樣使用。&lt;/p&gt;
+
+&lt;p&gt;不過目前讓人頭疼的地方是不是所有瀏覽器都支持&lt;code class=&quot;highlighter-rouge&quot;&gt;webfont&lt;/code&gt;，即使支持了還只能使用純色扁平的圖標，而且瀏覽器對字體的過渡優化偶爾也會造成圖標的顯示效果失真。&lt;/p&gt;
+
+&lt;p&gt;如果一個網站的設計風格是純色調，扁平化，那麼大氛圍的使用&lt;code class=&quot;highlighter-rouge&quot;&gt;webfont&lt;/code&gt;是個很好的選擇。&lt;/p&gt;
+
+&lt;h3 id=&quot;css3&quot;&gt;方式五：css3自己畫圖標&lt;/h3&gt;
+
+&lt;p&gt;CSS3上有許多讓人欣喜的特性，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;transorm&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;tranition&lt;/code&gt;這連個變換和過渡的屬性值，在設計頁面元素背景圖時特別有效；再撮合些CSS動畫效果會得到通過圖片無法得到的交互效果。&lt;/p&gt;
+
+&lt;p&gt;不過這樣的功能目前也只僅僅侷限與頁面元素的背景圖而已。&lt;/p&gt;
+
+&lt;p&gt;另外一種情況是使用&lt;code class=&quot;highlighter-rouge&quot;&gt;border&lt;/code&gt;屬性值的處理以很&lt;code class=&quot;highlighter-rouge&quot;&gt;hack&lt;/code&gt;的方式繪製一些集合圖形。
+如三角形&lt;i class=&quot;fa fa-caret-up fa-fw&quot;&gt;&lt;/i&gt;的繪製，一般情況下兼容性最強大的CSS源碼如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.triangle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;11px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;7px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* 絕對定位 */&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dashed&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#2bb8aa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;當然，總是有人喜歡使用CSS來繪製那些原本使用圖片展示的圖標；個人覺得這是耗費精力沒有必要的工作。為什麼要把那麼簡單的工作複雜化呢？CSS畢竟是用來點綴元素的，而非用來繪圖的。&lt;/p&gt;
+
+&lt;p&gt;最後，大部分網站圖標的使用都是上面提到的五種方式相結合進行使用的。&lt;/p&gt;
+
+&lt;p&gt;電商網站上面的奇怪&lt;code class=&quot;highlighter-rouge&quot;&gt;三角形&lt;/code&gt;：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;实心三角形&lt;i class=&quot;fa fa-star fa-fw&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+    &lt;li&gt;脱字号［即“^”］&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;這兩種圖標一般跟導航相關（如頂部導航）；用戶點擊後圖標的方向會反轉（會摻雜一些反轉動畫的效果）。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Feb 2015 15:26:12 +0800</pubDate>
+        <link>http://i.juyipeng.com/icon/2015/02/10/show-icon-in-web.html</link>
+        <guid isPermaLink="true">http://i.juyipeng.com/icon/2015/02/10/show-icon-in-web.html</guid>
+        
+        
+        <category>icon</category>
+        
+      </item>
+    
+  </channel>
+</rss>
