@@ -2,7 +2,7 @@
 layout: post
 title:  "web頁面上的那些圖標"
 date:   2015-02-10 15:26:12 +0800
-categories: icon
+categories: web
 ---
 
 
