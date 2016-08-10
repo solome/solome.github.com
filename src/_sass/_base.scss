@@ -8,17 +8,23 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+::selection {
+    background-color: $MDIndexColor;
+    color: $bgcolor;
+}
 
 /**
  * Basic styling
  */
 body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    font: $base-font-weight #{$base-font-size}/24px $base-font-family;
     color: $text-color;
     background-color: $background-color;
     font-feature-settings: "kern", "liga", "pnum";
     font-kerning: normal;
+
+    min-width: $MIN-WIDTH;
+
 }
 
 
@@ -88,18 +94,14 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
-    text-decoration: none;
+        text-decoration: none;
+        color: #007BAA;
 
-    &:visited {
-        color: darken($brand-color, 5%);
+        &:hover {
+            color: $red;
+            border-bottom: .1em solid $red;
+        }
     }
-
-    &:hover {
-        color: red;
-        text-decoration: underline;
-    }
-}
 
 
 
