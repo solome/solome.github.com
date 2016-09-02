@@ -48,8 +48,13 @@ fp.filter = function(fn, list) {
 
 
 ```js
-fp.reduce = function(iterator, items) {
-
+fp.reduce = function(fn, list) {
+  var cumulate = list[0]
+  list.shift()
+  this.map(function(e, i) {
+    cumulate = fn.call(null, cumulate, e, i, list)
+  }, list)
+  return cumulate
 }
 ```
 
