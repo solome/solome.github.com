@@ -113,9 +113,7 @@ fp.curry = function(fn) {
       }
     })([arguments[0]])
   }
-
 }
-
 ```
 
 再回到刚才的`max(a, b)`函数，如果想对其Curry化：
@@ -143,4 +141,5 @@ fp.compose = function() {
 }
 ```
 
+Source code: [jsfiddle](https://jsfiddle.net/juyipeng/x1bnpdvj/5/)
 
