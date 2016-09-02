@@ -305,7 +305,9 @@ $MDIndexCodeFont: courier, monospace;
     .post, .home {
         padding: 1em 0;
     }
-
+    .highlighter-rouge .highlight {
+      margin: .5em 0 1em 0 !important;
+    }
 }
 
 @include media-query($on-palm) {
