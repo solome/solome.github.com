@@ -222,13 +222,13 @@ $MDIndexCodeFont: courier, monospace;
 }
 
 .post-title {
-    font-size: 36px;
+    font-size: 28px;
     letter-spacing: -1px;
     line-height: 1;
     margin-bottom: 1em;
 
     @include media-query($on-laptop) {
-        font-size: 34px;
+        font-size: 26px;
     }
 }
 
@@ -241,6 +241,10 @@ $MDIndexCodeFont: courier, monospace;
     h1,h2,h3,h4 {
         text-indent: 1.2em;
         color: $MDIndexColorDark;
+        font-weight: bold;
+        @include media-query($on-laptop) {
+          text-indent: 0;
+        }
     }
     h1, h2 {
         text-indent: .6em;
@@ -254,26 +258,26 @@ $MDIndexCodeFont: courier, monospace;
         border-top: 1px solid #ddd;
     }
     h2 {
-        font-size: 28px;
+        font-size: 20px;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            font-size: 20px;
         }
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 17px;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 17px;
         }
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 15px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 15px;
         } 
     }
     blockquote {
@@ -287,6 +291,10 @@ $MDIndexCodeFont: courier, monospace;
     p {
         text-indent: 2em;
         line-height: 1.6em;
+        @include media-query($on-laptop) {
+          text-indent: 0;
+        }
+
     }
     i {text-indent: 0;}
 }
