@@ -203,3 +203,207 @@ pre {
     }
 }
 
+	body {
+		counter-reset: exampleno figure issue;
+	}
+/******************************************************************************/
+/*                             Colored Boxes                                  */
+/******************************************************************************/
+
+	.issue, .note, .example, .why, .advisement, blockquote {
+		padding: .5em;
+		border: .5em;
+		border-left-style: solid;
+		page-break-inside: avoid;
+	}
+	span.issue, span.note {
+		padding: .1em .5em .15em;
+		border-right-style: solid;
+	}
+
+	div.issue,
+	div.note,
+	div.example,
+	details.why,
+	blockquote {
+		margin: 1em auto;
+	}
+	.note  > p:first-child,
+	.issue > p:first-child,
+	blockquote > :first-child {
+		margin-top: 0;
+	}
+	blockquote > :last-child {
+		margin-bottom: 0;
+	}
+
+/** Blockquotes ***************************************************************/
+
+	blockquote {
+		border-color: silver;
+	}
+
+/** Open issue ****************************************************************/
+  /* not intended for CR+ publication */
+
+	.issue {
+		border-color: #E05252;
+		background: #FBE9E9;
+		counter-increment: issue;
+		overflow: auto;
+	}
+	.issue:before {
+		content: "Issue " counter(issue);
+		padding-right: 1em;
+		text-transform: uppercase;
+		color: #E05252;
+	}
+
+/** Example *******************************************************************/
+
+	.example {
+		border-color: #E0CB52;
+		background: #FCFAEE;
+		counter-increment: exampleno;
+		overflow: auto;
+		clear: both;
+	}
+	.example:before {
+		color: #B9AB2D;
+		font-family: sans-serif;
+	}
+	.example:before {
+		content: "Example";
+		content: "Example " counter(exampleno);
+		min-width: 7.5em;
+		text-transform: uppercase;
+		display: block;
+	}
+	.illegal.example:before,
+	.illegal.example:before {
+		content: "Invalid Example";
+		content: "Invalid Example" counter(exampleno);
+		color: red;
+	}
+
+/** Non-normative Note ********************************************************/
+
+	.note, .why {
+		border-color: #52E052;
+		background: #E9FBE9;
+		overflow: auto;
+	}
+
+/** Advisement Box ************************************************************/
+  /*  for attention-grabbing normative statements */
+
+	.advisement {
+		border-color: orange;
+		border-style: none solid;
+		background: #FFEECC;
+		text-align: center;
+	}
+	strong.advisement {
+		display: block;
+	}
+	/*.advisement:before { color: #FF8800; } */
+
+/** ??? ***********************************************************************/
+
+	details.why {
+		border-color: #52E052;
+		background: #E9FBE9;
+		display: block;
+	}
+
+	details.why > summary {
+		font-style: italic;
+		display: block;
+	}
+
+	details.why[open] > summary {
+		border-bottom: 1px silver solid;
+	}
+
+/** Spec Obsoletion Notice ****************************************************/
+	/* obnoxious obsoletion notice for older/abandoned specs. */
+
+	details.annoying-warning {
+		display: block;
+	}
+
+	details.annoying-warning[open] {
+		background: #fdd;
+		color: red;
+		font-weight: bold;
+		text-align: center;
+		padding: .5em;
+		border: thick solid red;
+		border-radius: 1em;
+	}
+@media not print {
+	details.annoying-warning[open] {
+		position: fixed;
+		left: 1em;
+		right: 1em;
+		bottom: 1em;
+		z-index: 1000;
+	}
+}
+
+	details.annoying-warning:not([open]) > summary {
+		background: #fdd;
+		color: red;
+		font-weight: bold;
+		text-align: center;
+		padding: .5em;
+	}
+
+/******************************************************************************/
+/*                                    Images                                  */
+/******************************************************************************/
+
+	img {
+		border-style: none;
+		color: white;
+	}
+
+	figure, div.figure, div.sidefigure {
+		page-break-inside: avoid;
+	}
+
+	div.figure, p.figure, div.sidefigure, figure {
+		text-align: center;
+		margin: 2.5em 0;
+	}
+	div.figure pre, div.sidefigure pre, figure pre {
+		text-align: left;
+		display: table;
+		margin: 1em auto;
+	}
+	.figure table, figure table {
+		margin: auto;
+	}
+	div.sidefigure, figure.sidefigure {
+		float: right;
+		width: 50%;
+		margin: 0 0 0.5em 0.5em
+	}
+	div.figure img, div.sidefigure img, figure img,
+	div.figure object, div.sidefigure object, figure object {
+		display: block;
+		margin: auto;
+		max-width: 100%
+	}
+	p.caption, figcaption, caption {
+		text-align: center;
+		font-style: italic;
+		font-size: 90%;
+	}
+	p.caption:before, figcaption:before {
+		content: "Figure " counter(figure) ". ";
+		font-weight: bold;
+	}
+	p.caption, figcaption {
+		counter-increment: figure;
+	}

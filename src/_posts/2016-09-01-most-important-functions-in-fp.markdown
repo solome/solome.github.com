@@ -6,7 +6,7 @@ categories: functional
 ---
 
 
-JavaScript函数式编程风格中，`map`、`filter`、`reduce`、`curry`、`compose`是使用极其高频的几个函数。本文简单针对这几个函数进行了简单实现。
+JavaScript函数式编程风格中，`map`、`filter`、`reduce`、`curry`、`compose`是使用率比较高的几个函数。本文针对这几个函数进行了简单实现，以便更深入理解其用途。
 
 首先，先定义一个`fp`(functional programming)对象:
 

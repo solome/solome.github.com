@@ -12,12 +12,17 @@ categories: functional
 
 下图集合A和集合B的映射关系即符合数学函数的定义。
 
+<figure>
+  <img src="/images/post/set_map.svg" alt="containing block" />
+  <figcaption>fn：除以5的余数</figcaption>
+</figure>
 
-满足这种数学意义上的函数即为纯函数(Pure Function)：相同的输入（参数），永远得到的是相同的输出（返回值），并且没有任何可观察的副作用。
+
+在编程语言中，满足这种数学意义上的函数即为纯函数(Pure Function)：相同的输入（参数），永远得到的是相同的输出（返回值），并且没有任何可观察的副作用。
 与纯函数的概念相反的函数（即相同输入却得到不同结果 或 附带副作用）叫做非纯函数(Impure Function)。
 
 
-### 关于函数副作用
+### 关于函数副作用(side-effect)
 
 函数副作用 指当调用函数时，在计算返回值数值的过程中，对主调用函数产生附加的影响。
 
@@ -121,11 +126,47 @@ function memoize(func) {
 }
 ```
 
-#### 便于移植、自文档化和测试
+#### 便于移植和测试
 
-#### 引用透明
+纯函数是“自给自足”的，所有的函数依赖均由函数自身提供（或参数）；因此，我们将一个函数移植到另外一个系统时，是无需考虑成本的（当然，如果一个函数依赖一个全部变量，在移植该函数时必须“慎重”，但该函数是纯函数时就无需有这样的顾虑）。
+
+相同参数得到的函数返回值是固定的，这一特性也使纯函数更易测试——你无需mock或模拟出一些特殊的测试环境，只要明确定义好函数参数的范围即可。
+
+#### 引用透明（Referential Transparent）
+
+> An expression is said to be referentially transparent if it can be replaced with its corresponding value without changing the program's behavior. As a result, evaluating a referentially transparent function gives the same value for same arguments. Such functions are called pure functions.  
+—— [https://en.wikipedia.org/wiki/Referential_transparency](https://en.wikipedia.org/wiki/Referential_transparency)
+
+该如何理解呢？可以拿上文提到的`fibonacci()`函数举例，比如存在这样一个函数：
+
+```js
+function foo(n, fun) {
+  return fun(n) + fun(n)
+}
+
+foo(10, fibonacci)
+```
+
+调用`foo(10, fibonacci)`会发现`fibonacci(10)`被执行了两遍。因为纯函数具备引用透明性，某些表达式被**替换**并不会改变函数的行为；因此，对`foo()`进行些许变动会使其性能得到质的提升。
+
+```js
+function foo(n, fun) {
+  return fun(n) * 2
+}
+```
+
+毕竟在此场景中，一次乘法运算成本远比一次`fibonacci(10)`递归运算的成本来得低。
+
+这里的由`fibonacci(n) + fibonacci(n) => 2*fibonacci(n)`转变完全跟数学概念中的`f(x) = x + x = 2 *x`函数推导一致。
+
+因为纯函数的引用透明的特性，我们完全可以将多个函数构成的复杂程序（函数）**推导**成更加简单的方式。
 
 #### 并行代码
 
-### 关于引用透明
+纯函数无副作用，同时调用两个函数或同个函数被同时调用两次都不会抢占外部公共资源的情况。
 
+### 总结
+
+- 程序设计中的大部分bug都是有函数副作用引入的，实际开发中必须鼓励纯函数的编写（尤其在JavaScript、Python这类**胶水**语言中）
+- 在函数式编程中，欲想以函数为基础生成新的函数，那纯函数是这些新函数的基石
+- 多尝试使用memoize技术对递归函数进行性能优化
