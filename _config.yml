@@ -9,7 +9,7 @@ github_username:  solome
 markdown: kramdown
 highlighter : pygments
 
-source: src
+source: sources
 destination: _site
 sass:
   sass_dir: _sass
