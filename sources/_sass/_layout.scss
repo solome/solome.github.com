@@ -1,0 +1,331 @@
+/**
+ * Site header
+ */
+.site-header {
+  position: fixed;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.15);
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+}
+
+.site-title {
+    font-size: 1.5em;
+    line-height: 48px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    float: left;
+
+    &,
+    &:visited, &:hover {
+        color: $brand-color;
+        text-decoration: none;
+        border: none;
+    }
+}
+
+.site-nav {
+    float: right;
+    line-height: 48px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+        &:hover {
+          text-decoration: none;
+          color: $brand-color;
+          border: none;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 6px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            &:hover {
+                border: none;
+            }
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+    font-weight: bold;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+    width:         calc(30% - (#{$spacing-unit} / 2));
+}
+
+.GoTop {
+  position: fixed;
+  bottom: 4em;
+  right: calc(10%);
+  color: #666;
+  display: none;
+  background-color: rgba(0,0,0,0.1);
+  padding: .68em 1.2em;
+  cursor: pointer;
+    &:hover {
+      color: #eee;
+      background-color: rgba(0,0,0,0.6);
+  }
+}
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: 8em 0 1em;
+    min-height: 36em;
+    font-weight: 300;
+    color: #333;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post, .home {
+    padding: 1em 4.75em;
+}
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+    padding: .25em;
+}
+
+.post-link {
+    display: block;
+    font-size: 22px;
+
+    &:hover {
+        border: none;
+    }
+}
+
+
+$MDIndexTextColor: #333;
+$MDIndexColor: #007BAA;
+$MDIndexColorDark: #3c3c3c;
+$MDIndexCodeFont: courier, monospace;
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 28px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 1em;
+
+    @include media-query($on-laptop) {
+        font-size: 26px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+    letter-spacing: .5px;
+    font-size: 1em;
+    color: $MDIndexTextColor;
+
+    h1,h2,h3,h4 {
+        text-indent: 1.2em;
+        color: $MDIndexColorDark;
+        font-weight: bold;
+        @include media-query($on-laptop) {
+          text-indent: 0;
+        }
+    }
+    h1, h2 {
+        text-indent: .6em;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #ddd;
+    }
+
+    h3 {
+        padding-top: 1em;
+        border-top: 1px solid #ddd;
+    }
+    h2 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 20px;
+        }
+    }
+
+    h3 {
+        font-size: 17px;
+
+        @include media-query($on-laptop) {
+            font-size: 17px;
+        }
+    }
+
+    h4 {
+        font-size: 15px;
+
+        @include media-query($on-laptop) {
+            font-size: 15px;
+        } 
+    }
+    blockquote {
+        background: #f0f0f0;
+        padding: .5em;
+        margin: 1em 0;
+        border-left: .3em solid #007baa;
+        font-size: .95em;
+        color: #888;
+    }
+    p {
+        text-indent: 2em;
+        line-height: 1.6em;
+        @include media-query($on-laptop) {
+          text-indent: 0;
+        }
+
+    }
+    i {text-indent: 0;}
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+    .post, .home {
+        padding: 1em 0;
+    }
+    .highlighter-rouge .highlight {
+      margin: .5em 0 1em 0 !important;
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+
+    .post, .home {
+        padding: 1em 0;
+    }
+}
