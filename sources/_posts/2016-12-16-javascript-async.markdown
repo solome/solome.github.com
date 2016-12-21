@@ -93,7 +93,7 @@ userInfoPromise.then(console.log)
 
 #### 特點三：可組合，復用
 
-類似與函數式編程中推廣的從已有的函數中創建新函數，也可以通過已有的Promise對象生成新的Promise對象。
+類似於函數式編程中推廣的從已有的函數中創建新函數，也可以通過已有的Promise對象生成新的Promise對象。
 比如獲取多個用戶信息，可使用`Promise.all()`方法實現異步操作的組合：
 
 ```js
@@ -113,8 +113,6 @@ const userInfosPromise = Promise.all(promises)
 
 ### Event Emitters
 
-事件監聽式異步編程無異於`goto`語句，稍有不慎形如`on()`、`emit()`、`subscribe()`、`publish()`等方法摻雜在各處，“剪不清，理還亂”；
-如果不是“約定”化編程不建議採用。
 事件監聽式異步編程本質上還是依賴於回調函數實現的，區別在於回調函數並不執行異步行為完成後需要的操作，而是發佈一個通知去觸發執行相應的函數。
 
 ```js
@@ -148,6 +146,22 @@ $.ajax(
 })
 ```
 很明顯，觀察者模式要比事件監聽方式擴充性更強（雖然本質一致，但是強調側重點不同）。
+<figure style="padding-top: 0;margin-top:-1.5em;">
+  <img src="/images/post/pingpong.gif" alt="containing block" />
+  <figcaption>陷入`emit`死循環</figcaption>
+</figure>
+事件監聽式異步編程無異於`goto`語句，稍有不慎形如`on()`、`emit()`、`subscribe()`、`publish()`等方法摻雜在各處，“剪不清，理還亂”；
+如果不是“約定”化編程不建議採用。比如下面這段源碼，稍不慎就陷入如圖1所示場景。
+
+```js
+const emitter = new EventEmitter()
+const foo = () => emitter.emit('bar')
+const bar = () => emitter.emit('foo')
+emitter.on('foo', foo)
+emitter.on('bar', bar)
+foo()    // 陷入死循環
+```
+
 
 和回調式異步編程（包括Promises/A+規範）相比，事件監聽式異步編程的軟肋在於需要手動註冊(Manual)。
 原本可以通過數據綁定(Data binding)[Object.observe()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe)方法來實現觀察者模式，很可惜該方法已被`deprecated`掉；目前推薦的是`get`和`set`+[Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)方式實現（相關討論：[36258502](http://stackoverflow.com/questions/36258502/why-object-observe-has-been-deprecated)）。
