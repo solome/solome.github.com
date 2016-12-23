@@ -43,7 +43,7 @@ getUserInfoCallback('10086', handleUserInfo)
 
 濫用回調帶來的問題是代碼邏輯耦合度很高，面臨回調災難。Promises/A+是種合理使用回調的**規範**，避免回調的濫用。
 
-#### 特點一：提供好看的API，由嵌套回調(callback hell)轉向鏈式語法
+#### 特點一：提供好看的API，由嵌套回調([callback hell](http://callbackhell.com/))轉向鏈式語法
 
 首先將請求用戶信息的Ajax異步操作包裝成一個Promise實例，後續的同步行為通過該實例對象的`then()`方法調用。
 
@@ -243,9 +243,10 @@ const run = async () => {
 
 ### References
 
-- [promises-spec](https://github.com/promises-aplus/promises-spec)
-- [promisejs.org](https://www.promisejs.org/)
-- [regenerator](https://facebook.github.io/regenerator/)
-- [ecmascript-asyncawait](https://github.com/tc39/ecmascript-asyncawait)
-- [whats-the-big-deal-with-generators](http://devsmash.com/blog/whats-the-big-deal-with-generators)
+- [Callback Hell](http://callbackhell.com/): A guide to writing asynchronous JavaScript programs.
+- [Promises/A+](https://promisesaplus.com/): An open standard for sound, interoperable JavaScript promises—by implementers, for implementers.
+- [promisejs.org](https://www.promisejs.org/): A website dedicated to promises in JavaScript.
+- [regenerator](https://facebook.github.io/regenerator/): Source transformer enabling ECMAScript 6 generator functions in JavaScript-of-today.
+- [ecmascript-asyncawait](https://github.com/tc39/ecmascript-asyncawait): Async/await for ECMAScript.
+- [whats-the-big-deal-with-generators](http://devsmash.com/blog/whats-the-big-deal-with-generators) 
 - [Threads, Fibers & Coroutines](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4287.pdf)
