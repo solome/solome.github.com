@@ -16,28 +16,10 @@
     {% include footer.html %}
     <span class="GoTop show"><i class="fa fa-angle-double-up fa-fw"></i>返回顶部</span>
 
-    <script src="https://use.fontawesome.com/14d053f92c.js"></script>
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script>
-      $(document).ready(function() {
-        // Show or hide the sticky footer button
-        $(window).scroll(function() {
-          console.log('hello');
-          if ($(this).scrollTop() > 200) {
-            $('.GoTop').fadeIn(200);
-          } else {
-            $('.GoTop').fadeOut(200);
-          }
-        });
-        // Animate the scroll to top
-        $('.GoTop').click(function(event) {
-          console.log('hello', event);
-          event.preventDefault();
-          $('html, body').animate({scrollTop: 0}, 300);
-        })
-      });
-  </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script>$(document).ready(function(){$(window).scroll(function(){if($(this).scrollTop()>200){$(".GoTop").fadeIn(200)}else{$(".GoTop").fadeOut(200)}});$(".GoTop").click(function(event){event.preventDefault();$("html, body").animate({scrollTop:0},300)})});</script>
   </body>
 
 </html>
