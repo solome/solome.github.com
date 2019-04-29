@@ -7,7 +7,7 @@
   "scripts": {
     "post": "gulp",
     "dev": "npx webpack-dev-server",
-    "build": "rm -rf webroot/explore && NODE_ENV=production webpack"
+    "build": "cd webroot && rm -rf `ls | grep -vE 'posts|CNAME|404.html|images|favicon.ico'` && cd .. && NODE_ENV=production webpack"
   },
   "devDependencies": {
     "file-loader": "^3.0.1",

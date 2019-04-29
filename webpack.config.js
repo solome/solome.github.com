@@ -8,7 +8,7 @@ const prod = process.env.NODE_ENV === 'production'
 const resolve = path.resolve
 const resources = resolve(__dirname, 'resources')
 
-const outputPath = resolve(__dirname, 'webroot/explore')
+const outputPath = resolve(__dirname, 'webroot')
 
 const { entries, htmlPlugins } = parse(resources)
 
@@ -16,7 +16,7 @@ module.exports = {
   entry: entries,
   output: {
     filename: '[name]-[hash:8].js',
-    publicPath: prod ? '//solome.js.org/explore' : '',
+    publicPath: prod ? '//solome.js.org' : '',
     path: outputPath,
   },
   devServer: devServer(outputPath),
