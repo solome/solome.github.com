@@ -1,11 +1,18 @@
 const path = require('path')
 const gulp = require('gulp')
+const markdown = require('./bundlers/gulp-plugins/markdown')
 
-function markdown () {
-  return gulp.src(path.resolve(__dirname, 'resources/blog'))
-    .pipe(gulp.dest(path.resolve(__dirname, 'web/blog')))
+function markdownTask () {
+  return gulp.src('resources/posts/**/*.markdown')
+    .pipe(markdown({
+      nunjucks: {
+        base: path.resolve(__dirname, 'resources'),
+        layout: 'layout/post.njk',
+      }
+    }))
+    .pipe(gulp.dest('webroot/posts'))
 }
 
-const build = gulp.series(gulp.parallel(markdown))
+const build = gulp.series(gulp.parallel(markdownTask))
 
 exports.default = build

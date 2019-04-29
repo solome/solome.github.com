@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-cd web
+cd webroot
 
 git init
 git add --all

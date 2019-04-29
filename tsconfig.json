@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "target": "es5",
+    "jsx": "react",
+    "lib": [ "es2015", "dom" ],
+    "baseUrl": ".",
+    "paths": {
+      "@images/*": [ "src/resources/images/*" ],
+      "@three/controls/*": ["src/threejs/controls/*"],
+      "@libs/*": ["src/threejs/libs/*"] 
+    }
+  }
+}
