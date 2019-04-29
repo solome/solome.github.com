@@ -1,1 +1,3 @@
-console.log('debug')
+import run from './index'
+
+run()

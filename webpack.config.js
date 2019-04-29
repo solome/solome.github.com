@@ -16,7 +16,7 @@ module.exports = {
   entry: entries,
   output: {
     filename: '[name]-[hash:8].js',
-    publicPath: prod ? '//solome.js.org' : '',
+    publicPath: prod ? '//solome.js.org/' : '/',
     path: outputPath,
   },
   devServer: devServer(outputPath),
@@ -56,5 +56,8 @@ module.exports = {
     ],
   },
   mode: process.env.NODE_ENV ||'development',
+  stats: {
+    children: false,
+  },
 }
 

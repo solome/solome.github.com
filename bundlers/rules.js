@@ -5,7 +5,7 @@ module.exports = () => {
     { test: /\.(png|jpg|gif)$/,
       use: [{
         loader: 'url-loader',
-        options: { fallback: 'file-loader', limit: 2048, name: '[name]-[hash:8].[ext]', outputPath: '/webroot/images/build' },
+        options: { fallback: 'file-loader', limit: 2048, name: '[name]-[hash:8].[ext]', outputPath: '/webroot/imgs' },
       }],
     }, // images
     { test:  /\.njk/,
