@@ -1,6 +1,6 @@
 const canvas = document.createElement('canvas')
-canvas.width=400
-canvas.height=400
+canvas.width = 400
+canvas.height = 400
 
 document.body.appendChild(canvas)
 
@@ -24,11 +24,10 @@ const drawPoint = (ps, color) => {
   ctx.fillStyle = color
   ctx.beginPath()
   console.log(ps)
-  ps.forEach(p => ctx.arc(p.x, p.y, 5, 0, 2*Math.PI))
+  ps.forEach((p) => ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI))
   ctx.fill()
 }
 
 drawBezierCurve(point)
 drawPoint([point[0], point[3]], 'blue')
 drawPoint([point[1], point[2]], 'red')
-

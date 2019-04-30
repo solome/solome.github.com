@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 const parse = require('./bundlers/parse')
 const rules = require('./bundlers/rules')
@@ -30,34 +31,32 @@ module.exports = {
   },
   devtool: 'source-map',
   module: { rules: rules() },
-  plugins: [].concat(htmlPlugins),
-  optimization: {
-    /*splitChunks: {
-      chunks: 'async',
-      // chunks: (chunk) => {
-      //   return chunk.name.indexOf('three') !== -1
-      // },
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10
-        },
-        'react-vendor': {
-          test: (module, chunks) => /react/.test(module.context),
-          priority: 1,
-        },
-      },
-    },*/
-  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name]-[hash:8].css",
+      chunkFilename: "[name].css"
+    })
+  ].concat(htmlPlugins),
   resolveLoader: {
     modules: [
       'node_modules',
       resolve(__dirname, 'bundlers/webpack-loaders')
     ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'async', 
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+    }
+  },
   mode: process.env.NODE_ENV ||'development',
   stats: {
     children: false,
   },
 }
-

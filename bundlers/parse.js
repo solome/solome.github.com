@@ -20,9 +20,10 @@ const parse = (c, srcPath) => {
 
   const name = c.replace('.page.ts', '')
   const tpl = resolve(srcPath, name + '.njk')
+  const chunks = [name]
 
   htmlPlugins.push(new HtmlWebpackPlugin({
-    filename: name + '.html', chunks: [name],
+    filename: name + '.html', chunks, minify: true,
     template: 'nunjucks-html-loader!./resources/' + (accessible(tpl) ? name : 'app') + '.njk',
   }))
   const res = {}

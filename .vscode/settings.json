@@ -1,0 +1,29 @@
+{
+  "editor.fontSize": 15,
+  "editor.tabSize": 2,
+  "workbench.colorTheme": "GitHub Clean White",
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontSize": 14,
+  "editor.fontWeight": "500",
+  "workbench.sideBar.location": "left",
+  "files.exclude": {
+      "**/.git": true,
+      "**/node_modules": false,
+      "**/bower_components": true,
+      "**/dist": true
+  },
+  "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/**": true,
+      "**/bower_components/**": true,
+      "**/dist/**": true
+  },
+  "tslint.jsEnable": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "tslint.suppressWhileTypeErrorsPresent": true,
+  "explorer.confirmDragAndDrop": false
+}

@@ -1,4 +1,5 @@
 // fork from https://github.com/ryanhornberger/nunjucks-html-loader/blob/master/index.js
+// 官方`nunjucks-html-loader`依赖的`loader-utils`版本太旧
 
 const fs = require('fs')
 const path = require('path')
@@ -8,7 +9,7 @@ const utils = require('loader-utils')
 const NunjucksLoader = nunjucks.Loader.extend({
   //Based off of the Nunjucks 'FileSystemLoader' 
 
-  init: function(searchPaths, sourceFoundCallback) {
+  init: function (searchPaths, sourceFoundCallback) {
     this.sourceFoundCallback = sourceFoundCallback
     if(searchPaths) {
       searchPaths = Array.isArray(searchPaths) ? searchPaths : [searchPaths]
@@ -19,7 +20,7 @@ const NunjucksLoader = nunjucks.Loader.extend({
     }
   },
 
-  getSource: function(name) {
+  getSource: function (name) {
     const fullpath = (() => {
       const paths = this.searchPaths
       for(let i = 0; i < paths.length; i++) {

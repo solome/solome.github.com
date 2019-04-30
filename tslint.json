@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "semicolon": [true, "never"],
+    "max-line-length": [true, 200],
+    "interface-name": [true, "never-prefix"],
+    "ordered-imports": false,
+    "variable-name": false,
+    "no-console": false,
+    "space-before-function-paren": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "resources/threejs/controls/OrbitControls.ts"
+    ]
+  },
+  "rulesDirectory": []
+}

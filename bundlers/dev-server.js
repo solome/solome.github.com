@@ -1,7 +1,7 @@
 module.exports = (contentBase) => {
   return {
     contentBase, compress: true, inline: true,
-    allowedHosts: [ '.tecnet.me', '.js.org', 'juyipeng.net' ],
+    allowedHosts: [ '.tecnet.me', '.js.org', '.juyipeng.net', '.iliyang.cn' ],
     port: '8081',
   }
 }

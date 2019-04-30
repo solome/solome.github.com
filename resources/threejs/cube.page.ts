@@ -1,12 +1,11 @@
 import * as THREE from 'three'
 import { orbitControls } from './controls/OrbitControls'
-import * as dat from 'dat.gui'
 
 const __global__: any = window as any
 __global__.THREE = __global__.THREE || THREE
 
 const scene: THREE.Scene = new THREE.Scene()
-const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000)
+const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000)
 camera.position.set(0, 0, 35)
 const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas: document.querySelector('#webgl-canvas')})
 renderer.setClearColor(0xeeeeee)
@@ -18,7 +17,7 @@ const planeGeometry: THREE.PlaneGeometry = new THREE.PlaneGeometry(60, 40, 1, 1)
 const planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff})
 const plane = new THREE.Mesh(planeGeometry, planeMaterial)
 plane.receiveShadow  = true
-plane.rotation.x = -0.5*Math.PI
+plane.rotation.x = -0.5 * Math.PI
 plane.position.x = 0
 plane.position.y = 0
 plane.position.z = 0
@@ -53,6 +52,6 @@ __global__.addCube = addCube
 
 orbitControls(camera, document.body, renderer, scene)
 
-for( let i = 0; i < 200; i++) {
+for (let i = 0; i < 200; i++) {
   addCube()
 }
