@@ -5,7 +5,8 @@ gulp && yarn run build
 
 cd webroot
 
-#git init
-#git add --all
-#git commit -m "deploy"
-#git push --force --quiet "git@github.com:solome/solome.github.com.git" master:master
+git init
+git add --all
+git commit -m "deploy"
+git push --force --quiet "git@github.com:solome/solome.github.com.git" master:master
+

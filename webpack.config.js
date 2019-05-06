@@ -44,16 +44,7 @@ module.exports = {
     ],
   },
   optimization: {
-    splitChunks: {
-      chunks: 'async', 
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-    }
+    splitChunks: { chunks: 'async' },
   },
   mode: process.env.NODE_ENV ||'development',
   stats: {

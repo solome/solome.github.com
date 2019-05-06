@@ -146,7 +146,7 @@ $.ajax(
 ```
 很明顯，觀察者模式要比事件監聽方式擴充性更強（雖然本質一致，但是強調側重點不同）。
 <figure style="padding-top: 0;margin-top:-1.5em;">
-  <img src="/images/post/pingpong.gif" alt="containing block" />
+  <img src="/images/posts/pingpong.gif" alt="containing block" />
   <figcaption>陷入`emit`死循環</figcaption>
 </figure>
 事件監聽式異步編程無異於`goto`語句，稍有不慎形如`on()`、`emit()`、`subscribe()`、`publish()`等方法摻雜在各處，“剪不清，理還亂”；

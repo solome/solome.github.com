@@ -2,7 +2,7 @@ const yaml = require('js-yaml')
 const marked = require('marked')
 const nunjucks = require('nunjucks')
 const promisify = require('util').promisify
-const highlighting = require('pygmentize-bundled')
+const hljs = require('highlight.js')
 
 class Markdown {
   constructor (options) {
@@ -12,13 +12,14 @@ class Markdown {
     this.env = options.nunjucks.env || new nunjucks.Environment(new nunjucks.FileSystemLoader(options.nunjucks.base), options.nunjucks)
 
     this.options = options || {}
+    this.version = Buffer.from(Date.now().toString()).toString('base64').substring(0, 16)
 
     marked.setOptions(Object.assign(this.options.marked || {}, {
       renderer: new marked.Renderer(),
       gfm: true, tables: true, breaks: false,
       pedantic: false, sanitize: false,
       smartLists: true, smartypants: false,
-      highlight: (code, lang, callback) => highlighting({lang, format: 'html'}, code, (err, content) => callback(err, content.toString())),
+      highlight: (code, lang) => lang ? hljs.highlight(lang, code).value : hljs.highlightAuto(code).value,
     }))
 
     this.marked = promisify(marked)
@@ -51,6 +52,7 @@ class Markdown {
     meta.date = date
     ret['content'] = await this.marked(content)
     ret['meta'] = meta
+    ret['version'] = this.version
     return ret
   }
 

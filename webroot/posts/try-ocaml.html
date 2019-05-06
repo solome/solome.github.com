@@ -1,103 +1,55 @@
-<!doctype html>
-<html>
-<head>
+<!doctype html><html><head><title>OCaml初探</title><link rel="stylesheet" href="/stylesheets/posts.css?v=MTU1NzEzNTMyMjUz"></head><body><article><h2 id="安装">安装</h2><p>macOS 系统通过<a href="http://brew.sh/">Homebrew</a>安装：</p><pre><code><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>ocaml
+<span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>opam</code></pre><h2 id="注释">注释</h2><pre><code class="language-ocaml"><span class="hljs-comment">(* 此处是单注释 *)</span>
 
-</head>
+<span class="hljs-comment">(*
+  此处是多行注释
+*)</span></code></pre><h2 id="函数调用">函数调用</h2><pre><code class="language-ocaml">plus a <span class="hljs-number">3</span> <span class="hljs-comment">(* a和3是函数plus的参数*)</span></code></pre><h2 id="函数定义">函数定义</h2><pre><code class="language-ocaml"><span class="hljs-keyword">let</span> hello <span class="hljs-literal">()</span> =
+  print_endline <span class="hljs-string">"Hello World"</span>
 
-<body>
-  <article>
-    <h2 id="安装">安装</h2>
-<p>macOS 系统通过<a href="http://brew.sh/">Homebrew</a>安装：</p>
-<pre><code><div class="highlight"><pre><span class="nx">brew</span> <span class="nx">install</span> <span class="nx">ocaml</span>
-<span class="nx">brew</span> <span class="nx">install</span> <span class="nx">opam</span>
-</pre></div>
-</code></pre><h2 id="注释">注释</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="c">(* 此处是单注释 *)</span>
+hello<span class="hljs-literal">()</span>
 
-<span class="c">(*</span>
-<span class="c">  此处是多行注释</span>
-<span class="c">*)</span>
-</pre></div>
-</code></pre>
-<h2 id="函数调用">函数调用</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="n">plus</span> <span class="n">a</span> <span class="mi">3</span> <span class="c">(* a和3是函数plus的参数*)</span>
-</pre></div>
-</code></pre>
-<h2 id="函数定义">函数定义</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="k">let</span> <span class="n">hello</span> <span class="bp">()</span> <span class="o">=</span>
-  <span class="n">print_endline</span> <span class="s2">&quot;Hello World&quot;</span>
+<span class="hljs-keyword">let</span> average a b =
+  (a +. b) /. <span class="hljs-number">2.0</span>
 
-<span class="n">hello</span><span class="bp">()</span>
+sum <span class="hljs-number">4</span> <span class="hljs-number">8</span>
+</code></pre><h2 id="匿名函数定义">匿名函数定义</h2><pre><code class="language-ocaml"><span class="hljs-keyword">let</span> sum = <span class="hljs-keyword">fun</span> a b -&gt; (a +. b) /. <span class="hljs-number">2.0</span>
 
-<span class="k">let</span> <span class="n">average</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span>
-  <span class="o">(</span><span class="n">a</span> <span class="o">+.</span> <span class="n">b</span><span class="o">)</span> <span class="o">/.</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="hljs-type">List</span>.map (<span class="hljs-keyword">fun</span> i -&gt; i*<span class="hljs-number">2</span>) [<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>;]</code></pre><h2 id="数据类型">数据类型</h2><pre><code class="language-ocaml">
+<span class="hljs-built_in">int</span>     <span class="hljs-number">31</span>-bit signed <span class="hljs-built_in">int</span> (roughly +/- <span class="hljs-number">1</span> billion) on <span class="hljs-number">32</span>-bit
+        processors, <span class="hljs-keyword">or</span> <span class="hljs-number">63</span>-bit signed <span class="hljs-built_in">int</span> on <span class="hljs-number">64</span>-bit processors
 
-<span class="n">sum</span> <span class="mi">4</span> <span class="mi">8</span>
-</pre></div>
-</code></pre>
-<h2 id="匿名函数定义">匿名函数定义</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="k">let</span> <span class="n">sum</span> <span class="o">=</span> <span class="k">fun</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">a</span> <span class="o">+.</span> <span class="n">b</span><span class="o">)</span> <span class="o">/.</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
+<span class="hljs-built_in">float</span>   <span class="hljs-type">IEEE</span> double-precision floating point, equivalent <span class="hljs-keyword">to</span> <span class="hljs-type">C</span>\<span class="hljs-symbol">'s</span> double
 
-<span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="o">(</span><span class="k">fun</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">)</span> <span class="o">[</span><span class="mi">1</span><span class="o">;</span><span class="mi">2</span><span class="o">;</span><span class="mi">3</span><span class="o">;]</span>
-</pre></div>
-</code></pre>
-<h2 id="数据类型">数据类型</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="kt">int</span>     <span class="mi">31</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="kt">int</span> <span class="o">(</span><span class="n">roughly</span> <span class="o">+/-</span> <span class="mi">1</span> <span class="n">billion</span><span class="o">)</span> <span class="n">on</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span>
-        <span class="n">processors</span><span class="o">,</span> <span class="ow">or</span> <span class="mi">63</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="kt">int</span> <span class="n">on</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">processors</span>
+<span class="hljs-built_in">bool</span>    <span class="hljs-type">A</span> boolean, written either <span class="hljs-literal">true</span> <span class="hljs-keyword">or</span> <span class="hljs-literal">false</span>
 
-<span class="kt">float</span>   <span class="nc">IEEE</span> <span class="n">double</span><span class="o">-</span><span class="n">precision</span> <span class="n">floating</span> <span class="n">point</span><span class="o">,</span> <span class="n">equivalent</span> <span class="k">to</span> <span class="nc">C</span><span class="err">\</span><span class="k">&#39;</span><span class="n">s</span> <span class="n">double</span>
+<span class="hljs-built_in">char</span>    <span class="hljs-number">8</span>-bit
 
-<span class="kt">bool</span>    <span class="nc">A</span> <span class="n">boolean</span><span class="o">,</span> <span class="n">written</span> <span class="n">either</span> <span class="bp">true</span> <span class="ow">or</span> <span class="bp">false</span>
+<span class="hljs-built_in">string</span>  
 
-<span class="kt">char</span>    <span class="mi">8</span><span class="o">-</span><span class="n">bit</span>
+<span class="hljs-built_in">unit</span>    <span class="hljs-type">Written</span> <span class="hljs-keyword">as</span> <span class="hljs-literal">()</span>
+</code></pre><h2 id="递归函数">递归函数</h2><pre><code class="language-ocaml"><span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> factorial n =
+  <span class="hljs-keyword">if</span> n &lt;= <span class="hljs-number">1</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-number">1</span>
+  <span class="hljs-keyword">else</span>
+    factorial (n-<span class="hljs-number">1</span>) * n</code></pre><h2 id="局部变量">局部变量</h2><pre><code class="language-ocaml"><span class="hljs-keyword">let</span> average a b =
+  <span class="hljs-keyword">let</span> sum = a +. b <span class="hljs-keyword">in</span>
+  sum /. <span class="hljs-number">2.0</span></code></pre><h2 id="引用">引用</h2><pre><code class="language-ocaml"><span class="hljs-keyword">let</span> var_ref = <span class="hljs-built_in">ref</span> <span class="hljs-number">0</span>
 
-<span class="kt">string</span>  
+var_ref := <span class="hljs-number">100</span>      <span class="hljs-comment">(* := 更改var_ref值 *)</span>
 
-<span class="kt">unit</span>    <span class="nc">Written</span> <span class="k">as</span> <span class="bp">()</span>
-</pre></div>
-</code></pre>
-<h2 id="递归函数">递归函数</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="k">let</span> <span class="k">rec</span> <span class="n">factorial</span> <span class="n">n</span> <span class="o">=</span>
-  <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="k">then</span>
-    <span class="mi">1</span>
-  <span class="k">else</span>
-    <span class="n">factorial</span> <span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">n</span>
-</pre></div>
-</code></pre>
-<h2 id="局部变量">局部变量</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="k">let</span> <span class="n">average</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span>
-  <span class="k">let</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+.</span> <span class="n">b</span> <span class="k">in</span>
-  <span class="n">sum</span> <span class="o">/.</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span>
-</pre></div>
-</code></pre>
-<h2 id="引用">引用</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="k">let</span> <span class="n">var_ref</span> <span class="o">=</span> <span class="n">ref</span> <span class="mi">0</span>
+!var_ref            <span class="hljs-comment">(* ! 查看var_ref引用的值*)</span></code></pre><h2 id="数据结构">数据结构</h2><pre><code class="language-ocaml"><span class="hljs-comment">(* List *)</span>
+[<span class="hljs-number">1</span>; <span class="hljs-number">2</span>; <span class="hljs-number">3</span>]
 
-<span class="n">var_ref</span> <span class="o">:=</span> <span class="mi">100</span>      <span class="c">(* := 更改var_ref值 *)</span>
+<span class="hljs-comment">(* Tuple *)</span>
+(<span class="hljs-number">3</span>, <span class="hljs-string">"hello"</span>, <span class="hljs-string">'x'</span>)
 
-<span class="o">!</span><span class="n">var_ref</span>            <span class="c">(* ! 查看var_ref引用的值*)</span>
-</pre></div>
-</code></pre>
-<h2 id="数据结构">数据结构</h2>
-<pre><code class="language-ocaml"><div class="highlight"><pre><span class="c">(* List *)</span>
-<span class="o">[</span><span class="mi">1</span><span class="o">;</span> <span class="mi">2</span><span class="o">;</span> <span class="mi">3</span><span class="o">]</span>
+<span class="hljs-comment">(* Record *)</span>
+<span class="hljs-comment">(*
+type pair =
+  {a: int; b: string}
+*)</span>
 
-<span class="c">(* Tuple *)</span>
-<span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s2">&quot;hello&quot;</span><span class="o">,</span> <span class="sc">&#39;x&#39;</span><span class="o">)</span>
+{ a = <span class="hljs-number">3</span>; b = <span class="hljs-string">"hello"</span> }
 
-<span class="c">(* Record *)</span>
-<span class="c">(*</span>
-<span class="c">type pair =</span>
-<span class="c">  {a: int; b: string}</span>
-<span class="c">*)</span>
-
-<span class="o">{</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span> <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span> <span class="o">}</span>
-
-<span class="c">(* Variant *)</span>
-</pre></div>
-</code></pre>
-
-  </article>
-</body>
-
-</html>
+<span class="hljs-comment">(* Variant *)</span>
+</code></pre></article></body></html>

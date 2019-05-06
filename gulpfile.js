@@ -1,5 +1,9 @@
 const path = require('path')
 const gulp = require('gulp')
+const rename = require('gulp-rename')
+const postcss = require('gulp-postcss')
+const htmlmin = require('gulp-htmlmin')
+const cleanCSS = require('gulp-clean-css')
 const markdown = require('./bundlers/gulp-plugins/markdown')
 
 function markdownTask () {
@@ -10,9 +14,19 @@ function markdownTask () {
         layout: 'layout/post.njk',
       }
     }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('webroot/posts'))
 }
 
-const build = gulp.series(gulp.parallel(markdownTask))
+function postcssTask () {
+  return gulp.src('resources/scss/pages/**/*.scss')
+    .pipe(postcss())
+    .pipe(rename(p => p.extname = '.css'))
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('webroot/stylesheets'))
+}
+
+const build = gulp.series(gulp.parallel(postcssTask, markdownTask))
 
 exports.default = build
+

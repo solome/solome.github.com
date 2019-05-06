@@ -1,125 +1,59 @@
-<!doctype html>
-<html>
-<head>
+<!doctype html><html><head><title>JavaScript函数式编程几个关键方法实现</title><link rel="stylesheet" href="/stylesheets/posts.css?v=MTU1NzEzNTMyMjUz"></head><body><article><p>JavaScript函数式编程风格中，<code>map</code>、<code>filter</code>、<code>reduce</code>、<code>curry</code>、<code>compose</code>是使用率比较高的几个函数。本文针对这几个函数进行了简单实现，以便更深入理解其用途。</p><p>首先，先定义一个<code>fp</code>(functional programming)对象:</p><pre><code class="language-js"><span class="hljs-keyword">const</span> fp = {}</code></pre><p><code>map(fn, list)</code> creates a new array with the results of calling a provided function on every element in this array.</p><pre><code class="language-js">fp.map = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn, list</span>) </span>{
+  <span class="hljs-keyword">const</span> len = list.length
+  <span class="hljs-keyword">const</span> mapped = []
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> idx = <span class="hljs-number">0</span>; idx &lt; len; idx++) {
+    mapped.push(fn.call(<span class="hljs-literal">null</span>, list[idx]))
+  }
+  <span class="hljs-keyword">return</span> mapped
+}</code></pre><p><code>filter(fn, list)</code> creates a new array with all elements that pass the test implemented by the provided function.</p><p>这个和<code>map(fn, list)</code>函数类似，可以通过调用该函数间接实现。</p><pre><code class="language-js">fp.filter = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn, list</span>) </span>{
+  <span class="hljs-keyword">const</span> filtered = []
+  <span class="hljs-keyword">this</span>.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+    <span class="hljs-keyword">if</span> (fn(e)) {
+      filtered.push(e)
+    }
+  }, list)
+  <span class="hljs-keyword">return</span> filtered
+}</code></pre><p><code>reduce(fn, list)</code> applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.</p><pre><code class="language-js">fp.reduce = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn, list</span>) </span>{
+  <span class="hljs-keyword">var</span> cumulate = list[<span class="hljs-number">0</span>]
+  list.shift()
+  <span class="hljs-keyword">this</span>.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, i</span>) </span>{
+    cumulate = fn.call(<span class="hljs-literal">null</span>, cumulate, e, i, list)
+  }, list)
+  <span class="hljs-keyword">return</span> cumulate
+}</code></pre><p><code>curry(fn)</code> allows you to easily create higher order functions by partially invoking an existing function, without supplying all the arguments of the original function.</p><p>如何理解Curry化函数呢？</p><p>这里我们假设，<code>JavaScript</code>语法有这样的限制：<strong>一个函数当且仅当只能容许拥有一个参数</strong>。</p><p>那么，求两个数最大值<code>max(a, b)</code>函数该怎么实现呢？</p><p>没有函数参数只能有一个的限制时，可以这样实现：</p><pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">max</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a &gt; b ? a : b;
+}
+max(<span class="hljs-number">10086</span>, <span class="hljs-number">10010</span>)
+<span class="hljs-comment">// =&gt; 10086</span></code></pre><p>但现在函数参数只能容许一个，可以将之前两个参数改成调用两个函数来解决：</p><pre><code class="language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curriedMax</span>(<span class="hljs-params">a</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b</span>) </span>{
+    <span class="hljs-keyword">return</span> a &gt; b ? a : b;
+  }
+}
+curriedMax(<span class="hljs-number">10086</span>)(<span class="hljs-number">10010</span>);
+<span class="hljs-comment">// =&gt; 10086</span></code></pre><p>这里作出了这样的变换：</p><p><center><code>fn(获取两个数最大值的函数)</code> => <code>fn(一个数与`10086`比较,获取最大的那个值)</code></center></p><p>Curry化的过程就是消化一个参数，然后生成一个新的函数，剩余的参数作为新函数的参数。</p><p>注意，这里有个假设：函数只能有一个参数；因此，如果存在多个参数，则Curry化工作会一直继续下去直到最后一个参数。</p><p>函数的Curry化实现不可能像<code>curriedMax()</code>方法那样手动维护，一般会借助<code>curry(fn)</code>方法来实现。</p><p>采用递归的实现方式如下：</p><pre><code class="language-js">fp.curry = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn</span>) </span>{
+  <span class="hljs-keyword">const</span> len = fn.length
+  <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
 
-</head>
-
-<body>
-  <article>
-    <p>JavaScript函数式编程风格中，<code>map</code>、<code>filter</code>、<code>reduce</code>、<code>curry</code>、<code>compose</code>是使用率比较高的几个函数。本文针对这几个函数进行了简单实现，以便更深入理解其用途。</p>
-<p>首先，先定义一个<code>fp</code>(functional programming)对象:</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">fp</span> <span class="o">=</span> <span class="p">{}</span>
-</pre></div>
-</code></pre>
-<p><code>map(fn, list)</code> creates a new array with the results of calling a provided function on every element in this array.</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="nx">fp</span><span class="p">.</span><span class="nx">map</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span>
-  <span class="kr">const</span> <span class="nx">mapped</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">idx</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">mapped</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">list</span><span class="p">[</span><span class="nx">idx</span><span class="p">]))</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">mapped</span>
-<span class="p">}</span>
-</pre></div>
-</code></pre>
-<p><code>filter(fn, list)</code> creates a new array with all elements that pass the test implemented by the provided function.</p>
-<p>这个和<code>map(fn, list)</code>函数类似，可以通过调用该函数间接实现。</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="nx">fp</span><span class="p">.</span><span class="nx">filter</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">fn</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">filtered</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="nx">list</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nx">filtered</span>
-<span class="p">}</span>
-</pre></div>
-</code></pre>
-<p><code>reduce(fn, list)</code> applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="nx">fp</span><span class="p">.</span><span class="nx">reduce</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">cumulate</span> <span class="o">=</span> <span class="nx">list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-  <span class="nx">list</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">cumulate</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">cumulate</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
-  <span class="p">},</span> <span class="nx">list</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nx">cumulate</span>
-<span class="p">}</span>
-</pre></div>
-</code></pre>
-<p><code>curry(fn)</code> allows you to easily create higher order functions by partially invoking an existing function, without supplying all the arguments of the original function.</p>
-<p>如何理解Curry化函数呢？</p>
-<p>这里我们假设，<code>JavaScript</code>语法有这样的限制：<strong>一个函数当且仅当只能容许拥有一个参数</strong>。</p>
-<p>那么，求两个数最大值<code>max(a, b)</code>函数该怎么实现呢？</p>
-<p>没有函数参数只能有一个的限制时，可以这样实现：</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span> <span class="o">?</span> <span class="nx">a</span> <span class="o">:</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">max</span><span class="p">(</span><span class="mi">10086</span><span class="p">,</span> <span class="mi">10010</span><span class="p">)</span>
-<span class="c1">// =&gt; 10086</span>
-</pre></div>
-</code></pre>
-<p>但现在函数参数只能容许一个，可以将之前两个参数改成调用两个函数来解决：</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">curriedMax</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span> <span class="o">?</span> <span class="nx">a</span> <span class="o">:</span> <span class="nx">b</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">curriedMax</span><span class="p">(</span><span class="mi">10086</span><span class="p">)(</span><span class="mi">10010</span><span class="p">);</span>
-<span class="c1">// =&gt; 10086</span>
-</pre></div>
-</code></pre>
-<p>这里作出了这样的变换：</p>
-<p>
-<center><code>fn(获取两个数最大值的函数)</code> => <code>fn(一个数与`10086`比较,获取最大的那个值)</code></center>
-</p>
-
-<p>Curry化的过程就是消化一个参数，然后生成一个新的函数，剩余的参数作为新函数的参数。</p>
-<p>注意，这里有个假设：函数只能有一个参数；因此，如果存在多个参数，则Curry化工作会一直继续下去直到最后一个参数。</p>
-<p>函数的Curry化实现不可能像<code>curriedMax()</code>方法那样手动维护，一般会借助<code>curry(fn)</code>方法来实现。</p>
-<p>采用递归的实现方式如下：</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="nx">fp</span><span class="p">.</span><span class="nx">curry</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">length</span>
-  <span class="kr">const</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span>
-
-  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">len</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">that</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span>
-      <span class="p">}</span>
-      <span class="kr">const</span> <span class="nx">callee</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">callee</span>
-      <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">args</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="k">return</span> <span class="nx">callee</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
-      <span class="p">}</span>
-    <span class="p">})([</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</code></pre>
-<p>再回到刚才的<code>max(a, b)</code>函数，如果想对其Curry化：</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="kr">const</span> <span class="nx">curriedMax</span> <span class="o">=</span> <span class="nx">fp</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="nx">max</span><span class="p">)</span>
-<span class="nx">curriedMax</span><span class="p">(</span><span class="mi">10086</span><span class="p">)(</span><span class="mi">10010</span><span class="p">)</span>
-<span class="c1">// =&gt; 10086</span>
-</pre></div>
-</code></pre>
-<blockquote>
-<p>Curry的好处&amp;用途，本文尚不深入分析。</p>
-</blockquote>
-<p><code>compose(fns)</code> facilitates multiple function composition. This is the generation of a higher order function by combining simpler functions.</p>
-<pre><code class="language-js"><div class="highlight"><pre><span class="c1">// fp.compose(f,g,h) =&gt; f(g(h()))</span>
-<span class="nx">fp</span><span class="p">.</span><span class="nx">compose</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">fns</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">).</span><span class="nx">reverse</span><span class="p">()</span>
-  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">preFn</span><span class="p">,</span> <span class="nx">curFn</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">curFn</span><span class="p">(</span><span class="nx">preFn</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">))</span>
-    <span class="p">}</span>
-  <span class="p">},</span> <span class="nx">fns</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</code></pre>
-<p>Source code: <a href="https://jsfiddle.net/juyipeng/x1bnpdvj/5/">jsfiddle</a></p>
-
-  </article>
-</body>
-
-</html>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">args</span>) </span>{
+      <span class="hljs-keyword">if</span> (args.length === len) {
+        <span class="hljs-keyword">return</span> fn.apply(that, args)
+      }
+      <span class="hljs-keyword">const</span> callee = <span class="hljs-built_in">arguments</span>.callee
+      <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        args.push(<span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>])
+        <span class="hljs-keyword">return</span> callee(args)
+      }
+    })([<span class="hljs-built_in">arguments</span>[<span class="hljs-number">0</span>]])
+  }
+}</code></pre><p>再回到刚才的<code>max(a, b)</code>函数，如果想对其Curry化：</p><pre><code class="language-js"><span class="hljs-keyword">const</span> curriedMax = fp.curry(max)
+curriedMax(<span class="hljs-number">10086</span>)(<span class="hljs-number">10010</span>)
+<span class="hljs-comment">// =&gt; 10086</span></code></pre><blockquote><p>Curry的好处&amp;用途，本文尚不深入分析。</p></blockquote><p><code>compose(fns)</code> facilitates multiple function composition. This is the generation of a higher order function by combining simpler functions.</p><pre><code class="language-js"><span class="hljs-comment">// fp.compose(f,g,h) =&gt; f(g(h()))</span>
+fp.compose = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> fns = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>).reverse()
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">preFn, curFn</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">return</span> curFn(preFn.apply(<span class="hljs-literal">null</span>, <span class="hljs-built_in">arguments</span>))
+    }
+  }, fns)
+}</code></pre><p>Source code: <a href="https://jsfiddle.net/juyipeng/x1bnpdvj/5/">jsfiddle</a></p></article></body></html>

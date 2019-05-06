@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./resources/d.scss"],"names":[],"mappings":"AAAA;AACA;AACA;;AAEA;AACA;AACA,G","file":"index-8240df71.css","sourcesContent":["body {\n  color: red;\n}\n\n  body #app {\n    font-size: 20px;\n  }"],"sourceRoot":""}
