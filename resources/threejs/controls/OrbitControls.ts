@@ -1090,7 +1090,7 @@ export const orbitControls = (camera: THREE.PerspectiveCamera,
 	animate()
 
 	const resize = () => {
-		const { offsetWidth: width, offsetHeight: height } = domElement
+		const { innerWidth: width, innerHeight: height } = window
 		renderer.setSize(width, height)
 		camera.aspect = width / height
 		camera.updateProjectionMatrix()

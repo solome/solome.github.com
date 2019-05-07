@@ -56,7 +56,7 @@ const run = (canvas) => {
   }
 
   return () => {
-    disposeOrbitControls()
+    // disposeOrbitControls()
   }
 }
 
