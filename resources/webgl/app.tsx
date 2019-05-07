@@ -5,8 +5,4 @@ import './app.scss';
 
 export default function run () {
   ReactDOM.render(<h1>Hello World!</h1>, document.querySelector('#app'))
-
-  import('./split-chunks.ts')
-    .then(npm => console.log(npm))
 }
-

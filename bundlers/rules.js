@@ -3,7 +3,23 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 module.exports = () => {
 
   return [
-    { test: /\.tsx?$/, loader: 'ts-loader' }, // typescript
+    { test: /\.tsx?$/,
+      use: [
+        'cache-loader',
+        {
+          loader: 'thread-loader',
+          options: {
+            workers: require('os').cpus().length - 1,
+          },
+        }, {
+          loader: 'ts-loader',
+          options: {
+            happyPackMode: true,
+            transpileOnly: true,
+          },
+        }
+      ],
+    }, // typescript
     { test: /\.(png|jpg|gif)$/,
       use: [{
         loader: 'url-loader',

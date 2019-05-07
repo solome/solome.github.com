@@ -1,2 +1,12 @@
 @import 'normalize.css';
 @import 'highlight.js/styles/github.css';
+
+::selection {
+  background: #0074bf;
+  color: #e5f1f8;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: LyonText,Georgia,serif;
+}

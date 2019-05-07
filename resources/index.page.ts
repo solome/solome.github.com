@@ -1,3 +1,3 @@
 import run from './index'
-import('./d.scss')
+require('./d.scss')
 run()

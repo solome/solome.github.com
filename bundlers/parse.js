@@ -17,10 +17,10 @@ const accessible = (f) => {
 const htmlPlugins = []
 
 const parse = (c, srcPath) => {
-
   const name = c.replace('.page.ts', '')
   const tpl = resolve(srcPath, name + '.njk')
-  const chunks = [name]
+  const chunks = ['vendor~react', 'runtime', name]
+  if (c.startsWith('threejs')) chunks.push('vendor~three')
 
   htmlPlugins.push(new HtmlWebpackPlugin({
     filename: name + '.html', chunks, minify: true,
