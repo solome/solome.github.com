@@ -1,15 +1,20 @@
 import * as THREE from 'three'
+import * as dat from 'dat.gui'
+
 import { orbitControls } from '@three/controls/OrbitControls'
 import __global__ from '@three/libs/__global__'
 
 const run = (canvas) => {
+
+  // Scene, Camera, Render
   const scene: THREE.Scene = new THREE.Scene()
   const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 100)
   camera.position.set(0, 0, 35)
-  const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas})
+  const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({ canvas })
   renderer.setClearColor(0xeeeeee)
   renderer.shadowMap.enabled = true
 
+  // Plane
   const planeGeometry: THREE.PlaneGeometry = new THREE.PlaneGeometry(60, 40, 1, 1)
   const planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff})
   const plane = new THREE.Mesh(planeGeometry, planeMaterial)
@@ -20,6 +25,7 @@ const run = (canvas) => {
   plane.position.z = 0
   scene.add(plane)
 
+  // Light
   const ambientLight = new THREE.AmbientLight(0x0c0c0c)
   scene.add(ambientLight)
   const spotLight = new THREE.SpotLight(0xffffff)
@@ -27,7 +33,9 @@ const run = (canvas) => {
   spotLight.castShadow = true
   scene.add(spotLight)
 
-  let numbersOfObjects = 0
+  // Fog
+  scene.fog = new THREE.FogExp2(0xffffff, 0.015)
+
   const addCube = () => {
     const cubeSize = Math.ceil((Math.random() * 3))
     const cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize)
@@ -40,23 +48,69 @@ const run = (canvas) => {
     cube.position.y = Math.round((Math.random() * 5))
     cube.position.z = -20 + Math.round((Math.random() * 40))
     scene.add(cube)
-    numbersOfObjects = scene.children.length
   }
 
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  const removeCube = () => {
+    const allChildren = scene.children
+    const lastObject = allChildren[allChildren.length-1]
+    if (lastObject instanceof THREE.Mesh) {
+      scene.remove(lastObject)
+    }
+  }
+
   renderer.render(scene, camera)
 
-
+  __global__.scene = scene
   __global__.addCube = addCube
+  __global__.removeCube = removeCube
 
-  const disposeOrbitControls = orbitControls(camera, document.body, renderer, scene)
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 20; i++) {
     addCube()
   }
 
+  // dat.gui
+  interface Controls {
+    rotationSpeed: number
+    addCube: Function
+    removeCube: Function
+    overrideMaterial: Function
+  }
+  const controls: Controls = {
+    rotationSpeed: 0.02,
+    addCube,
+    removeCube,
+    overrideMaterial: () => scene.overrideMaterial = !scene.overrideMaterial ? new THREE.MeshLambertMaterial({color: 0xffffff}) : null,
+  }
+  const datGUI = new dat.GUI()
+  datGUI.add(controls, 'rotationSpeed', 0, 0.5)
+  datGUI.add(controls, 'addCube')
+  datGUI.add(controls, 'removeCube')
+  datGUI.add(controls, 'overrideMaterial')
+
+  // Animation
+  const renderScene = () => {
+    scene.traverse(e => {
+      if (e instanceof THREE.Mesh && e !== plane) {
+        e.rotation.x += controls.rotationSpeed
+        e.rotation.y += controls.rotationSpeed
+        e.rotation.z += controls.rotationSpeed
+      }
+    })
+
+    requestAnimationFrame(renderScene)
+    renderer.render(scene, camera)
+  }
+
+  renderScene()
+
+  // OrbitCOntrols
+  const disposeOrbitControls = orbitControls(camera, document.body, renderer, scene)
+
+
   return () => {
-    // disposeOrbitControls()
+    datGUI.destroy()
+    disposeOrbitControls()
   }
 }
 

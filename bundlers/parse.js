@@ -19,8 +19,7 @@ const htmlPlugins = []
 const parse = (c, srcPath) => {
   const name = c.replace('.page.ts', '')
   const tpl = resolve(srcPath, name + '.njk')
-  const chunks = ['vendor~react', 'runtime', name]
-  if (c.startsWith('threejs')) chunks.push('vendor~three')
+  const chunks = [ 'runtime', name]
 
   htmlPlugins.push(new HtmlWebpackPlugin({
     filename: name + '.html', chunks, minify: true,
@@ -41,4 +40,3 @@ module.exports = (srcPath ) => {
 
   return { entries, htmlPlugins }
 }
-

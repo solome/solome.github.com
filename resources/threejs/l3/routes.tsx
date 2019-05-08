@@ -1,24 +1,24 @@
 import * as React from 'react'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
 
 import webGL from '@components/webGL'
+import L3Navi from './components/L3Navi'
 
 const routes = () => {
+
   return (
+
     <Router>
-      <div className="l3-nav">
-        <ul>
-        <li><Link to="/threejs/l3">Index</Link></li>
-        <li><Link to="/threejs/l3/cube">Cube</Link></li>
-        </ul>
-      </div>
-      <Route exact path="/threejs/l3" component={webGL(import(/* webpackChunkName: "l3-examples-home"*//* webpackMode: "lazy" */'@three/l3/examples/index'))} />
-      <Route exact path="/threejs/l3/cube" component={webGL(import(/* webpackChunkName: "l3-examples-cube"*//* webpackMode: "lazy" */'@three/l3/examples/cube'))} />
+      <L3Navi />
+      <Route exact path="/" component={webGL(import(/* webpackChunkName: "l3-examples-index"*//* webpackMode: "lazy" */'@three/l3/examples/index'))} />
+      <Route exact path="/cube" component={webGL(import(/* webpackChunkName: "l3-examples-cube"*//* webpackMode: "lazy" */'@three/l3/examples/cube'))} />
+      <Route exact path="/vertices-faces" component={webGL(import(/* webpackChunkName: "l3-examples-vertices-faces"*//* webpackMode: "lazy" */'@three/l3/examples/vertices-faces'))} />
     </Router>
+  
   )
 }
 

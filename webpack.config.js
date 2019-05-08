@@ -1,7 +1,9 @@
 const path = require('path')
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
+const hashids = require('./bundlers/hashids')
 const parse = require('./bundlers/parse')
 const rules = require('./bundlers/rules')
 const devServer = require('./bundlers/dev-server')
@@ -17,7 +19,8 @@ const { entries, htmlPlugins } = parse(resources)
 module.exports = {
   entry: entries,
   output: {
-    filename: '[name]-[hash:8].js',
+    filename: '[name].[chunkhash:8].js',
+    chunkFilename: '[name].[chunkhash:8].js',
     publicPath: prod ? '//solome.js.org/' : '/',
     path: outputPath,
   },
@@ -37,8 +40,8 @@ module.exports = {
   plugins: [
     new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true }),
     new MiniCssExtractPlugin({
-      filename: "[name]-[hash:8].css",
-      chunkFilename: "[name].css"
+      filename: "[name].[contenthash:8].css",
+      chunkFilename: "[name].[contenthash:8].css",
     })
   ].concat(htmlPlugins),
   resolveLoader: {
@@ -55,22 +58,11 @@ module.exports = {
       minChunks: 1,
       maxAsyncRequests: 2,
       maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        // react: {
-        //   chunks: 'initial',
-        //   name: 'vendor~react',
-        //   test: m => /react|prop-types/.test(m.context),
-        // },
-        // three: {
-        //   chunks: 'initial',
-        //   name: 'vendor~three',
-        //   test: m => /node_modules\/three/.test(m.context),
-        // },
-      },
+      name: (module, chunks, cacheGroupKey) => hashids([cacheGroupKey].concat(chunks.map(c => c.name)).join('~')),
+      cacheGroups: {},
     },
     runtimeChunk: 'single',
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
   },
   mode: process.env.NODE_ENV || 'development',
   stats: {

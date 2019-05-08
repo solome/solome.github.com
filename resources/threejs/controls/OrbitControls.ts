@@ -1080,7 +1080,6 @@ export const orbitControls = (camera: THREE.PerspectiveCamera,
 	const controls: OrbitControls = new OrbitControls(camera, renderer.domElement)
 	controls.update()
 
-	console.log(controls, controls.enabled)
 	const animate = () => {
 		if (!controls.enabled) return
 		requestAnimationFrame(animate)

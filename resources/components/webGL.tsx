@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import ReactLoading from 'react-loading'
-
 export interface Props {
 }
 

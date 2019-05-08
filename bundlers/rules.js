@@ -1,5 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
+const prod = process.env.NODE_ENV === 'production'
+
 module.exports = () => {
 
   return [
@@ -36,7 +38,13 @@ module.exports = () => {
       test: /\.scss$/,
       exclude: /node_modules/,
       use: [
-        { loader: MiniCssExtractPlugin.loader },
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: !prod,
+            reloadAll: true,
+          }
+        },
         {
           loader: 'css-loader',
           options: { importLoaders: 1 },

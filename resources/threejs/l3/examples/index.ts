@@ -72,8 +72,6 @@ const run = (canvas) => {
   let bouncingSpeed = 0
 
   const renderScene = () => {
-    renderer.setSize(window.innerWidth, window.innerHeight)
-
     box.rotation.x += controls.rotationSpeed
     box.rotation.y += controls.rotationSpeed
     box.rotation.z += controls.rotationSpeed
@@ -90,8 +88,10 @@ const run = (canvas) => {
   const disposeOrbitControls = orbitControls(camera, document.body, renderer, scene)
 
   return () => {
-    disposeOrbitControls()
+
     datGUI.destroy()
+    disposeOrbitControls()
+  
   }
 }
 
