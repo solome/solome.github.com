@@ -17,8 +17,9 @@ const routes = () => {
       <Route exact path="/" component={webGL(import(/* webpackChunkName: "l3-examples-index"*//* webpackMode: "lazy" */'@three/l3/examples/index'))} />
       <Route exact path="/cube" component={webGL(import(/* webpackChunkName: "l3-examples-cube"*//* webpackMode: "lazy" */'@three/l3/examples/cube'))} />
       <Route exact path="/vertices-faces" component={webGL(import(/* webpackChunkName: "l3-examples-vertices-faces"*//* webpackMode: "lazy" */'@three/l3/examples/vertices-faces'))} />
+      <Route exact path="/geometries" component={webGL(import(/* webpackChunkName: "l3-examples-geometries"*//* webpackMode: "lazy" */'@three/l3/examples/geometries'))} />
     </Router>
-  
+
   )
 }
 

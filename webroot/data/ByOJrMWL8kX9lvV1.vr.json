@@ -1,0 +1,432 @@
+{
+  "imgCDN": "//vrlab-public.ljcdn.com/release",
+  "user_id": 1000000023023792,
+  "project_id": "-0TIBbdERsLfmeu5bGO-3gK",
+  "name": "",
+  "is_active": true,
+  "title": "51be34c1ac998219d24e50914688a528",
+  "description": "",
+  "picture_url": "/auto3dhd/51be34c1ac998219d24e50914688a528/screenshot/1550804890_5/pc0_y4K3dUCIb.jpg",
+  "picture_checksum": "",
+  "initial": {
+    "pano": 5,
+    "heading": -0.49645564744484,
+    "longitude": 3.1193228296917,
+    "latitude": 0
+  },
+  "machine_id": "RA00330",
+  "machine_version": "3",
+  "title_picture_url": "/auto3dhd/51be34c1ac998219d24e50914688a528/screenshot/1550804890_5/pc1_UR6vmsvyT.jpg",
+  "house_layout": {
+    "bedroom_amount": 2,
+    "parlor_amount": 1,
+    "cookroom_amount": 1,
+    "toilet_amount": 1
+  },
+  "standard_floor_plan_url": "/vrcustomer/ByOJrMWL8kX9lvV1/floorplan/standard_c4e670ef-1d43-4896-a73d-e7731a496b31.png",
+  "standard_floor_plan_checksum": "",
+  "hierarchy_floor_plan": [
+    {
+      "url": "/vrcustomer/ByOJrMWL8kX9lvV1/floorplan/hierarchy_0_c4e670ef-1d43-4896-a73d-e7731a496b31.png",
+      "index": 0
+    }
+  ],
+  "outline_floor_plan": [
+    {
+      "url": "/vrcustomer/ByOJrMWL8kX9lvV1/floorplan/outline_0_c4e670ef-1d43-4896-a73d-e7731a496b31.png",
+      "index": 0
+    }
+  ],
+  "status": 1,
+  "create_time": "2019年02月22日",
+  "house_info": {
+    "relation_id": 973120,
+    "city_id": 120000,
+    "source": "ALLIANCE",
+    "house_id": "0",
+    "house_code": "101104102208"
+  },
+  "work_code": "ByOJrMWL8kX9lvV1",
+  "model": {
+    "file_url": "/auto3dhd/51be34c1ac998219d24e50914688a528/model/auto3d-0TIBbdERsLfmeu5bGO-3gK.at3d",
+    "material_base_url": "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/",
+    "material_textures": [
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_0.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_1.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_2.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_3.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_4.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_5.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_6.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_7.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_8.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_9.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_10.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_11.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_12.jpg",
+      "/auto3dhd/51be34c1ac998219d24e50914688a528/materials/texture_13.jpg"
+    ]
+  },
+  "panorama": {
+    "count": 14,
+    "base_url": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/",
+    "list": [
+      {
+        "index": 0,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/0/18f3b9f9a2c2f51e997951e0f2d95554/0_b.jpg"
+      },
+      {
+        "index": 1,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/1/726300e3483f5236953eea759039d3b0/1_b.jpg"
+      },
+      {
+        "index": 2,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/2/eeea5072006b3e000da95bfdd327d5c0/2_b.jpg"
+      },
+      {
+        "index": 3,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/3/82cca19046cf21e4fd4427ffca289520/3_b.jpg"
+      },
+      {
+        "index": 4,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/4/756cb5db326291b6829ccd3f36b15579/4_b.jpg"
+      },
+      {
+        "index": 5,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/5/f45e2e0a5bb3967793f90ba4191e71b9/5_b.jpg"
+      },
+      {
+        "index": 6,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/6/08696a0713bd72d4325d75bc6469d056/6_b.jpg"
+      },
+      {
+        "index": 7,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/7/42a2b0bc849ee1725af386f544f60c1d/7_b.jpg"
+      },
+      {
+        "index": 8,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/8/22098fd8eb5c4c228fe3ce5e9a6f5320/8_b.jpg"
+      },
+      {
+        "index": 9,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/9/7d7b50a879bcc50e3d165879f3dba465/9_b.jpg"
+      },
+      {
+        "index": 10,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/10/c863ace80f7718fb068c65af088f67d0/10_b.jpg"
+      },
+      {
+        "index": 11,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/11/c442a6d2e57a3231ae139ac7c20d69a7/11_b.jpg"
+      },
+      {
+        "index": 12,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/12/7da2aff33451a34da940644364d35dd0/12_b.jpg"
+      },
+      {
+        "index": 13,
+        "up": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_u.jpg",
+        "down": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_d.jpg",
+        "right": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_r.jpg",
+        "left": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_l.jpg",
+        "front": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_f.jpg",
+        "back": "/auto3dhd/51be34c1ac998219d24e50914688a528/images/cube_2048/13/59390f0c08a15d51e7753788ac04a7b2/13_b.jpg"
+      }
+    ]
+  },
+  "observers": [
+    {
+      "visible_nodes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "accessible_nodes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "index": 0,
+      "quaternion": {
+        "y": -0.99959349565613,
+        "x": -0.0090066867368972,
+        "z": 0.010049412375973,
+        "w": 0.025114295916496
+      },
+      "standing_position": [-1.8420100212097, -1.296222911011, -1.407389998436],
+      "position": [-1.8420100212097, 0.020851999521255, -1.407389998436],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 2, 5, 8, 9, 10],
+      "accessible_nodes": [0, 2, 5, 8, 9, 10],
+      "index": 1,
+      "quaternion": {
+        "y": -0.83425887189097,
+        "x": -0.0053390237375959,
+        "z": 0.011030835664041,
+        "w": 0.55123673685804
+      },
+      "standing_position": [
+        -3.3764600753784,
+        -1.2959999752045,
+        -1.5146399736404
+      ],
+      "position": [-3.3764600753784, 0.011759700253606, -1.5146399736404],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 1],
+      "accessible_nodes": [0, 1],
+      "index": 2,
+      "quaternion": {
+        "y": -0.6783125401059,
+        "x": 0.0005891134530539,
+        "z": 0.015556880016525,
+        "w": 0.734608547108
+      },
+      "standing_position": [
+        -4.6516299247742,
+        -1.2960153175984,
+        -0.91019797325134
+      ],
+      "position": [-4.6516299247742, 0.0050279102288187, -0.91019797325134],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 4],
+      "accessible_nodes": [0, 4],
+      "index": 3,
+      "quaternion": {
+        "y": 0.35601876336562,
+        "x": -0.00048871955594696,
+        "z": -0.016746331231598,
+        "w": -0.93432861200218
+      },
+      "standing_position": [
+        -2.2597899436951,
+        -1.2955562804661,
+        1.0506500005722
+      ],
+      "position": [-2.2597899436951, 0.024876700714231, 1.0506500005722],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 3],
+      "accessible_nodes": [0, 3],
+      "index": 4,
+      "quaternion": {
+        "y": 0.46026632654655,
+        "x": -0.0032362046066665,
+        "z": -0.011839162476302,
+        "w": -0.88769603431261
+      },
+      "standing_position": [-3.0699300765991, -1.2954563913244, 2.77800989151],
+      "position": [-3.0699300765991, 0.025842100381851, 2.77800989151],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 1, 6, 7, 8, 9, 10],
+      "accessible_nodes": [0, 1, 6, 7, 8, 9, 10],
+      "index": 5,
+      "quaternion": {
+        "y": -0.81545926799915,
+        "x": -0.0062316566984064,
+        "z": -0.0036311160808812,
+        "w": -0.57876952534182
+      },
+      "standing_position": [
+        0.16041900217533,
+        -1.2951476379528,
+        -0.71581500768661
+      ],
+      "position": [0.16041900217533, 0.027030199766159, -0.71581500768661],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 5, 7],
+      "accessible_nodes": [0, 5, 7],
+      "index": 6,
+      "quaternion": {
+        "y": -0.54145585062731,
+        "x": 0.0032731179884929,
+        "z": -0.011057643773484,
+        "w": -0.84065008719475
+      },
+      "standing_position": [0.51040601730347, -1.295713880855, 1.5104800462723],
+      "position": [0.51040601730347, 0.031075600534678, 1.5104800462723],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 5, 6],
+      "accessible_nodes": [0, 5, 6],
+      "index": 7,
+      "quaternion": {
+        "y": -0.60947606886948,
+        "x": 0.0093637763314692,
+        "z": -0.0053165116252112,
+        "w": -0.7927313390617
+      },
+      "standing_position": [
+        0.46208098530769,
+        -1.2960999917984,
+        3.3151700496674
+      ],
+      "position": [0.46208098530769, 0.036079999059439, 3.3151700496674],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 1, 5, 9, 10, 11, 12, 13],
+      "accessible_nodes": [0, 1, 5, 9, 10, 11, 12, 13],
+      "index": 8,
+      "quaternion": {
+        "y": -0.71183063351165,
+        "x": -0.0021826011915705,
+        "z": 0.0038356597570482,
+        "w": 0.70233728360743
+      },
+      "standing_position": [
+        2.7919399738312,
+        -1.2974050148087,
+        -0.65171098709106
+      ],
+      "position": [2.7919399738312, 0.017815800383687, -0.65171098709106],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 1, 5, 8, 10],
+      "accessible_nodes": [0, 1, 5, 8, 10],
+      "index": 9,
+      "quaternion": {
+        "y": -0.99740163172272,
+        "x": -0.0022923608854818,
+        "z": 0.0090120695195343,
+        "w": -0.071438875792986
+      },
+      "standing_position": [
+        4.303530216217,
+        -1.2962000083923,
+        -0.68939298391342
+      ],
+      "position": [4.303530216217, -0.0010282200528309, -0.68939298391342],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [0, 1, 5, 8, 9],
+      "accessible_nodes": [0, 1, 5, 8, 9],
+      "index": 10,
+      "quaternion": {
+        "y": -0.97545677910956,
+        "x": 0.0032311377015681,
+        "z": 0.006015641568359,
+        "w": -0.22008509250191
+      },
+      "standing_position": [
+        5.6103000640869,
+        -1.321844137982,
+        -0.70798498392105
+      ],
+      "position": [5.6103000640869, -0.0045270398259163, -0.70798498392105],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [8, 12, 13],
+      "accessible_nodes": [8, 12, 13],
+      "index": 11,
+      "quaternion": {
+        "y": -0.4735897588386,
+        "x": -0.0030864229273131,
+        "z": 0.0040160214712899,
+        "w": -0.88073100235152
+      },
+      "standing_position": [2.9628601074219, -1.2959999752045, 1.1350699663162],
+      "position": [2.9628601074219, 0.018750999122858, 1.1350699663162],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [8, 11, 13],
+      "accessible_nodes": [8, 11, 13],
+      "index": 12,
+      "quaternion": {
+        "y": 0.39702813174166,
+        "x": -0.0029888873171674,
+        "z": -0.0024119682987889,
+        "w": -0.91779841202135
+      },
+      "standing_position": [4.0984601974487, -1.2959999752045, 2.6790299415588],
+      "position": [4.0984601974487, 0.013713099993765, 2.6790299415588],
+      "floor_index": 0
+    },
+    {
+      "visible_nodes": [8, 11, 12],
+      "accessible_nodes": [8, 11, 12],
+      "index": 13,
+      "quaternion": {
+        "y": 0.30872947989083,
+        "x": -0.0033707842712279,
+        "z": 0.0029938189427961,
+        "w": -0.95113920277091
+      },
+      "standing_position": [3.5823700428009, -1.2922034683385, 3.9452500343323],
+      "position": [3.5823700428009, 0.011878999881446, 3.9452500343323],
+      "floor_index": 0
+    }
+  ]
+}

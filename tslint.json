@@ -1,10 +1,11 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
+  "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
+    "object-property-newline": ["error", "never"],
+    "object-curly-newline": ["error", "never"],
+    "function-paren-newline": ["error", "never"],
     "quotemark": [true, "single", "jsx-double"],
     "semicolon": [true, "never"],
     "max-line-length": [true, 200],
@@ -12,12 +13,10 @@
     "ordered-imports": false,
     "variable-name": false,
     "no-console": false,
-    "space-before-function-paren": false
+    "space-before-function-paren": true
   },
   "linterOptions": {
-    "exclude": [
-      "resources/threejs/controls/OrbitControls.ts"
-    ]
+    "exclude": ["resources/threejs/controls/OrbitControls.ts"]
   },
   "rulesDirectory": []
 }

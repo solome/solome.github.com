@@ -5,7 +5,8 @@ const prod = process.env.NODE_ENV === 'production'
 module.exports = () => {
 
   return [
-    { test: /\.tsx?$/,
+    {
+      test: /\.tsx?$/,
       use: [
         'cache-loader',
         {
@@ -22,16 +23,18 @@ module.exports = () => {
         }
       ],
     }, // typescript
-    { test: /\.(png|jpg|gif)$/,
+    {
+      test: /\.(png|jpg|gif)$/,
       use: [{
         loader: 'url-loader',
         options: { fallback: 'file-loader', limit: 2048, name: '[name]-[hash:8].[ext]', outputPath: 'imgs' },
       }],
     }, // images
-    { test:  /\.njk/,
+    {
+      test: /\.njk/,
       use: ['html-loader', {
         loader: 'nunjucks-html-loader',
-        options: { searchPaths: [ 'resources' ] },
+        options: { searchPaths: ['resources'] },
       }],
     },
     {
