@@ -50,6 +50,7 @@ const NunjucksLoader = nunjucks.Loader.extend({
 })
 
 module.exports = function (content) {
+
   this.cacheable()
 
   const callback = this.async()
@@ -67,3 +68,4 @@ module.exports = function (content) {
 
   callback(null, html)
 }
+

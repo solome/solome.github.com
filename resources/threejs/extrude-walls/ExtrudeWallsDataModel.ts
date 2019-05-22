@@ -1,4 +1,5 @@
 export default interface ExtrudeWallsDataModel {
-  exterior: string
-  interior: string
+  height: number
+  exterior: Array<[number, number]>
+  interior: Array<[number, number]>
 }
