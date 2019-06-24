@@ -30,3 +30,11 @@ const build = gulp.series(gulp.parallel(postcssTask, markdownTask))
 
 exports.default = build
 
+function watchTask () {
+
+  gulp.watch(['resources/posts/**/*.markdown', 'resources/scss/pages/**/*.scss', 'resources/layout/**/*.njk'], build)
+
+}
+
+exports.watch = watchTask
+

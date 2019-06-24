@@ -6,9 +6,17 @@
 </head>
 
 <body>
+  <header>
+  </header>
   <article>
+    <h1>{{meta.title}}</h1>
+    <div class="meta">
+      <div>编辑时间&nbsp;&nbsp;{{meta.date}}</div>
+    </div>
     {{ content | safe }}
   </article>
+  <footer>
+  </footer>
 </body>
 
 </html>

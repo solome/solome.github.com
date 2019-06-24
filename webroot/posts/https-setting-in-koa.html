@@ -1,4 +1,4 @@
-<!doctype html><html><head><title>SSL/TLS - 掬一捧</title><link rel="stylesheet" href="/stylesheets/posts.css?v=MTU1NzIxNDU4NjU1"></head><body><article><blockquote><p>SSL的全称Secure Sockets Layer，即安全通訊端層，簡而言之，這是一種標準的技術，用於保持網際網路連線安全以及防止在兩個系統之間發送的所有敏感資料被罪犯讀取及修改任何傳輸的資訊，包括潛在的個人詳細資料。 TLS即Transport Layer Security</p></blockquote><p>Koa中设置 https</p><pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<!doctype html><html><head><title>SSL/TLS - 掬一捧</title><link rel="stylesheet" href="/stylesheets/posts.css?v=MTU2MTM3MjMwMTQz"></head><body><header></header><article><h1>SSL/TLS</h1><div class="meta"><div>编辑时间&nbsp;&nbsp;Thu Jan 12 2017 15:18:22 GMT+0800 (GMT+08:00)</div></div><blockquote><p>SSL的全称Secure Sockets Layer，即安全通訊端層，簡而言之，這是一種標準的技術，用於保持網際網路連線安全以及防止在兩個系統之間發送的所有敏感資料被罪犯讀取及修改任何傳輸的資訊，包括潛在的個人詳細資料。 TLS即Transport Layer Security</p></blockquote><p>Koa中设置 https</p><pre><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
 <span class="hljs-keyword">const</span> Koa = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>)
 <span class="hljs-keyword">const</span> https = <span class="hljs-built_in">require</span>(<span class="hljs-string">'https'</span>)
 <span class="hljs-keyword">const</span> enforceHttps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa-sslify'</span>)
@@ -8,4 +8,4 @@
     <span class="hljs-attr">cert</span>: fs.readFileSync(<span class="hljs-string">'./ssl/xxxx.pem'</span>)
 }
 
-https.createServer(options, app.callback()).listen(config.port)</code></pre></article></body></html>
+https.createServer(options, app.callback()).listen(config.port)</code></pre></article><footer></footer></body></html>
