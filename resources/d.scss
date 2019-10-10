@@ -1,7 +1,85 @@
+html {
+  background-color: #e5f1f8;
+}
 body {
-  color: red;
+  background-color: white;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: 'Heiti SC', tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+  max-width: 760px;
+  margin: 10px auto;
+  padding: 20px;
+}
 
-  #app {
-    font-size: 20px;
+a {
+  text-decoration: none;
+  color: #007BAA;
+
+  &:hover {
+    color: #D73D32;
   }
 }
+
+.logo {
+  font-size: 20px;
+  color: darkgray;
+}
+
+.logo-name {
+  font-size: 32px;
+  color: #007BAA;
+}
+
+.footer-nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  color: #7F8FA4;
+
+  .fnw-col {
+    flex: 1;
+  }
+}
+.icon {
+  margin: 0 5px;
+}
+
+.icon>svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.fnw-copyright {
+  text-align: right;
+  color: #828282;
+}
+
+.footer {
+  font-size: 14px;
+
+  .fnw-heading {
+    font-size: 18px;
+  }
+}
+
+.footer ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+
+#app {
+  position: absolute;
+  right: 0;
+  top: 75px;
+
+  .minions {
+    margin: 20px;
+    border: 1px solid rgba(169, 169, 169, .5);
+    border-radius: 50%;
+  }
+}
+

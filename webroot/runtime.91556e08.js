@@ -46,6 +46,7 @@
 /******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
 /******/ 			}
 /******/ 		}
+/******/
 /******/ 		return result;
 /******/ 	}
 /******/
@@ -63,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"1":"lJy3DXlFRijDW1eY","4":"l3-examples-cube","5":"l3-examples-index","6":"l3-examples-vertices-faces"}[chunkId]||chunkId) + "." + {"1":"1b9a1153","4":"b74cd819","5":"b03901a1","6":"8a4f5d98"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"1":"lJy3DXlFRijDW1eY","4":"l3-examples-cube","5":"l3-examples-geometries","6":"l3-examples-index","7":"l3-examples-vertices-faces"}[chunkId]||chunkId) + "." + {"1":"34c294a6","4":"8d70346c","5":"4ef3b00e","6":"d1273141","7":"1d4a1a8a"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -122,6 +123,8 @@
 /******/ 				}
 /******/ 				script.src = jsonpScriptSrc(chunkId);
 /******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
 /******/ 				onScriptComplete = function (event) {
 /******/ 					// avoid mem leaks in IE.
 /******/ 					script.onerror = script.onload = null;
@@ -131,7 +134,7 @@
 /******/ 						if(chunk) {
 /******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 /******/ 							var realSrc = event && event.target && event.target.src;
-/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
 /******/ 							error.type = errorType;
 /******/ 							error.request = realSrc;
 /******/ 							chunk[1](error);

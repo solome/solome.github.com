@@ -6,17 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>掬一捧 - 🤓 Solo Web Developer</title>
     <meta name="description" content="掬一捧清水窥明月...">
-    <style>
-    html, body, div, canvas {
-      padding: 0;
-      margin: 0;
-    }
-    </style>
   </head>
 
   <body>
-    <div id="app">
-      <canvas id="webgl-canvas"></canvas>
-    </div>
+    {% include "./layout/header.html" %}
+    <div id="app"></div>
+    {% include "./layout/posts.html" %}
+    {% include "./layout/footer.html" %}
   </body>
 </html>

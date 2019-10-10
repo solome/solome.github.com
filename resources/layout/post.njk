@@ -1,22 +1,23 @@
 <!doctype html>
 <html>
 <head>
-  <title>{{ meta.title +' - 掬一捧' }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ meta.title +' - 掬一捧 🤓 Solo Web Developer' }}</title>
   <link rel="stylesheet" href="/stylesheets/posts.css?v={{ version }}">
 </head>
 
 <body>
-  <header>
-  </header>
+  {% include "./header.html" %}
   <article>
     <h1>{{meta.title}}</h1>
     <div class="meta">
-      <div>编辑时间&nbsp;&nbsp;{{meta.date}}</div>
+      <div>首次编辑于&nbsp;&nbsp;{{meta.date}}</div>
     </div>
     {{ content | safe }}
   </article>
-  <footer>
-  </footer>
+
+  {% include "./footer.html" %}
 </body>
 
 </html>

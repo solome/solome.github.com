@@ -60,8 +60,8 @@ module.exports = function (content) {
 
   const loader = new NunjucksLoader(nunjucksSearchPaths, (path) => this.addDependency(path))
 
-  const nunjEnv = new nunjucks.Environment(loader)
-  nunjucks.configure(null, { watch: false })
+  const nunjEnv = new nunjucks.Environment(loader, { watch: false, trimBlocks: true, lstripBlocks: true })
+  //nunjucks.configure(null, { watch: false, trimBlocks: true, lstripBlocks: true })
 
   const template = nunjucks.compile(content, nunjEnv)
   html = template.render(nunjucksContext)

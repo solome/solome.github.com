@@ -1,4 +1,5 @@
 @import "normalize.css";
+@import "../../d.scss";
 @import "highlight.js/styles/github.css";
 
 ::selection {
@@ -8,35 +9,23 @@
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-  font-weight: 400;
+  //font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-style: normal;
-  padding-top: 120px;
-  -webkit-font-smoothing: antialiased;
-}
-
-header {
-  position: fixed;
-  width: 100%;
-  height: 64px;
-  top: 0;
-  left: 0;
-  background-color: #20232a;
-  color: #fff;
-  z-index: 1;
+  color: #2c3746;
 }
 
 
 article {
-  max-width: 960px;
   margin: 0 auto;
+  font-size: 14px;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     line-height: 1.25;
   }
 
   .meta {
+    font-size: .8rem;
     line-height: 2;
     color: #6d6d6d;
   }
@@ -45,10 +34,10 @@ article {
     margin: 0;
     background: lavender;
     padding: 10px 15px;
-    color: #444;
-    background-color: rgba(255,229,100,0.3);
-    border-left-color: #ffe564;
-    border-left: 8px solid #ffe564;
+    color: #7F8FA4;
+    background-color: rgba(202, 224, 224, 0.3);
+    border-left-color: #97babf;
+    border-left: 8px solid #9ab7c3;
   }
 
   code {
@@ -84,6 +73,15 @@ article {
     line-height: 1.5;
   }
 
+  h3 {
+    color: #458;
+  }
+  h4 {
+    color: darkcyan;
+  }
+  strong {
+    color: darkslategray;
+  }
   figure {
     text-align: center;
 

@@ -1,7 +1,7 @@
 {
   "editor.fontSize": 15,
   "editor.tabSize": 2,
-  "workbench.colorTheme": "GitHub Clean White",
+  "workbench.colorTheme": "Solarized Light",
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "explorer.confirmDelete": false,
