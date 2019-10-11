@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[15],{
 
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
@@ -10,6 +10,13 @@ if (true) {
   module.exports = __webpack_require__(6);
 } else {}
 
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -111,13 +118,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ 35:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -130,16 +130,19 @@ var react = __webpack_require__(1);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(4);
 
-// CONCATENATED MODULE: ./resources/index.tsx
+// EXTERNAL MODULE: ./resources/webgl/app.scss
+var app = __webpack_require__(20);
+
+// CONCATENATED MODULE: ./resources/webgl/app.tsx
+
 
 
 function run() {
     react_dom["render"](react["createElement"]("h1", null, "Hello World!"), document.querySelector('#app'));
 }
 
-// CONCATENATED MODULE: ./resources/index.page.ts
+// CONCATENATED MODULE: ./resources/webgl/index.page.ts
 
-__webpack_require__(35);
 run();
 
 

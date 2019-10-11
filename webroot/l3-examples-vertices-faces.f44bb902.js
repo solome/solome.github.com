@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
 /***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -681,199 +681,70 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 
 /***/ }),
 
-/***/ 41:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-
-var __global__ = window;
-__global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
-/* harmony default export */ __webpack_exports__["a"] = (__global__);
-
-
-/***/ }),
-
-/***/ 42:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
-/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(41);
-/**
- * 提供一個平面版的畫布，演示Demo源碼中重複、冗餘邏輯儘量集中在此處。
- */
-
-
-
-
-var PlaneCanvas = /** @class */ (function () {
-    function PlaneCanvas(_a) {
-        var canvas = _a.canvas, _b = _a.needAxes, needAxes = _b === void 0 ? false : _b, _c = _a.needFog, needFog = _c === void 0 ? false : _c;
-        this.__dispose__ = [];
-        this.scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
-        this.camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](100, window.innerWidth / window.innerHeight, 0.1, 100);
-        this.camera.position.set(0, 0, 35);
-        this.renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({ canvas: canvas });
-        this.renderer.setClearColor(0xeeeeee);
-        this.renderer.shadowMap.enabled = true;
-        // Plane
-        var planeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["PlaneGeometry"](60, 40, 1, 1);
-        var planeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: 0xffffff });
-        var plane = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](planeGeometry, planeMaterial);
-        plane.receiveShadow = true;
-        plane.rotation.x = -0.5 * Math.PI;
-        plane.position.x = 0;
-        plane.position.y = 0;
-        plane.position.z = 0;
-        this.scene.add(plane);
-        // Light
-        var ambientLight = new three__WEBPACK_IMPORTED_MODULE_0__["AmbientLight"](0x0c0c0c);
-        this.scene.add(ambientLight);
-        var spotLight = new three__WEBPACK_IMPORTED_MODULE_0__["SpotLight"](0xffffff);
-        spotLight.position.set(-40, 60, -10);
-        spotLight.castShadow = true;
-        this.scene.add(spotLight);
-        if (needFog) {
-            this.scene.fog = new three__WEBPACK_IMPORTED_MODULE_0__["FogExp2"](0xffffff, 0.015);
-        }
-        if (needAxes) {
-            var axes = new three__WEBPACK_IMPORTED_MODULE_0__["AxesHelper"](20);
-            this.scene.add(axes);
-        }
-        _three_libs_global___WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"].scene = this.scene;
-        this.__dispose__.push(Object(_three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__[/* orbitControls */ "a"])(this.camera, document.body, this.renderer, this.scene));
-        this.render();
-    }
-    /**
-     * 渲染
-     */
-    PlaneCanvas.prototype.render = function () {
-        this.renderer.render(this.scene, this.camera);
-    };
-    /**
-     * 構建 dat.GUI 內容
-     * @param container dat.GUI執行容器
-     */
-    PlaneCanvas.prototype.buildDatGUI = function (container) {
-        var _this = this;
-        this.datGUI = new dat_gui__WEBPACK_IMPORTED_MODULE_1__[/* GUI */ "a"]();
-        this.__dispose__.push(function () { return _this.datGUI.destroy(); });
-        var dispose = container(this.datGUI);
-        if (dispose && dispose instanceof Function) {
-            this.__dispose__.push(dispose);
-        }
-    };
-    /**
-     * 幀動畫
-     * @param frame 當前動畫幀的執行行爲
-     */
-    PlaneCanvas.prototype.requestAnimationFrame = function (frame) {
-        var _this = this;
-        var __frame__ = function () {
-            frame();
-            _this.__requestAnimationFrameId__ = requestAnimationFrame(__frame__);
-            _this.render();
-        };
-        __frame__();
-    };
-    /**
-     * 銷毀常駐內存的對象、事件綁定
-     */
-    PlaneCanvas.prototype.dispose = function () {
-        // 如果有幀動畫，則終止幀動畫
-        if (this.__requestAnimationFrameId__) {
-            cancelAnimationFrame(this.__requestAnimationFrameId__);
-        }
-        this.__dispose__.forEach(function (dispose) {
-            try {
-                dispose();
-            }
-            catch (err) {
-                /* not care */
-            }
-        });
-    };
-    return PlaneCanvas;
-}());
-/* harmony default export */ __webpack_exports__["a"] = (PlaneCanvas);
-
-
-/***/ }),
-
-/***/ 44:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41);
-/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
-/**
- * 好玩的立方體
- */
-
+/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
 
 var run = function (canvas) {
-    var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"]({ canvas: canvas, needFog: true });
-    var scene = planeCanvas.scene;
-    var addCube = function () {
-        var cubeSize = Math.ceil(Math.random() * 3);
-        var cubeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](cubeSize, cubeSize, cubeSize);
-        var cubeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
-            color: Math.random() * 0xffffff,
-        });
-        var cube = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](cubeGeometry, cubeMaterial);
-        cube.castShadow = true;
-        cube.name = 'cube-' + scene.children.length;
-        cube.position.x =
-            -30 + Math.round(Math.random() * 60 /*planeGeometry.width */);
-        cube.position.y = Math.round(Math.random() * 5);
-        cube.position.z = -20 + Math.round(Math.random() * 40);
-        scene.add(cube);
+    // Scene, Camera, Render
+    var scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
+    var camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](100, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 35);
+    var renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({ canvas: canvas });
+    renderer.setClearColor(0xeeeeee);
+    renderer.shadowMap.enabled = true;
+    // Axes
+    var axes = new three__WEBPACK_IMPORTED_MODULE_0__["AxesHelper"](20);
+    scene.add(axes);
+    // Plane
+    var planeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["PlaneGeometry"](60, 40, 1, 1);
+    var planeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: 0xffffff });
+    var plane = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](planeGeometry, planeMaterial);
+    plane.receiveShadow = true;
+    plane.rotation.x = -0.5 * Math.PI;
+    plane.position.x = 0;
+    plane.position.y = 0;
+    plane.position.z = 0;
+    scene.add(plane);
+    // Light
+    var ambientLight = new three__WEBPACK_IMPORTED_MODULE_0__["AmbientLight"](0x0c0c0c);
+    scene.add(ambientLight);
+    var spotLight = new three__WEBPACK_IMPORTED_MODULE_0__["SpotLight"](0xffffff);
+    spotLight.position.set(-40, 60, -10);
+    spotLight.castShadow = true;
+    scene.add(spotLight);
+    var vertices = [
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](1, 3, 1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](1, 3, -1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](1, -1, 1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](1, -1, -1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](-1, 3, -1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](-1, 3, 1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](-1, -1, -1),
+        new three__WEBPACK_IMPORTED_MODULE_0__["Vector3"](-1, -1, 1),
+    ];
+    var faces = [
+        new three__WEBPACK_IMPORTED_MODULE_0__["Face3"](0, 5, 1)
+    ];
+    var geometry = new three__WEBPACK_IMPORTED_MODULE_0__["Geometry"]();
+    geometry.vertices = vertices;
+    geometry.faces = faces;
+    geometry.computeFaceNormals();
+    geometry.computeVertexNormals();
+    // computeCentroids
+    geometry.mergeVertices();
+    scene.add(new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometry));
+    renderer.render(scene, camera);
+    // OrbitCOntrols
+    var disposeOrbitControls = Object(_three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__[/* orbitControls */ "a"])(camera, document.body, renderer, scene);
+    return function () {
+        disposeOrbitControls();
     };
-    var removeCube = function () {
-        var allChildren = scene.children;
-        var lastObject = allChildren[allChildren.length - 1];
-        if (lastObject instanceof three__WEBPACK_IMPORTED_MODULE_0__["Mesh"]) {
-            scene.remove(lastObject);
-        }
-    };
-    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].scene = scene;
-    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].addCube = addCube;
-    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].removeCube = removeCube;
-    for (var i = 0; i < 20; i++) {
-        addCube();
-    }
-    var controls = {
-        rotationSpeed: 0.02,
-        addCube: addCube,
-        removeCube: removeCube,
-        overrideMaterial: function () {
-            return (scene.overrideMaterial = !scene.overrideMaterial
-                ? new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: 0xffffff })
-                : null);
-        },
-    };
-    planeCanvas.buildDatGUI(function (datGUI) {
-        datGUI.add(controls, 'rotationSpeed', 0, 0.5);
-        datGUI.add(controls, 'addCube');
-        datGUI.add(controls, 'removeCube');
-        datGUI.add(controls, 'overrideMaterial');
-    });
-    planeCanvas.requestAnimationFrame(function () {
-        scene.traverse(function (e) {
-            if (e instanceof three__WEBPACK_IMPORTED_MODULE_0__["Mesh"] && e.name.startsWith('cube-')) {
-                e.rotation.x += controls.rotationSpeed;
-                e.rotation.y += controls.rotationSpeed;
-                e.rotation.z += controls.rotationSpeed;
-            }
-        });
-    });
-    return function () { return planeCanvas.dispose(); };
 };
 /* harmony default export */ __webpack_exports__["default"] = (run);
 

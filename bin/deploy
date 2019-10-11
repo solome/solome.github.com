@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-gulp && yarn run build
+yarn run post
+yarn run build
 
 cd webroot
 
