@@ -36,6 +36,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
+    "hard-source-webpack-plugin": "^0.13.1",
     "hashids": "^1.2.2",
     "highlight.js": "^9.15.6",
     "html-loader": "^0.5.5",

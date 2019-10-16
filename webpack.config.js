@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 const hashids = require('./bundlers/hashids')
 const parse = require('./bundlers/parse')
@@ -42,7 +43,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash:8].css",
       chunkFilename: "[name].[contenthash:8].css",
-    })
+    }),
+    new HardSourceWebpackPlugin({ cacheDirectory: resolve(process.env.HOME || process.env.USERPROFILE || '.', '.cache/solome.github.com/hard_source') }),
   ].concat(htmlPlugins),
   resolveLoader: {
     modules: [
