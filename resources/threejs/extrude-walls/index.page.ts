@@ -17,7 +17,7 @@ const run = (Data_lo024DEgzanMj5BE: ExtrudeWallsDataModel) => {
   camera.position.set(0, 0, 35)
 
   const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#webgl-canvas'),
+    canvas: document.querySelector('#webgl-canvas') as HTMLCanvasElement,
   })
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
