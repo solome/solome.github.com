@@ -10,7 +10,7 @@ const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, window.i
 
 camera.position.set(0, 0, 35)
 
-const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas: document.querySelector('#webgl-canvas')})
+const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas: document.querySelector('#webgl-canvas') as HTMLCanvasElement})
 renderer.setClearColor(0xeeeeee)
 renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.shadowMapEnabled = true

@@ -7,7 +7,7 @@ __global__.THREE = __global__.THREE || THREE
 const scene: THREE.Scene = new THREE.Scene()
 const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000)
 camera.position.set(0, 0, 35)
-const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas: document.querySelector('#webgl-canvas')})
+const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({canvas: document.querySelector('#webgl-canvas') as HTMLCanvasElement})
 renderer.setClearColor(0xeeeeee)
 renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.shadowMap.enabled = true

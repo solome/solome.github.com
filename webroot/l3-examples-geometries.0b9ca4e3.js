@@ -13,6 +13,7 @@
  * @author WestLangley / http://github.com/WestLangley
  * @author erich666 / http://erichaines.com
  */
+/* tslint:disable */
 // This set of controls performs orbiting, dollying (zooming), and panning.
 // Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
 //
@@ -681,7 +682,7 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 
 /***/ }),
 
-/***/ 42:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -694,14 +695,14 @@ __global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
 
 /***/ }),
 
-/***/ 43:
+/***/ 40:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
 /* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
+/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
 /**
  * 提供一個平面版的畫布，演示Demo源碼中重複、冗餘邏輯儘量集中在此處。
  */
@@ -803,12 +804,12 @@ var PlaneCanvas = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 47:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
+/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 
 var run = function (canvas) {
     var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]({ canvas: canvas });

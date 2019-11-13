@@ -5,7 +5,7 @@
  * @author WestLangley / http://github.com/WestLangley
  * @author erich666 / http://erichaines.com
  */
-
+/* tslint:disable */
 // This set of controls performs orbiting, dollying (zooming), and panning.
 // Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
 //
@@ -15,7 +15,7 @@
 
 import * as THREE from 'three'
 
-const OrbitControls = function ( object, domElement ) {
+const OrbitControls: any = function ( object, domElement ) {
 
 	this.object = object
 
@@ -1077,7 +1077,7 @@ export const orbitControls = (camera: THREE.PerspectiveCamera,
 	renderer: THREE.WebGLRenderer,
 	scene: THREE.Scene) => {
 
-	const controls: OrbitControls = new OrbitControls(camera, renderer.domElement)
+	const controls = new OrbitControls(camera, renderer.domElement)
 	controls.update()
 
 	const animate = () => {

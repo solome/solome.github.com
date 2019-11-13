@@ -10,7 +10,7 @@
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
 /******/ 				resolves.push(installedChunks[chunkId][0]);
 /******/ 			}
 /******/ 			installedChunks[chunkId] = 0;
@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"1":"lJy3DXlFRijDW1eY","4":"l3-examples-cube","5":"l3-examples-geometries","6":"l3-examples-index","7":"l3-examples-vertices-faces"}[chunkId]||chunkId) + "." + {"1":"34c294a6","4":"d72d70d0","5":"5ec69829","6":"da782ca5","7":"f44bb902"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"1":"lJy3DXlFRijDW1eY","4":"l3-examples-cube","5":"l3-examples-geometries","6":"l3-examples-index","7":"l3-examples-vertices-faces"}[chunkId]||chunkId) + "." + {"1":"f6cf572c","4":"2da807aa","5":"0b9ca4e3","6":"c73db10d","7":"345b538b"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -135,6 +135,7 @@
 /******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 /******/ 							var realSrc = event && event.target && event.target.src;
 /******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
 /******/ 							error.type = errorType;
 /******/ 							error.request = realSrc;
 /******/ 							chunk[1](error);

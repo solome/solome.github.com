@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
 /***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -13,6 +13,7 @@
  * @author WestLangley / http://github.com/WestLangley
  * @author erich666 / http://erichaines.com
  */
+/* tslint:disable */
 // This set of controls performs orbiting, dollying (zooming), and panning.
 // Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
 //
@@ -681,7 +682,7 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 
 /***/ }),
 
-/***/ 42:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -694,14 +695,14 @@ __global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
 
 /***/ }),
 
-/***/ 43:
+/***/ 40:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
 /* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
+/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
 /**
  * 提供一個平面版的畫布，演示Demo源碼中重複、冗餘邏輯儘量集中在此處。
  */
@@ -803,62 +804,75 @@ var PlaneCanvas = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 44:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
+/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
+/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40);
+/**
+ * 好玩的立方體
+ */
+
 
 
 var run = function (canvas) {
-    var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]({ canvas: canvas, needAxes: true });
+    var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"]({ canvas: canvas, needFog: true });
     var scene = planeCanvas.scene;
-    // Cube/Box
-    var boxGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](4, 4, 4);
-    // const boxMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})
-    var boxMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
-        color: 0xff0000,
-        wireframe: true,
-    });
-    var box = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](boxGeometry, boxMaterial);
-    box.position.x = -4;
-    box.position.y = 3;
-    box.position.z = 0;
-    box.castShadow = true;
-    scene.add(box);
-    // Sphere
-    var sphereGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](4, 20, 20);
-    // const sphereMaterial = new THREE.MeshBasicMaterial({color: 0x7777ff, wireframe: true})
-    var sphereMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
-        color: 0x7777ff,
-        wireframe: true,
-    });
-    var sphere = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](sphereGeometry, sphereMaterial);
-    sphere.position.x = 20;
-    sphere.position.y = 4;
-    sphere.position.z = 2;
-    sphere.castShadow = true;
-    scene.add(sphere);
-    var camera = planeCanvas.camera;
-    camera.position.x = -30;
-    camera.position.y = 40;
-    camera.position.z = 30;
-    camera.lookAt(scene.position);
-    var controls = { rotationSpeed: 0.02, bouncingSpeed: 0.04 };
+    var addCube = function () {
+        var cubeSize = Math.ceil(Math.random() * 3);
+        var cubeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](cubeSize, cubeSize, cubeSize);
+        var cubeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
+            color: Math.random() * 0xffffff,
+        });
+        var cube = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](cubeGeometry, cubeMaterial);
+        cube.castShadow = true;
+        cube.name = 'cube-' + scene.children.length;
+        cube.position.x =
+            -30 + Math.round(Math.random() * 60 /*planeGeometry.width */);
+        cube.position.y = Math.round(Math.random() * 5);
+        cube.position.z = -20 + Math.round(Math.random() * 40);
+        scene.add(cube);
+    };
+    var removeCube = function () {
+        var allChildren = scene.children;
+        var lastObject = allChildren[allChildren.length - 1];
+        if (lastObject instanceof three__WEBPACK_IMPORTED_MODULE_0__["Mesh"]) {
+            scene.remove(lastObject);
+        }
+    };
+    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].scene = scene;
+    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].addCube = addCube;
+    _three_libs_global___WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].removeCube = removeCube;
+    for (var i = 0; i < 20; i++) {
+        addCube();
+    }
+    var controls = {
+        rotationSpeed: 0.02,
+        addCube: addCube,
+        removeCube: removeCube,
+        overrideMaterial: function () {
+            return (scene.overrideMaterial = !scene.overrideMaterial
+                ? new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: 0xffffff })
+                : null);
+        },
+    };
     planeCanvas.buildDatGUI(function (datGUI) {
         datGUI.add(controls, 'rotationSpeed', 0, 0.5);
-        datGUI.add(controls, 'bouncingSpeed', 0, 0.5);
+        datGUI.add(controls, 'addCube');
+        datGUI.add(controls, 'removeCube');
+        datGUI.add(controls, 'overrideMaterial');
     });
-    var bouncingSpeed = 0;
     planeCanvas.requestAnimationFrame(function () {
-        box.rotation.x += controls.rotationSpeed;
-        box.rotation.y += controls.rotationSpeed;
-        box.rotation.z += controls.rotationSpeed;
-        bouncingSpeed += controls.bouncingSpeed;
-        sphere.position.x = 20 + 10 * Math.cos(bouncingSpeed);
-        sphere.position.y = 2 + 10 * Math.abs(Math.sin(bouncingSpeed));
+        scene.traverse(function (e) {
+            if (e instanceof three__WEBPACK_IMPORTED_MODULE_0__["Mesh"] && e.name.startsWith('cube-')) {
+                e.rotation.x += controls.rotationSpeed;
+                e.rotation.y += controls.rotationSpeed;
+                e.rotation.z += controls.rotationSpeed;
+            }
+        });
     });
     return function () { return planeCanvas.dispose(); };
 };
