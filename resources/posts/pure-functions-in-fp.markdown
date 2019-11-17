@@ -13,7 +13,7 @@ categories: functional
 比如，下图集合`A`和集合`B`的映射关系即符合数学函数的定义。
 
 <figure>
-  <img src="/images/posts/set_map.svg" alt="containing block" />
+  <img style="width: auto;" src="/images/posts/set_map.svg" alt="containing block" />
   <figcaption>fn：除以5的余数</figcaption>
 </figure>
 
