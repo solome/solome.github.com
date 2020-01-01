@@ -25,5 +25,7 @@
   "tslint.jsEnable": true,
   "editor.cursorSmoothCaretAnimation": true,
   "tslint.suppressWhileTypeErrorsPresent": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "vscode.configuration-editing"
 }

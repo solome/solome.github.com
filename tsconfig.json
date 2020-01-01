@@ -9,6 +9,7 @@
     "baseUrl": ".",
     "paths": {
       "@images/*": [ "resources/images/*" ],
+      "@utils/*": [ "resources/utils/*" ],
       "@components/*": [ "resources/components/*" ],
       "@three/l3/*": ["resources/threejs/l3/*"],
       "@three/controls/*": ["resources/threejs/controls/*"],

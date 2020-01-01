@@ -1,0 +1,57 @@
+.sekta-wrapper {
+  position: absolute;
+  left: 40px;
+  background: rebeccapurple;
+  padding: 0;
+  margin: 0;
+  width: 268px;
+  height: 268px;
+  overflow: hidden;
+}
+
+.sekta {
+  position: absolute;
+  top: 0;
+  left: 34px;
+  background: brown;
+  clip-path: url(#sekta);
+  width: 98px;
+  height: 134px;
+  transform-origin: bottom right;
+  transition: transform ease-out .2s;
+}
+
+.sekta-bg {
+  width: 98px;
+  height: 134px;
+  transform: rotate(-22.5deg);
+  position: relative;
+  left: 12.5%;
+  top: -20%;
+}
+
+.sekta-1 {
+  background: chocolate;
+}
+
+.sekta-2 {
+}
+
+.sekta-3 {
+  background: yellowgreen;
+}
+.sekta-4 {
+  background: orange;
+}
+.sekta-5 {
+  background: yellow;
+}
+.sekta-6 {
+  background: green;
+}
+.sekta-7 {
+  background: aquamarine;
+}
+.sekta-8 {
+  background: teal;
+}
