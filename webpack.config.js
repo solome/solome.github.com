@@ -34,6 +34,7 @@ module.exports = {
       '@three/l3': resolve(resources, 'threejs/l3'),
       '@three/controls': resolve(resources, 'threejs/controls'),
       '@three/libs': resolve(resources, 'threejs/libs'),
+      '@three/special-effects': resolve(resources, 'threejs/special-effects'),
     },
     extensions: [ '.ts', '.tsx', '.js', '.jsx', '.png', '.jpg', '.gif' ],
   },

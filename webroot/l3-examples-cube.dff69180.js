@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
 /***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -682,7 +682,7 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 
 /***/ }),
 
-/***/ 39:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -695,14 +695,14 @@ __global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
 
 /***/ }),
 
-/***/ 40:
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
+/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
 /* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
+/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
 /**
  * 提供一個平面版的畫布，演示Demo源碼中重複、冗餘邏輯儘量集中在此處。
  */
@@ -804,14 +804,14 @@ var PlaneCanvas = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 42:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
-/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40);
+/* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(42);
+/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(43);
 /**
  * 好玩的立方體
  */

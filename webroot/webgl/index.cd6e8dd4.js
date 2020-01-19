@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
 
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
@@ -13,10 +13,10 @@ if (true) {
 
 /***/ }),
 
-/***/ 19:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "imgs/minions-73416e9d.gif";
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -118,14 +118,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ 33:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 37:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -137,21 +130,21 @@ var react = __webpack_require__(1);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(4);
 
-// EXTERNAL MODULE: ./resources/images/minions.gif
-var minions = __webpack_require__(19);
-var minions_default = /*#__PURE__*/__webpack_require__.n(minions);
+// EXTERNAL MODULE: ./resources/webgl/app.scss
+var app = __webpack_require__(21);
 
-// CONCATENATED MODULE: ./resources/index.tsx
+// CONCATENATED MODULE: ./resources/webgl/app.tsx
 
 
 
 function run() {
-    react_dom["render"](react["createElement"]("img", { src: minions_default.a, className: "minions", width: "80" }), document.querySelector('#app'));
+    var ndCanvas = document.querySelector('#canvas');
+    console.warn('ndCanvas', ndCanvas);
+    react_dom["render"](react["createElement"]("h1", null, "Hello World!"), document.querySelector('#app'));
 }
 
-// CONCATENATED MODULE: ./resources/index.page.ts
+// CONCATENATED MODULE: ./resources/webgl/index.page.ts
 
-__webpack_require__(33);
 run();
 
 
@@ -566,4 +559,4 @@ exports.unstable_pauseExecution=function(){};exports.unstable_getFirstCallbackNo
 
 /***/ })
 
-},[[37,0]]]);
+},[[39,0]]]);

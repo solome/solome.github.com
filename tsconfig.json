@@ -13,7 +13,8 @@
       "@components/*": [ "resources/components/*" ],
       "@three/l3/*": ["resources/threejs/l3/*"],
       "@three/controls/*": ["resources/threejs/controls/*"],
-      "@three/libs/*": ["resources/threejs/libs/*"]
+      "@three/libs/*": ["resources/threejs/libs/*"],
+      "@three/special-effects/*": ["resources/threejs/special-effects/*"],
     }
   }
 }

@@ -1,10 +1,7 @@
 import './index.scss'
 
 import Hammer from 'hammerjs'
-import { observable } from 'mobx'
-import log from '@utils/log'
 import mockData from './data/mock'
-import { from } from 'rxjs'
 
 const renderItem4Info = (data) => {
   return `
@@ -14,7 +11,7 @@ const renderItem4Info = (data) => {
 
 const renderItem = (data, index) => {
   return `
-  <li class="sekta" data-idx="${index}" data-pano_index="${data.pano_index}" style="transform: rotate(${index * 45 + 22.5}deg);">
+  <li class="sekta" data-idx="${index}" data-pano_index="${data.pano_index}" style="clip-path: url(#sekta);transform: rotate(${index * 45 + 22.5}deg);">
     ${renderItem4Info(data)}
   </li>
   `
