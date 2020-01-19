@@ -1,5 +1,8 @@
 import run from './index'
-import snow from '@three/special-effects/snow'
-snow()
 require('./d.scss')
+
+import(/* webpackChunkName: "snow.mallaborema"*//* webpackMode: "lazy" */'@three/special-effects/snow')
+  .then((m) => m.default)
+  .then((fun) => fun())
+
 run()

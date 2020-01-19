@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
 /***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
@@ -13,10 +13,10 @@ if (true) {
 
 /***/ }),
 
-/***/ 21:
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
+module.exports = __webpack_require__.p + "imgs/minions-73416e9d.gif";
 
 /***/ }),
 
@@ -118,6 +118,13 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
+/***/ 34:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -130,21 +137,24 @@ var react = __webpack_require__(1);
 // EXTERNAL MODULE: ./node_modules/react-dom/index.js
 var react_dom = __webpack_require__(4);
 
-// EXTERNAL MODULE: ./resources/webgl/app.scss
-var app = __webpack_require__(21);
+// EXTERNAL MODULE: ./resources/images/minions.gif
+var minions = __webpack_require__(20);
+var minions_default = /*#__PURE__*/__webpack_require__.n(minions);
 
-// CONCATENATED MODULE: ./resources/webgl/app.tsx
+// CONCATENATED MODULE: ./resources/index.tsx
 
 
 
 function run() {
-    var ndCanvas = document.querySelector('#canvas');
-    console.warn('ndCanvas', ndCanvas);
-    react_dom["render"](react["createElement"]("h1", null, "Hello World!"), document.querySelector('#app'));
+    react_dom["render"](react["createElement"]("img", { src: minions_default.a, className: "minions", width: "80" }), document.querySelector('#app'));
 }
 
-// CONCATENATED MODULE: ./resources/webgl/index.page.ts
+// CONCATENATED MODULE: ./resources/index.page.ts
 
+__webpack_require__(34);
+Promise.all(/* import() | snow.mallaborema */[__webpack_require__.e(1), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, 48))
+    .then(function (m) { return m.default; })
+    .then(function (fun) { return fun(); });
 run();
 
 
