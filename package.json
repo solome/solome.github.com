@@ -2,7 +2,7 @@
   "name": "solome.js.org",
   "version": "0.0.1",
   "repository": "git@github.com:solome/solome.github.com.git",
-  "author": "solome <iliyang.cn@gmail.com>",
+  "author": "solome <solome@outlook.com>",
   "license": "CC-BY-NC-ND-4.0",
   "scripts": {
     "post": "gulp",
