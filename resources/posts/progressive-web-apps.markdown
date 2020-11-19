@@ -8,11 +8,13 @@ categories: web
 
 最暴力的做法，纯粹地使用原生技术实现：同一套UI，iOS和Android端均利用自己风格的技术栈实现一遍；如果想支持移动端浏览器的话，还需要一个移动前端团队再实现一遍简版。面临的问题是：多团队，技术栈种类多；随便新增一个需求，牵扯的点太多了，毫无"灵活性"。
 
-- "热更新"限制，用户并一定会主动升级自己的App
+但是，如果追求极致的体验且不考虑成本**原生方案就是最好的方案**。
 
-### Hybird Apps: Native + WebView + Bridge Protocol
+原生最大的缺陷在于"热更新"，用户并一定会主动升级自己的App，且应用商店出于维护生态的目的的强制审核流程。
 
-这种模式整体思路是App主体框架还是由Native部分构建，但是多端适用、频繁迭代的页面则由WebView页面替代。Native与WebView部分"沟通"则可以定制一份"桥协议"( Bridge Protocol)。典型的开源实现有
+### Hybird Apps: Native + WebView + "jsBridge" Protocol
+
+这种模式整体思路是App主体框架还是由Native部分构建，但是多端适用、频繁迭代的页面则由WebView页面替代。Native与WebView部分"沟通"则可以定制一份"桥协议"(jsBridge Protocol)。典型的开源实现有
 
 - http://ionicframework.com/
 - http://phonegap.com/
@@ -20,16 +22,16 @@ categories: web
 	
 其实稍大些的互联网公司都会根据自己的业务特色自建一套属于自己的"桥协议"。
 
-WebView中的JavaScript执行环境如何通知Native去执行某些行为？一般的做法通过JavaScript去发一个类HTTP请求（一个特殊的Schema，而非"http://"），然后Native会拦截这个特殊Schema请求，根据具体的路径或请求参数做出对应的反馈。
+WebView中的JavaScript执行环境如何通知Native去执行某些行为？一般的做法通过JavaScript去发一个类HTTP请求（一个特殊的Schema，而非"http://"），然后Native会拦截这个特殊Schema请求，根据具体的路径或请求参数做出对应的反馈。目前来看，iOS和Android都系统层面支持了这种请求拦截模式的识别，所以也能实现从浏览器唤起App的能力。
 
-Native如何通过JavaScript执行某些行为？
+Native如何通知JavaScript执行某些行为？
 - 修改当前WebView的Url，JavaScript监听Url变化。
 - 直接修改当前WebView中HTML内容，硬塞一段JavaScript去执行。
 	
 ### Cross Platform Framework
 
 通过"桥协议"，WebView可以调用本身无法实现的功能如设备Wifi、蓝牙状态的控制等。WebView模式虽然部分解决重复开发的问题，但是开发一个App，依旧需要多个不同技术栈团队共同协助完成（全栈式的研发人员毕竟不多见）。
-一个App的实现，要涉及iOS、Android、Web等各种前端领域的技术栈，不是每个研发团队都具备这样的开发资源。此外，WebView兼容性适配问题甚是恶习，尤其是针对国内五花八门的Android定制ROM。
+一个App的实现，要涉及iOS、Android、Web等各种前端领域的技术栈，不是每个研发团队都具备这样的开发资源。此外，WebView兼容性适配问题甚是恶心，尤其是针对国内五花八门的Android定制ROM。
 
 能不能把"桥协议"走得更加"彻底"些呢？怎么才叫做走得更加"彻底"呢？彻底地抛弃掉WebView，将WebView上所有的View功能全部通过Native重新实现一遍，实现View层技术栈的跨平台。这种思路最典型的实现是React Native和Weex。正如其宣传的口号那样"Learn Once Write Anywhere 、Write Once Run Everywhere"，其本质是统一Apps开发View层技术栈而已。
 

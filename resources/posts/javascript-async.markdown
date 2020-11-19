@@ -8,7 +8,7 @@ JavaScript是單線程的，除了你的JS代码，其它操作都是并行执�
 
 在JS執行線程中進行的行為被稱作同步(Synchronous)操作，非JS執行線程執行的行為則被稱呼為異步(Asynchronous)操作。
 諸如Ajax/HTTP請求、I/O操作等行為均與JS執行線程無關（由自己獨立的線程進行運作），這些行為在執行完成之後會將結果通知到JS執行線程；
-因此，JS執行線程中會有個類似`while(true)`的循環，以觀察者的姿態`監聽`是否有其它線程傳遞消息過來，一旦捕獲到則執行本JS執行線程中相應的函數塊（回調）。
+因此，JS執行線程中會有個類似`while(true)`的循環，以觀察者的姿態`監聽`（轮询）是否有其它線程傳遞消息過來，一旦捕獲到則執行本JS執行線程中相應的函數塊（回調）。
 
 JavaScript事件循環不是本文的重點（[JavaScript Event Loop](https://docs.google.com/presentation/d/1-UC3cwd0KZtdSRAd6edLD-CvrOeM-IOpJYcb8rhElBY/edit?usp=sharing)），本文僅對前端異步編程進行些許總結。個人的理解是JavaScript異步編程方式只有兩種方式：回調和觀察者模式。需要注意的是：
 
@@ -56,6 +56,7 @@ function getUserInfoPromise(id) {
     }) // end $.ajax
   }) // end return
 } // end getUserInfoPromise
+
 getUserInfoPromise('10086')
   .then(userInfo => handleUserInfo)
   .catch(console.log)
@@ -145,7 +146,7 @@ $.ajax(
 })
 ```
 很明顯，觀察者模式要比事件監聽方式擴充性更強（雖然本質一致，但是強調側重點不同）。
-<figure style="padding-top: 0;margin-top:-1.5em;">
+<figure style="padding-top: 0;margin-top: .5em;">
   <img src="/images/posts/pingpong.gif" alt="containing block" />
   <figcaption>陷入`emit`死循環</figcaption>
 </figure>

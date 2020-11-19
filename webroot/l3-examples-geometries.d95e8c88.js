@@ -1,6 +1,6 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -700,8 +700,8 @@ __global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
 
 "use strict";
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
+/* harmony import */ var dat_gui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
+/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _three_libs_global___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
 /**
  * 提供一個平面版的畫布，演示Demo源碼中重複、冗餘邏輯儘量集中在此處。
@@ -804,63 +804,15 @@ var PlaneCanvas = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 44:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
-
+/* harmony import */ var _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
 
 var run = function (canvas) {
-    var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"]({ canvas: canvas, needAxes: true });
-    var scene = planeCanvas.scene;
-    // Cube/Box
-    var boxGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](4, 4, 4);
-    // const boxMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe: true})
-    var boxMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
-        color: 0xff0000,
-        wireframe: true,
-    });
-    var box = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](boxGeometry, boxMaterial);
-    box.position.x = -4;
-    box.position.y = 3;
-    box.position.z = 0;
-    box.castShadow = true;
-    scene.add(box);
-    // Sphere
-    var sphereGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["SphereGeometry"](4, 20, 20);
-    // const sphereMaterial = new THREE.MeshBasicMaterial({color: 0x7777ff, wireframe: true})
-    var sphereMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({
-        color: 0x7777ff,
-        wireframe: true,
-    });
-    var sphere = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](sphereGeometry, sphereMaterial);
-    sphere.position.x = 20;
-    sphere.position.y = 4;
-    sphere.position.z = 2;
-    sphere.castShadow = true;
-    scene.add(sphere);
-    var camera = planeCanvas.camera;
-    camera.position.x = -30;
-    camera.position.y = 40;
-    camera.position.z = 30;
-    camera.lookAt(scene.position);
-    var controls = { rotationSpeed: 0.02, bouncingSpeed: 0.04 };
-    planeCanvas.buildDatGUI(function (datGUI) {
-        datGUI.add(controls, 'rotationSpeed', 0, 0.5);
-        datGUI.add(controls, 'bouncingSpeed', 0, 0.5);
-    });
-    var bouncingSpeed = 0;
-    planeCanvas.requestAnimationFrame(function () {
-        box.rotation.x += controls.rotationSpeed;
-        box.rotation.y += controls.rotationSpeed;
-        box.rotation.z += controls.rotationSpeed;
-        bouncingSpeed += controls.bouncingSpeed;
-        sphere.position.x = 20 + 10 * Math.cos(bouncingSpeed);
-        sphere.position.y = 2 + 10 * Math.abs(Math.sin(bouncingSpeed));
-    });
+    var planeCanvas = new _three_l3_utils_PlaneCanvas__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]({ canvas: canvas });
     return function () { return planeCanvas.dispose(); };
 };
 /* harmony default export */ __webpack_exports__["default"] = (run);
