@@ -58,6 +58,7 @@ const run = (Data_lo024DEgzanMj5BE: ExtrudeWallsDataModel) => {
     face.a = face.c
     face.c = t
   })
+  
   const material0: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({
     color: 0xc8c8c8,
     opacity: 0.7,
@@ -87,6 +88,7 @@ const run = (Data_lo024DEgzanMj5BE: ExtrudeWallsDataModel) => {
     material2,
     material0,
   ])
+
   meshConfig(meshEBack)
   const mesh: THREE.Mesh = new THREE.Mesh(geometry, [material0, material2])
   meshConfig(mesh)

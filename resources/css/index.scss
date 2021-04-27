@@ -1,0 +1,17 @@
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: right bottom;
+  border-radius: 50%;
+  background-color: black;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  transition: transform 1.5s ease-out;
+
+  &:hover {
+    transform: scale(2);
+    transition: transform 1.5s;
+  }
+}

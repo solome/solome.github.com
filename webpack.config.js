@@ -30,6 +30,7 @@ module.exports = {
     alias: {
       '@images': resolve(resources, 'images'),
       '@utils': resolve(resources, 'utils'),
+      '@shared-utils': resolve(resources, 'shared-utils'),
       '@components': resolve(resources, 'components'),
       '@three/l3': resolve(resources, 'threejs/l3'),
       '@three/controls': resolve(resources, 'threejs/controls'),
