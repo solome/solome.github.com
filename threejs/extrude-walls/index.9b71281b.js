@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
 
 /***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -51486,14 +51486,115 @@ if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
 
 /***/ }),
 
-/***/ 19:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 30:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "imgs/concrete-092d560d.jpg";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+
+
+var __global__ = window;
+__global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
+var run = function (Data_lo024DEgzanMj5BE) {
+    var scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
+    var camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](75, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 35);
+    var renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({
+        canvas: document.querySelector('#webgl-canvas'),
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    var shape = new three__WEBPACK_IMPORTED_MODULE_0__["Shape"]();
+    var shapeEWalls = new three__WEBPACK_IMPORTED_MODULE_0__["Shape"]();
+    var line2 = function (d, s) {
+        return d.forEach(function (p, i) {
+            return s[!i ? 'moveTo' : 'lineTo'](p[0], p[1]);
+        });
+    };
+    line2(Data_lo024DEgzanMj5BE.exterior, shape);
+    line2(Data_lo024DEgzanMj5BE.interior, shape);
+    line2(Data_lo024DEgzanMj5BE.exterior, shapeEWalls);
+    var extrudeSettings = {
+        bevelEnabled: false,
+        depth: Data_lo024DEgzanMj5BE.height,
+        steps: 1,
+    };
+    var geometry = new three__WEBPACK_IMPORTED_MODULE_0__["ExtrudeGeometry"](shape, extrudeSettings);
+    var geometryEFront = new three__WEBPACK_IMPORTED_MODULE_0__["ExtrudeGeometry"](shapeEWalls, extrudeSettings);
+    var geometryEBack = geometryEFront.clone();
+    geometryEBack.faces.forEach(function (face) {
+        var t = face.a;
+        face.a = face.c;
+        face.c = t;
+    });
+    var material0 = new three__WEBPACK_IMPORTED_MODULE_0__["MeshBasicMaterial"]({
+        color: 0xc8c8c8,
+        opacity: 0.7,
+        transparent: true,
+        wireframe: false,
+    });
+    var material1 = new three__WEBPACK_IMPORTED_MODULE_0__["MeshBasicMaterial"]({
+        color: 0xc8c8c8,
+        opacity: 0.2,
+        transparent: true,
+        wireframe: false,
+    });
+    var material2 = new three__WEBPACK_IMPORTED_MODULE_0__["MeshBasicMaterial"]({
+        color: 0xc8c8c8,
+        opacity: 0,
+        transparent: true,
+        wireframe: false,
+    });
+    var renderOrder = 99;
+    var meshConfig = function (m) {
+        m.renderOrder = renderOrder++;
+        scene.add(m);
+    };
+    var meshEBack = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometryEBack, [
+        material2,
+        material0,
+    ]);
+    meshConfig(meshEBack);
+    var mesh = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometry, [material0, material2]);
+    meshConfig(mesh);
+    var meshEFront = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometryEFront, [
+        material2,
+        material1,
+    ]);
+    meshConfig(meshEFront);
+    renderer.render(scene, camera);
+    var meshEBackS = meshEBack.clone();
+    meshEBackS.position.x = -16;
+    meshEBackS.position.y = 16;
+    scene.add(meshEBackS);
+    var meshEFrontS = meshEFront.clone();
+    meshEFrontS.position.x = 16;
+    meshEFrontS.position.y = -16;
+    scene.add(meshEFrontS);
+    var meshS = mesh.clone();
+    meshS.position.x = 16;
+    meshS.position.y = 16;
+    scene.add(meshS);
+    var meshDefault = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometry, [material0, material1]);
+    meshDefault.position.x = -16;
+    meshDefault.position.y = -16;
+    scene.add(meshDefault);
+    Object(_three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__[/* orbitControls */ "a"])(camera, document.body, renderer, scene);
+};
+var lsJson = JSON.parse(localStorage.getItem('extrude_walls_json'));
+var promise = lsJson
+    ? Promise.resolve(lsJson)
+    : fetch('/data/lo024DEgzanMj5BE.json') // /data/ZLvK29zj4L29Jowd.json
+        .then(function (res) { return res.json(); })
+        .then(function (json) { return json; });
+promise.then(run).catch(function (error) { return console.log(error); });
+
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52173,46 +52274,6 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 /* unused harmony default export */ var _unused_webpack_default_export = (OrbitControls);
 
 
-/***/ }),
-
-/***/ 31:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
-/* harmony import */ var _images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-
-
-
-var __global__ = window;
-__global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
-var scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
-var camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](45, window.innerWidth / window.innerHeight, 0.1, 100);
-camera.position.set(0, 0, 35);
-var renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({ canvas: document.querySelector('#webgl-canvas') });
-renderer.setClearColor(0xeeeeee);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
-document.body.appendChild(renderer.domElement);
-var texture = new three__WEBPACK_IMPORTED_MODULE_0__["TextureLoader"]().load(_images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__);
-texture.wrapS = three__WEBPACK_IMPORTED_MODULE_0__["RepeatWrapping"];
-texture.wrapT = three__WEBPACK_IMPORTED_MODULE_0__["RepeatWrapping"];
-texture.offset.set(0, 0);
-texture.repeat.set(1, 1);
-var cubeSize = 3;
-var cubeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](cubeSize, cubeSize, cubeSize);
-var cubeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshBasicMaterial"]({ map: texture });
-var cube = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](cubeGeometry, cubeMaterial);
-cube.castShadow = true;
-cube.name = 'cube-' + scene.children.length;
-scene.add(cube);
-renderer.render(scene, camera);
-Object(_three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__[/* orbitControls */ "a"])(camera, document.body, renderer, scene);
-
-
 /***/ })
 
-},[[31,0]]]);
+},[[30,0]]]);

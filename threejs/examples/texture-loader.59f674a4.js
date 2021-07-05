@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[15],{
 
 /***/ 0:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -51486,7 +51486,54 @@ if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 19:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "imgs/concrete-092d560d.jpg";
+
+/***/ }),
+
+/***/ 31:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var _images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
+/* harmony import */ var _images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+
+
+
+var __global__ = window;
+__global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
+var scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
+var camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](45, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(0, 0, 35);
+var renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({ canvas: document.querySelector('#webgl-canvas') });
+renderer.setClearColor(0xeeeeee);
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+var texture = new three__WEBPACK_IMPORTED_MODULE_0__["TextureLoader"]().load(_images_concrete_jpg__WEBPACK_IMPORTED_MODULE_1__);
+texture.wrapS = three__WEBPACK_IMPORTED_MODULE_0__["RepeatWrapping"];
+texture.wrapT = three__WEBPACK_IMPORTED_MODULE_0__["RepeatWrapping"];
+texture.offset.set(0, 0);
+texture.repeat.set(1, 1);
+var cubeSize = 3;
+var cubeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](cubeSize, cubeSize, cubeSize);
+var cubeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshBasicMaterial"]({ map: texture });
+var cube = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](cubeGeometry, cubeMaterial);
+cube.castShadow = true;
+cube.name = 'cube-' + scene.children.length;
+scene.add(cube);
+renderer.render(scene, camera);
+Object(_three_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_2__[/* orbitControls */ "a"])(camera, document.body, renderer, scene);
+
+
+/***/ }),
+
+/***/ 4:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52166,64 +52213,6 @@ var orbitControls = function (camera, domElement, renderer, scene) {
 /* unused harmony default export */ var _unused_webpack_default_export = (OrbitControls);
 
 
-/***/ }),
-
-/***/ 32:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-
-
-var __global__ = window;
-__global__.THREE = __global__.THREE || three__WEBPACK_IMPORTED_MODULE_0__;
-var scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
-var camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](45, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 0, 35);
-var renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({ canvas: document.querySelector('#webgl-canvas') });
-renderer.setClearColor(0xeeeeee);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
-document.body.appendChild(renderer.domElement);
-var planeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["PlaneGeometry"](60, 40, 1, 1);
-var planeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: 0xffffff });
-var plane = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](planeGeometry, planeMaterial);
-plane.receiveShadow = true;
-plane.rotation.x = -0.5 * Math.PI;
-plane.position.x = 0;
-plane.position.y = 0;
-plane.position.z = 0;
-scene.add(plane);
-var ambientLight = new three__WEBPACK_IMPORTED_MODULE_0__["AmbientLight"](0x0c0c0c);
-scene.add(ambientLight);
-var spotLight = new three__WEBPACK_IMPORTED_MODULE_0__["SpotLight"](0xffffff);
-spotLight.position.set(-40, 60, -10);
-spotLight.castShadow = true;
-scene.add(spotLight);
-var numbersOfObjects = 0;
-var addCube = function () {
-    var cubeSize = Math.ceil((Math.random() * 3));
-    var cubeGeometry = new three__WEBPACK_IMPORTED_MODULE_0__["BoxGeometry"](cubeSize, cubeSize, cubeSize);
-    var cubeMaterial = new three__WEBPACK_IMPORTED_MODULE_0__["MeshLambertMaterial"]({ color: Math.random() * 0xffffff });
-    var cube = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](cubeGeometry, cubeMaterial);
-    cube.castShadow = true;
-    cube.name = 'cube-' + scene.children.length;
-    cube.position.x = -30 + Math.round((Math.random() * 60 /*planeGeometry.width */));
-    cube.position.y = Math.round((Math.random() * 5));
-    cube.position.z = -20 + Math.round((Math.random() * 40));
-    scene.add(cube);
-    numbersOfObjects = scene.children.length;
-};
-renderer.render(scene, camera);
-__global__.addCube = addCube;
-Object(_controls_OrbitControls__WEBPACK_IMPORTED_MODULE_1__[/* orbitControls */ "a"])(camera, document.body, renderer, scene);
-for (var i = 0; i < 200; i++) {
-    addCube();
-}
-
-
 /***/ })
 
-},[[32,0]]]);
+},[[31,0]]]);

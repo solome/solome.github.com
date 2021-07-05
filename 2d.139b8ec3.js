@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
-/***/ 36:
+/***/ 40:
 /***/ (function(module, exports) {
 
 var canvas = document.createElement('canvas');
@@ -34,4 +34,4 @@ drawPoint([point[1], point[2]], 'red');
 
 /***/ })
 
-},[[36,0]]]);
+},[[40,0]]]);

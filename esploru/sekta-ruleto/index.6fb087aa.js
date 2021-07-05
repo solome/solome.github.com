@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[3],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
 /***/ 11:
 /***/ (function(module, exports, __webpack_require__) {
@@ -2647,14 +2647,14 @@ if (true) {
 
 /***/ }),
 
-/***/ 35:
+/***/ 37:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ 40:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2662,7 +2662,7 @@ if (true) {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./resources/esploru/sekta-ruleto/index.scss
-var sekta_ruleto = __webpack_require__(35);
+var sekta_ruleto = __webpack_require__(37);
 
 // EXTERNAL MODULE: ./node_modules/hammerjs/hammer.js
 var hammer = __webpack_require__(11);
@@ -2949,4 +2949,4 @@ render('#app', mock);
 
 /***/ })
 
-},[[40,0]]]);
+},[[45,0]]]);
