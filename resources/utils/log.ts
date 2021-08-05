@@ -3,4 +3,3 @@ export default function (...args) {
   img.src = `/log/?json=${JSON.stringify(arguments)}`
   console.log('log ➜ ', JSON.parse(JSON.stringify(args)))
 }
-
