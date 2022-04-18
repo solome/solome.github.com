@@ -51,6 +51,7 @@ const config = {
           //   label: 'Tutorial',
           // },
           { to: 'https://solome.js.org/blog', label: '博客', position: 'right' },
+          { to: 'https://solome.js.org/storybook', label: 'Storybook', position: 'right' },
           { to: 'https://solome.js.org/slides', label: 'Slides', position: 'right' },
 
           {
