@@ -64,30 +64,45 @@ const config = {
       footer: {
         style: 'dark',
         links: [
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Tutorial',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     // {
+          //     //   label: 'Stack Overflow',
+          //     //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     // },
+          //     // {
+          //     //   label: 'Discord',
+          //     //   href: 'https://discordapp.com/invite/docusaurus',
+          //     // },
+
+          //   ],
+          // },
           {
-            title: 'Docs',
+            title: '外链推荐',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '卡拉云低代码工具',
+                to: 'https://kalacloud.com/',
               },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              // {
-              //   label: 'Stack Overflow',
-              //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              // },
-              // {
-              //   label: 'Discord',
-              //   href: 'https://discordapp.com/invite/docusaurus',
-              // },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/juyipeng',
+                label: '中州韻輸入法引擎',
+                href: 'https://rime.im/',
               },
+              {
+                label: '汉典',
+                href: 'https://rime.im/',
+              },
+
             ],
           },
           {
@@ -100,6 +115,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/solome',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/juyipeng',
               },
             ],
           },
