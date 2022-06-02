@@ -21,3 +21,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.main-wrapper {
+  display: flex;
+  min-height: 540px;
+}
+
+.main {
+  flex: 1;
+  width: 100%; 
+}

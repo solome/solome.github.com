@@ -33,7 +33,6 @@ export function createHatsuneMiku(container: HTMLDivElement) {
   const renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setSize(container.clientWidth, container.clientHeight)
-  console.log('container.appendChild(renderer.domElement)')
   container.appendChild(renderer.domElement)
 
   const effect = new OutlineEffect(renderer)
@@ -67,7 +66,6 @@ export function createHatsuneMiku(container: HTMLDivElement) {
       return
     }
     const percentComplete = xhr.loaded / xhr.total * 100
-    console.log(Math.round(percentComplete) + '% downloaded')
   }, null)
 
   const controls = new OrbitControls(camera, renderer.domElement)
@@ -77,7 +75,8 @@ export function createHatsuneMiku(container: HTMLDivElement) {
   const resizeObserver = new ResizeObserver(() => {
     camera.aspect = container.clientWidth / container.clientHeight
     camera.updateProjectionMatrix()
-    effect.setSize(window.innerWidth, window.innerHeight)
+    // effect.setSize(window.innerWidth, window.innerHeight)
+    effect.setSize(container.clientWidth, container.clientHeight)
 
   })
   resizeObserver.observe(container)

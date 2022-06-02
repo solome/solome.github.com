@@ -12,10 +12,6 @@ export function HatsuneMiku() {
     }
     const intervalID = setInterval(() => {
       if (window['Ammo']) {
-        console.log('Ammo---', window['Ammo'])
-
-        console.log('intervalID', intervalID)
-
         if (intervalID) {
           clearInterval(intervalID)
         }
@@ -34,8 +30,10 @@ export function HatsuneMiku() {
   return (
     <div
       style={{
-        width: size.width + 'px',
-        height: size.height - 60 + 'px',
+        width: '100%',
+        height: '100%',
+        // width: size.width + 'px',
+        // height: size.height - 60 + 'px',
       }}
       className="HatsuneMiku"
       ref={ref}

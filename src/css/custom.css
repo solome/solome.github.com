@@ -41,3 +41,12 @@
 .navbar__logo {
   height: 2.25rem;
 }
+
+
+.footer__link-item {
+  font-size: .85rem;
+}
+
+.footer__copyright {
+  font-size: 14px;
+}

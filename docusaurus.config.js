@@ -44,12 +44,12 @@ const config = {
           src: 'img/juyipeng_min.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
+          {
+            type: 'doc',
+            docId: 'strengths-finder/finding',
+            position: 'left',
+            label: '琐碎整理',
+          },
           { to: 'https://solome.js.org/blog', label: '博客', position: 'right' },
           { to: 'https://solome.js.org/storybook', label: 'Storybook', position: 'right' },
           { to: 'https://solome.js.org/slides', label: 'Slides', position: 'right' },
@@ -62,7 +62,8 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        // style: 'dark',
+        style: 'light',
         links: [
           // {
           //   title: 'Docs',
@@ -88,11 +89,11 @@ const config = {
           //   ],
           // },
           {
-            title: '外链推荐',
+            title: '项目推荐',
             items: [
               {
                 label: '卡拉云低代码工具',
-                to: 'https://kalacloud.com/',
+                href: 'https://kalacloud.com/',
               },
               {
                 label: '中州韻輸入法引擎',
@@ -100,17 +101,17 @@ const config = {
               },
               {
                 label: '汉典',
-                href: 'https://rime.im/',
+                href: 'https://www.zdic.net/',
               },
 
             ],
           },
           {
-            title: 'More',
+            title: '快捷链接',
             items: [
               {
                 label: '博客',
-                to: 'https://solome.js.org/blog',
+                href: 'https://solome.js.org/blog',
               },
               {
                 label: 'GitHub',
