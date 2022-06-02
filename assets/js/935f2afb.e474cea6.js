@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksolome_js_org=self.webpackChunksolome_js_org||[]).push([[53],{1109:function(e){e.exports=JSON.parse('{"pluginId":"default","version":"current","label":"Next","banner":null,"badge":false,"className":"docs-version-current","isLast":true,"docsSidebars":{},"docs":{"intro":{"id":"intro","title":"Tutorial Intro","description":"\u54c8\u54c8"}}}')}}]);
