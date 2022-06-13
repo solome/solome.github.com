@@ -27,6 +27,18 @@ const sidebars = {
         // 'strengths-finder/cliftonStrengths-themes',
       ],
     },
+    'the-one-thing',
+    {
+      type: 'category',
+      label: '逆向工作',
+      items: [
+        'working-backwards/intro',
+        'working-backwards/buliding-blocks',
+        'working-backwards/hiring',
+        'working-backwards/organizing',
+        'working-backwards/communicating',
+      ],
+    },
   ],
 };
 

@@ -15,7 +15,6 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'solome', // Usually your GitHub org/user name.
   projectName: 'solome.github.com', // Usually your repo name.
-
   presets: [
     [
       'classic',
@@ -24,7 +23,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/solome/solome.github.com',
+          editUrl: 'https://github.com/solome/solome.github.com/blob/solome.js.org/',
         },
 
         theme: {
