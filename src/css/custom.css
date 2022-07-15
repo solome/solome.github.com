@@ -50,3 +50,17 @@
 .footer__copyright {
   font-size: 14px;
 }
+
+ul, ol {
+  padding-left: 16px;
+}
+
+figure img {
+  max-width: 720px;
+}
+
+figcaption {
+  font-size: 14px;
+  font-style:italic;
+  text-align: center;
+}

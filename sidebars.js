@@ -43,10 +43,10 @@ const sidebars = {
 
   Methodology: [{
     type: 'category',
-      label: '沉淀方法论',
-      items: [
-        'methodology/performance',
-      ],
+    label: '沉淀方法论',
+    items: [
+      'methodology/performance',
+    ],
   }]
 };
 
