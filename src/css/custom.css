@@ -57,6 +57,7 @@ ul, ol {
 
 figure img {
   max-width: 720px;
+  width: 100%;
 }
 
 figcaption {
