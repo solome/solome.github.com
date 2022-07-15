@@ -40,6 +40,14 @@ const sidebars = {
       ],
     },
   ],
+
+  Methodology: [{
+    type: 'category',
+      label: '沉淀方法论',
+      items: [
+        'methodology/performance',
+      ],
+  }]
 };
 
 module.exports = sidebars;

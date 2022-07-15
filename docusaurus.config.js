@@ -49,6 +49,12 @@ const config = {
             position: 'left',
             label: '琐碎整理',
           },
+          {
+            type: 'doc',
+            docId: 'methodology/performance',
+            position: 'left',
+            label: '工作剪辑',
+          },
           { to: 'https://solome.js.org/blog', label: '博客', position: 'right' },
           { to: 'https://solome.js.org/storybook', label: 'Storybook', position: 'right' },
           { to: 'https://solome.js.org/slides', label: 'Slides', position: 'right' },
