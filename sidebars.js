@@ -45,7 +45,9 @@ const sidebars = {
     type: 'category',
     label: '沉淀方法论',
     items: [
+      'methodology/intro',
       'methodology/performance',
+      'underlying-logic/subject-separation',
     ],
   }]
 };
