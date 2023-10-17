@@ -49,7 +49,7 @@ export function renderWPRLine(node: HTMLElement, config: WPRLineConfig) {
     },
     xAxis: {
       type: 'category',
-      boundaryGap: false,
+      boundaryGap: true,
       data: xAxisData,
     },
     yAxis: {

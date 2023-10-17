@@ -34,18 +34,8 @@ export function Group(props: GroupProps) {
             // name: data.name,
             type: 'bar',
             data: data.items.map((item2) => item2.data[0].value),
-            barMaxWidth: 50,
-            showBackground: true,
-            coordinateSystem: 'cartesian2d',
-            legendHoverLink: true,
-            barMinHeight: 0,
-            barMinAngle: 0,
-            large: false,
-            largeThreshold: 400,
-            progressive: 3000,
-            progressiveChunkMode: 'mod',
-            clip: true,
-            roundCap: false,
+            barMaxWidth: 120,
+  
             backgroundStyle: {
               color: 'rgba(180, 180, 180, 0.2)'
             }
