@@ -97,8 +97,8 @@ const config = {
             title: '项目推荐',
             items: [
               {
-                label: '卡拉云低代码工具',
-                href: 'https://kalacloud.com/',
+                label: '30个CSS碎片拼图，30种濒临灭绝动物',
+                href: 'https://www.webhek.com/post/species-in-pieces/'
               },
               {
                 label: '中州韻輸入法引擎',

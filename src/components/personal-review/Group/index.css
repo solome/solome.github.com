@@ -1,0 +1,48 @@
+.group {
+  width: 100%;
+}
+
+.group-nav {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(228 233 237 / 50%);
+
+  .group-item {
+    flex: 1;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px 2px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .group-item-title {
+    font-size: 12px;
+    height: 24px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease-in;
+    border: 1px solid rgb(228 233 237 / 0%);
+  }
+
+  .group-item--selected, .group-item:hover {
+
+    & .group-item-title {
+      font-weight: bold;
+      background-color: white;
+      border-radius: 10px;
+      border: 1px solid rgb(228 233 237 / 50%);
+
+    }
+  }
+}
+
+.group-panel {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 480px;
+}
