@@ -33,9 +33,13 @@ export function Group(props: GroupProps) {
           return [{
             // name: data.name,
             type: 'bar',
-            data: data.items.map((item2) => item2.data[0].value),
-            barMaxWidth: 120,
-  
+            data: data.items.map((item2) => ({
+              value: item2.data[0].value,
+              itemStyle: {
+                color: item2.data[0].extend.color,
+              }
+            })),
+            barMaxWidth: 80,
             backgroundStyle: {
               color: 'rgba(180, 180, 180, 0.2)'
             }

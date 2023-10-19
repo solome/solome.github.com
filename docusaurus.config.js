@@ -118,6 +118,10 @@ const config = {
                 label: '博客',
                 href: 'https://solome.js.org/blog',
               },
+              // {
+              //   label: 'WPR',
+              //   href: '/personal-review.html',
+              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/solome',

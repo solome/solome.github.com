@@ -7,10 +7,10 @@ import { DatasetItem } from './typings'
 
 
 const dataset: DatasetItem[] = [
-  games,
   readings,
   creations,
   travel,
+  games,
 ]
 
 export default dataset

@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
         description="每个人都会遇到的一个朋友，他的思想，他的价值观，都会让你很欣赏他，但是因为利益出卖了你..."
         wrapperClassName={styles['main-wrapper']}
       >
-        <main className={styles['main']}>
+        <main className={styles['main'] + ' ' + styles['main-wpr']}>
           <BrowserOnly>{() => <Group dataset={dataset} />}</BrowserOnly>
         </main>
       </Layout>

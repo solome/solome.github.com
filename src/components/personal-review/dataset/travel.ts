@@ -6,7 +6,7 @@ export default {
   unit: '趟',
   items: [
     {
-      title: '创作篇幅(2023)',
+      title: '游记篇幅(2023)',
       year: 2023,
       data: [{
         index: 10,

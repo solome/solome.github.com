@@ -5,6 +5,11 @@
  */
 
 /* You can override the default Infima variables here. */
+/* html {
+  --ifm-font-family-base: OpenDyslexic, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+} */
 :root {
   --ifm-color-primary: #096a90;
   --ifm-color-primary-dark: #085f82;
@@ -13,7 +18,11 @@
   --ifm-color-primary-light: #0a759e;
   --ifm-color-primary-lighter: #0a7aa6;
   --ifm-color-primary-lightest: #0c8abb;
-  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: OpenDyslexic, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
+  'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-font-size-base: 87.5%;
+  --ifm-code-font-size: 80%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -42,6 +51,9 @@
   height: 2.25rem;
 }
 
+.navbar__link {
+  padding-top: 10px;
+}
 
 .footer__link-item {
   font-size: .85rem;
@@ -64,4 +76,9 @@ figcaption {
   font-size: 14px;
   font-style:italic;
   text-align: center;
+}
+
+sup {
+  font-style: oblique;
+   color: rgb(0 0 0 / 60%);
 }

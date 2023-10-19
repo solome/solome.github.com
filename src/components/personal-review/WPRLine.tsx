@@ -13,7 +13,6 @@ export interface WPRLineConfig {
 }
 
 export function renderWPRLine(node: HTMLElement, config: WPRLineConfig) {
-  console.log('__debug__', config)
   const myChart = echarts.init(node)
   const xAxisData = (()=> {
     if (config.cycle === CycleEnum.BarChart) {
@@ -40,7 +39,7 @@ export function renderWPRLine(node: HTMLElement, config: WPRLineConfig) {
       left: '2%',
       right: '3%',
       bottom: '3%',
-      containLabel: true
+      containLabel: true,
     },
     toolbox: {
       feature: {
@@ -49,11 +48,20 @@ export function renderWPRLine(node: HTMLElement, config: WPRLineConfig) {
     },
     xAxis: {
       type: 'category',
+      axisLabel: {
+        // interval: 0,
+        rotate: 0,
+        inside: false,
+      },
       boundaryGap: true,
       data: xAxisData,
+      axisTick: {
+        alignWithLabel: true
+      },
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+   
     },
     series: config.series,
     plotOptions: { series: { connectNulls: true } }
