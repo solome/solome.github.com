@@ -1,6 +1,4 @@
 import * as THREE from 'three'
-import Stats from 'three/examples/jsm/libs/stats.module.js'
-import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js'
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { OutlineEffect } from 'three/examples/jsm/effects/OutlineEffect.js'
@@ -45,6 +43,8 @@ export function createHatsuneMiku(container: HTMLDivElement) {
   const loader = new MMDLoader()
 
   loader.loadWithAnimation(modelFile, vmdFiles, function (mmd) {
+    console.log('__debug__005')
+
     const mesh = mmd.mesh
     mesh.position.y = -10
     scene.add(mesh)
@@ -55,7 +55,7 @@ export function createHatsuneMiku(container: HTMLDivElement) {
     })
 
     const ikHelper = helper.objects.get(mesh).ikSolver.createHelper()
-    ikHelper.visible = false
+    ikHelper.visible = true
     scene.add(ikHelper)
     const physicsHelper = helper.objects.get(mesh).physics.createHelper()
     physicsHelper.visible = false
@@ -65,7 +65,7 @@ export function createHatsuneMiku(container: HTMLDivElement) {
     if (!xhr.lengthComputable) {
       return
     }
-    const percentComplete = xhr.loaded / xhr.total * 100
+    // const percentComplete = xhr.loaded / xhr.total * 100
   }, null)
 
   const controls = new OrbitControls(camera, renderer.domElement)
