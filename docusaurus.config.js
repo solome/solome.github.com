@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '掬一捧',
-  tagline: '掬一捧清水窥明月',
+  tagline: '掬一捧清水窥月落',
   url: 'https://solome.js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',

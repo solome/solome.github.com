@@ -6,19 +6,28 @@ sidebar_position: 1
 
 ## MBTI 16 型人格
 
-### [**ENFJ-A**](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC)
+### ENFJ-A
 
-也是神奇，测了多次都是 [ENFJ-A](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC)。
+也是神奇，测了多次都是 [ENFJ-A](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC)——在熟悉的领域是 [ENFJ-A](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC)，在陌生的圈子是 [INFJ-A](https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC)。
 
-> [ENFJ-A](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC) 一般不喜欢抽象的学科，最典型的就是数学，然后就是计算机科学。更不喜欢细节类和数据类，如财务和会计等等。  
-> ——但是我现在天天码代码，可能很难成为顶级的那种吧~
+:::note
+
+[ENFJ-A](https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC) 一般不喜欢抽象的学科，最典型的就是数学，然后就是计算机科学。更不喜欢细节类和数据类，如财务和会计等等。  
+
+——但是我现在天天码代码，可能很难成为顶级的那种吧~
+:::
 
 ### "毛病"
+
+:::warning
 
 - 喜欢"指导"别人干事情，"说教"别人——**把握不好尺寸招人嫌**。
 - **"不愿干与自己价值观相冲突的事"**——真的很难。
 - 对那些缺乏执行效率、"死脑筋"式的人没有耐心——有时候会觉得无比 **绝望**。
 - 忽视自己的需求和真实的问题——**不要冲动，理性些**。
+- <span style={{color: "hsl(231deg 96% 31%)",fontWeight: "600"}}>Doorslam</span>。
+
+:::
 
 ## 五大优势
 

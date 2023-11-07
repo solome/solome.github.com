@@ -30,7 +30,7 @@ const sidebars = {
     'the-one-thing',
     {
       type: 'category',
-      label: '逆向工作',
+      label: '逆向工作（亚马逊）',
       items: [
         'working-backwards/intro',
         'working-backwards/buliding-blocks',
