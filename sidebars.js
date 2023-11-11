@@ -47,6 +47,7 @@ const sidebars = {
     items: [
       'methodology/intro',
       'methodology/performance',
+      'methodology/resume-identify',
       'underlying-logic/subject-separation',
     ],
   }]

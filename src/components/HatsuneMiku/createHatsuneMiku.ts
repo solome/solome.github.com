@@ -43,7 +43,6 @@ export function createHatsuneMiku(container: HTMLDivElement) {
   const loader = new MMDLoader()
 
   loader.loadWithAnimation(modelFile, vmdFiles, function (mmd) {
-    console.log('__debug__005')
 
     const mesh = mmd.mesh
     mesh.position.y = -10
@@ -55,7 +54,7 @@ export function createHatsuneMiku(container: HTMLDivElement) {
     })
 
     const ikHelper = helper.objects.get(mesh).ikSolver.createHelper()
-    ikHelper.visible = true
+    ikHelper.visible = false
     scene.add(ikHelper)
     const physicsHelper = helper.objects.get(mesh).physics.createHelper()
     physicsHelper.visible = false

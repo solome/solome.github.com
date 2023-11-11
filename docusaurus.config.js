@@ -56,7 +56,7 @@ const config = {
             label: '工作剪辑',
           },
           { to: 'https://solome.js.org/blog', label: '博客', position: 'right' },
-          { to: 'https://solome.js.org/storybook', label: 'Storybook', position: 'right' },
+          // { to: 'https://solome.js.org/storybook', label: 'Storybook', position: 'right' },
           { to: 'https://solome.js.org/slides', label: 'Slides', position: 'right' },
 
           {
@@ -108,6 +108,10 @@ const config = {
                 label: '汉典',
                 href: 'https://www.zdic.net/',
               },
+              {
+                label: '日本の伝統色',
+                href: 'http://nipponcolors.com/',
+              }
 
             ],
           },
@@ -118,10 +122,6 @@ const config = {
                 label: '博客',
                 href: 'https://solome.js.org/blog',
               },
-              // {
-              //   label: 'WPR',
-              //   href: '/personal-review.html',
-              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/solome',
@@ -129,6 +129,16 @@ const config = {
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/juyipeng',
+              },
+            ],
+          },
+
+          {
+            title: '快捷链接',
+            items: [
+              {
+                label: 'COLORS',
+                href: '/colors/',
               },
             ],
           },

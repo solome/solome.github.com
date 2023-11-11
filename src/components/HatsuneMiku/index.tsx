@@ -10,18 +10,14 @@ export function HatsuneMiku() {
     if (!ref.current) {
       return
     }
-    console.log('__debug__002')
 
     const intervalID = setInterval(() => {
       if (window['Ammo']) {
-        console.log('__debug__003')
         if (intervalID) {
           clearInterval(intervalID)
         }
 
         window['Ammo']().then(() => {
-        console.log('__debug__004')
-
           createHatsuneMiku(ref.current!)
         })
       }
@@ -33,8 +29,6 @@ export function HatsuneMiku() {
       }
     }
   }, [])
-
-  console.log('__debug__001')
 
   return (
     <div

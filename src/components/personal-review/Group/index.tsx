@@ -22,6 +22,9 @@ export function Group(props: GroupProps) {
 
     myChart.current?.dispose()
     const data = dataset[current]
+
+    console.log('__debug__', data)
+
     myChart.current = renderWPRLine(canvasRef.current!, {
       cycle: data.cycle,
       legend: {
