@@ -39,6 +39,43 @@ const sidebars = {
         'working-backwards/communicating',
       ],
     },
+    {
+      type: 'category',
+      label: 'LeetCode',
+      items: [
+        'data-structures-algorithms/categories/index',
+        'data-structures-algorithms/base',
+        'data-structures-algorithms/complexity',
+        {
+          type: 'category',
+          label: '算法专题 (Draft)',
+          items: [
+            'data-structures-algorithms/categories/array',
+            'data-structures-algorithms/categories/string',
+            'data-structures-algorithms/categories/two-pointers',
+            'data-structures-algorithms/categories/linked-list',
+            'data-structures-algorithms/categories/tree',
+            'data-structures-algorithms/categories/dynamic-programming',
+
+            'data-structures-algorithms/categories/backtracking',
+            'data-structures-algorithms/categories/depth-first-search',
+            'data-structures-algorithms/categories/breadth-first-search',
+            'data-structures-algorithms/categories/binary-search',
+            'data-structures-algorithms/categories/hash-table',
+            'data-structures-algorithms/categories/sorting',
+            'data-structures-algorithms/categories/bit-manipulation',
+            'data-structures-algorithms/categories/union-find',
+
+            'data-structures-algorithms/categories/sliding-window',
+            'data-structures-algorithms/categories/segment-tree',
+            'data-structures-algorithms/categories/binary-indexed-tree',
+
+          ],
+        },
+        'data-structures-algorithms/fibonacci',
+
+      ],
+    }
   ],
 
   Methodology: [{
@@ -51,6 +88,8 @@ const sidebars = {
       'underlying-logic/subject-separation',
     ],
   }]
+
+
 };
 
 module.exports = sidebars;
