@@ -23,6 +23,7 @@
   --ifm-font-family-base: OpenDyslexic, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont,
   'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-font-family-monospace: OpenDyslexic, 'Fira Code', Menlo, "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace, Courier;
   --ifm-font-size-base: 87.5%;
   --ifm-code-font-size: 80%;
 }
@@ -96,4 +97,7 @@ sup {
   border-bottom-color: hsl(0deg 0% 10%);
   text-decoration: none;
 
+}
+.theme-doc-markdown pre code {
+  font-size: 14px !important;
 }

@@ -2,6 +2,8 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
+// const nightOwlLight = require('prism-react-renderer/themes/vsLight');
+
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -150,6 +152,7 @@ const config = {
         copyright: `Copyright © 2012-${new Date().getFullYear()} 掬一捧`,
       },
       prism: {
+        // theme: lightCodeTheme,
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
