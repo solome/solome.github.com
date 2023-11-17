@@ -127,6 +127,10 @@ const config = {
                 href: 'https://github.com/solome',
               },
               {
+                label: '小红书',
+                href: 'https://www.xiaohongshu.com/user/profile/5b21fb804eacab44a9d13a8e',
+              },
+              {
                 label: 'Twitter',
                 href: 'https://twitter.com/juyipeng',
               },
