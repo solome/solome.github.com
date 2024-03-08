@@ -75,6 +75,14 @@ const sidebars = {
         'data-structures-algorithms/fibonacci',
 
       ],
+    },
+    {
+      type: 'category',
+      label: 'Swift',
+      items: [
+        'swift/explore'
+      ],
+      
     }
   ],
 
