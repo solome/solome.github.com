@@ -132,7 +132,7 @@ const config = {
                 href: 'https://www.xiaohongshu.com/user/profile/5b21fb804eacab44a9d13a8e',
               },
               {
-                label: 'Twitter',
+                label: 'X/Twitter',
                 href: 'https://twitter.com/juyipeng',
               },
             ],
