@@ -94,6 +94,7 @@ const sidebars = {
       'methodology/performance',
       'methodology/resume-identify',
       'underlying-logic/subject-separation',
+      'methodology/cyclomatic-complexity'
     ],
   }]
 

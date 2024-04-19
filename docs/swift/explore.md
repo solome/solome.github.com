@@ -635,7 +635,6 @@ let userIDs = await withTaskGroup(of: Int.self) { group in
     }
     return results
 }
-
 ```
 
 **Actors** are similar to classes, except they ensure that different asynchronous functions can safely interact with an instance of the same actor at the same time.
