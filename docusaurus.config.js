@@ -1,7 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 import { themes } from 'prism-react-renderer'; 
+
 const lightCodeTheme = themes.github
 const darkCodeTheme = themes.dracula
 
@@ -25,6 +28,8 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/solome/solome.github.com/blob/solome.js.org/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
 
         theme: {
@@ -154,9 +159,22 @@ const config = {
         // theme: lightCodeTheme,
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: [ 'swift', 'rust'],
+        additionalLanguages: [ 'swift', 'rust', 'bash'],
       },
     }),
+    stylesheets: [
+      {
+        // href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css',
+
+
+        type: 'text/css',
+        integrity:
+          'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+        crossorigin: 'anonymous',
+      },
+    ],
 };
 
 module.exports = config;
