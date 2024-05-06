@@ -211,46 +211,46 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="tip1_wrong" label="待优化">
-```rust
+```rust title="函数 filter_primes_from_mixed_array() 圈复杂度为11。"
 pub fn filter_primes_from_mixed_array(mixed_array: Vec<&dyn std::fmt::Display>) -> Vec<i32> {
-  let mut primes = Vec::new();
-  for item in mixed_array {
-    let item_as_string = item.to_string();
-    if let Ok(num) = item_as_string.parse::<i32>() {
-      if num <= 1 {
-        continue;
-      }
+    let mut primes = Vec::new();
+    for item in mixed_array {
+        let item_as_string = item.to_string();
+        if let Ok(num) = item_as_string.parse::<i32>() {
+            if num <= 1 {
+                continue;
+            }
 
-      if num <= 3 {
-        primes.push(num);
-        continue;
-      }
-      if num % 2 == 0 || num % 3 == 0 {
-        continue;
-      }
+            if num <= 3 {
+                primes.push(num);
+                continue;
+            }
+            if num % 2 == 0 || num % 3 == 0 {
+                continue;
+            }
 
-      let mut i = 5;
+            let mut i = 5;
 
-      let mut flag = true;
-      while i * i <= num {
-        if num % i == 0 || num % (i + 2) == 0 {
-          flag = false;
-          break;
+            let mut flag = true;
+            while i * i <= num {
+                if num % i == 0 || num % (i + 2) == 0 {
+                    flag = false;
+                    break;
+                }
+                i += 6;
+            }
+
+            if flag == true {
+                primes.push(num)
+            }
         }
-        i += 6;
-      }
-
-      if flag == true {
-        primes.push(num)
-      }
     }
-  }
-  primes
+    primes
 }
 ```
   </TabItem>
   <TabItem value="tip2_correct" label="重构后">
-```rust
+```rust title="剥离出 is_prime()函数，不会出现圈复杂度 ≥10 的函数。"
 pub fn is_prime(num: i32) -> bool {
     if num <= 1 {
         return false;
@@ -283,14 +283,97 @@ pub fn filter_primes_from_mixed_array(mixed_array: Vec<&dyn std::fmt::Display>) 
     }
     primes
 }
-}
 ```
   </TabItem>
 </Tabs>
 
+重构前圈复杂度为 11 的`filter_primes_from_mixed_array()` 函数对研发人员来说，阅读、理解的压力是巨大的。
+
 **技巧2: 替换算法**
 
+选择圈复杂度更低的算法去重新实现你的函数，比如典型的有用空间复杂度替换时间复杂度（高时间复杂度往往也意味着逻辑复杂）算法、同类型的条件判断使用字典这类数据结构替换等思路。
 
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust title="圈复杂度为 13、判断冗余。"
+pub fn number_to_month_conditional(number: u32) -> Option<&'static str> {
+  if number == 1 {
+      Some("January")
+  } else if number == 2 {
+      Some("February")
+  } else if number == 3 {
+      Some("March")
+  } else if number == 4 {
+      Some("April")
+  } else if number == 5 {
+      Some("May")
+  } else if number == 6 {
+      Some("June")
+  } else if number == 7 {
+      Some("July")
+  } else if number == 8 {
+      Some("August")
+  } else if number == 9 {
+      Some("September")
+  } else if number == 10 {
+      Some("October")
+  } else if number == 11 {
+      Some("November")
+  } else if number == 12 {
+      Some("December")
+  } else {
+      None
+  }
+}
+```
+  </TabItem>
+
+  <TabItem value="tip2_correct" label="重构一">
+```rust title="通过 HashMap 规避 if 条件判断。"
+use std::collections::HashMap;
+
+pub fn number_to_month_hashmap(number: u32) -> Option<&'static str> {
+  // 用空间换时间
+  let mut month_map = HashMap::new();
+  month_map.insert(1, "January");
+  month_map.insert(2, "February");
+  month_map.insert(3, "March");
+  month_map.insert(4, "April");
+  month_map.insert(5, "May");
+  month_map.insert(6, "June");
+  month_map.insert(7, "July");
+  month_map.insert(8, "August");
+  month_map.insert(9, "September");
+  month_map.insert(10, "October");
+  month_map.insert(11, "November");
+  month_map.insert(12, "December");
+
+  month_map.get(&number).cloned()
+}
+```
+  </TabItem>
+  <TabItem value="tip3_correct" label="重构二">
+```rust title="使用 Rust 的 match 语法风格上可以更优雅、简洁，且更易读。"
+pub fn number_to_month_match(number: u32) -> Option<&'static str> {
+  match number {
+      1 => Some("January"),
+      2 => Some("February"),
+      3 => Some("March"),
+      4 => Some("April"),
+      5 => Some("May"),
+      6 => Some("June"),
+      7 => Some("July"),
+      8 => Some("August"),
+      9 => Some("September"),
+      10 => Some("October"),
+      11 => Some("November"),
+      12 => Some("December"),
+      _ => None,
+  }
+}
+```
+  </TabItem>
+</Tabs>
 ### 5.2 简化条件表达式
 
 **技巧3: 逆向表达**
