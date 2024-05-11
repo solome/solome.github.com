@@ -378,27 +378,511 @@ pub fn number_to_month_match(number: u32) -> Option<&'static str> {
 
 **技巧3: 逆向表达**
 
+比如，常见的参加芭蕾舞比赛条件是⓵性别是女生；②性别若是男生，但是年龄低于16岁这类判断。逆向思维可以转换为 **低于16岁或是女生就可以参加**。
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+struct User {
+    gender: Gender,
+    age: u8,
+}
+
+enum Gender {
+    Female,
+    Male,
+}
+
+fn can_participate_in_ballerina_competition(user: &User) -> bool {
+    if user.gender == Gender::Female {
+        return true;
+    }
+
+    if user.gender == Gender::Male && user.age < 16 {
+        return true;
+    }
+
+    false
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+// 很明显源码清晰很多。
+fn can_participate_in_ballerina_competition(user: &User) -> bool {
+    if user.age < 16 {
+        return true
+    }
+    user.gender == Gender::Female
+}
+```
+  </TabItem>
+</Tabs>
+
+逆向表达方式通常是使用早期返回（early return）来减少嵌套的条件判断。**早期返回（early return）** 即使不能改变圈复杂度，但是对源码的可读性、可维护性都会有明显提高。下面举一个用户登录验证的典型：
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+fn validate_login(username: &str, password: &str, is_active: bool) -> Result<(), String> {
+    if is_active {
+        if username == "admin" {
+            if password == "secret" {
+                Ok(())
+            } else {
+                Err("Invalid password".to_string())
+            }
+        } else {
+            Err("Invalid username".to_string())
+        }
+    } else {
+        Err("Account is not active".to_string())
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust title="规避了 if 判断嵌套，更容易理解、便于后续维护。"
+fn validate_login(username: &str, password: &str, is_active: bool) -> Result<(), String> {
+    if !is_active {
+        return Err("Account is not active".to_string());
+    }
+    if username != "admin" {
+        return Err("Invalid username".to_string());
+    }
+    if password != "secret" {
+        return Err("Invalid password".to_string());
+    }
+    Ok(())
+}
+```
+  </TabItem>
+</Tabs>
+
 **技巧4: 分解条件**
+
+这个跟前文提到的 **提炼函数** 的思路类似，即将函数中复杂的判断逻辑 **提炼**、**分解** 出来。
+比如一个根据日期获取当日的促销折扣函数（如果在夏季打7折，若是夏季的周六日则打6折；非夏季日期单数打9折，偶数打8折）：
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust title="圈复杂度为5，且签到比较深。"
+use chrono::{NaiveDate, Datelike, Weekday};
+
+fn get_discount(date: &str) -> f32 {
+    let parsed_date = NaiveDate::parse_from_str(date, "%Y-%m-%d").unwrap();
+    let month = parsed_date.month();
+    let day = parsed_date.day();
+    let weekday = parsed_date.weekday();
+
+    if month >= 6 && month <= 8 {
+        if weekday == Weekday::Sat || weekday == Weekday::Sun {
+            0.6 // 夏季周六日打6折
+        } else {
+            0.7 // 夏季打7折
+        }
+    } else {
+        if day % 2 == 0 {
+            0.8 // 日期偶数打8折
+        } else {
+            0.9 // 日期单数打9折
+        }
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust title="圈复杂度降低的同时，可读性、可维护性（复用）、可测性都变好了。"
+use chrono::{NaiveDate, Datelike, Weekday};
+
+fn is_summer(month: u32) -> bool {
+    month >= 6 && month <= 8
+}
+
+fn is_weekend(weekday: Weekday) -> bool {
+    weekday == Weekday::Sat || weekday == Weekday::Sun
+}
+
+fn summer_discount(weekday: Weekday) -> f32 {
+    if is_weekend(weekday) {
+        0.6 // 夏季周六日打6折
+    } else {
+        0.7 // 夏季打7折
+    }
+}
+
+fn not_summer_discount(day: u32) -> f32 {
+    if day % 2 == 0 {
+        0.8 // 日期偶数打8折
+    } else {
+        0.9 // 日期单数打9折
+    }
+}
+
+fn get_discount(date: &str) -> f32 {
+    let parsed_date = NaiveDate::parse_from_str(date, "%Y-%m-%d").unwrap();
+    let month = parsed_date.month();
+    let day = parsed_date.day();
+    let weekday = parsed_date.weekday();
+
+    if is_summer(month) {
+        summer_discount(weekday)
+    } else {
+        not_summer_discount(day)
+    }
+}
+```
+  </TabItem>
+</Tabs>
 
 **技巧5: 合并条件**
 
+日常开发中，经常出现多种条件判断但是判断的结果是一致的，比如周六日、夏季、每月第一周周四均有促销（打六折）活动的函数判断：
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+fn get_discount(date: &str) -> f32 {
+    let parsed_date = NaiveDate::parse_from_str(date, "%Y-%m-%d").unwrap();
+    let month = parsed_date.month();
+    let day = parsed_date.day();
+    let weekday = parsed_date.weekday();
+
+    if month >= 6 && month <= 8 {
+        0.6
+    } else if weekday == Weekday::Sat || weekday == Weekday::Sun {
+        0.6
+    } else if  day <= 7 && weekday == Weekday::Thu {
+        0.6
+    } else {
+        0.9
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+fn is_summer(month: u32) -> bool {
+    month >= 6 && month <= 8
+}
+
+fn is_weekend(weekday: Weekday) -> bool {
+    weekday == Weekday::Sat || weekday == Weekday::Sun
+}
+
+// 同一结果的判断收敛在一起
+fn low_discount(data: &str) -> bool {
+    let parsed_date = NaiveDate::parse_from_str(date, "%Y-%m-%d").unwrap();
+    let month = parsed_date.month();
+    let day = parsed_date.day();
+    let weekday = parsed_date.weekday();
+
+    is_summer(month) || is_weekend(weekday) || (day <=7 && weekday == Weekday::Thu)
+}
+
+fn get_discount(date: &str) -> f32 {
+    if low_discount(date) {
+        0.6
+    } else {
+        0.9
+    }
+}
+```
+  </TabItem>
+</Tabs>
+
 **技巧6: 移除临时标记变量**
+
+在代码逻辑中，有时候会使用`bool`类型作为逻辑控制标记，一般可以通过`break`或提前`return`来取代控制标记：
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+fn check_security(peoples: Vec<String>) {
+    let mut found = false;
+    for people in peoples {
+        if !found && (people == "Don" || people == "John") {
+            send_alert();
+            found = true;
+        }
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+fn check_security(peoples: Vec<String>) {
+    for people in peoples {
+        if people == "Don" || people == "John" {
+            send_alert();
+            break; // 提前终止
+        }
+    }
+}
+```
+  </TabItem>
+</Tabs>
 
 **技巧7: 以多态取代条件判断**
 
+条件式根据对象类型的不同而选择不同的行为引申的高圈复杂度，可以通过将整个条件式的每个分支放进一个子类的重载方法中，然后将原始函数声明为抽象方法：
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+enum Animal {
+    Dog,
+    Cat,
+}
+
+fn sound(animal: Animal) -> &'static str {
+    match animal {
+        Animal::Dog => "旺旺!",
+        Animal::Cat => "Meow!",
+    }
+}
+
+fn main() {
+    let dog = Animal::Dog;
+    println!("{}", sound(dog)); // 输出 "旺旺!"
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+trait Animal {
+    fn sound(&self) -> &'static str;
+}
+
+struct Dog;
+struct Cat;
+
+impl Animal for Dog {
+    fn sound(&self) -> &'static str {
+        "旺旺!"
+    }
+}
+
+impl Animal for Cat {
+    fn sound(&self) -> &'static str {
+        "Meow!"
+    }
+}
+
+fn make_sound(animal: &dyn Animal) {
+    println!("{}", animal.sound());
+}
+```
+  </TabItem>
+</Tabs>
 
 ### 5.3 简化函数调用
 
 **技巧8: 读写分离**
 
+比如有一个订单处理系统，它有一个方法可以根据不同的条件处理订单并返回处理结果——`process_order`判断条件比较多，**读写分离**后将大量的判断逻辑放到调用方，规避复杂圈复杂度——分离逻辑，规避写**万能函数**。
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+pub struct Order {
+    pub status: String,
+    pub amount: i32,
+}
+
+impl Order {
+    pub fn new() -> Order {
+        Order { status: "New".to_string(), amount: 0 }
+    }
+
+    pub fn process_order(&mut self, payment: i32) -> String {
+        if self.status == "New" {
+            if payment >= self.amount {
+                self.status = "Paid".to_string();
+            } else {
+                self.status = "Failed".to_string();
+            }
+        } else if self.status == "Paid" {
+            self.status = "Shipped".to_string();
+        } else if self.status == "Shipped" {
+            self.status = "Completed".to_string();
+        }
+        self.status.clone()
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+pub struct Order {
+    pub status: String,
+    pub amount: i32,
+}
+
+impl Order {
+    pub fn new() -> Order {
+        Order { status: "New".to_string(), amount: 0 }
+    }
+
+    pub fn pay(&mut self, payment: i32) {
+        if self.status == "New" && payment >= self.amount {
+            self.status = "Paid".to_string();
+        } else {
+            self.status = "Failed".to_string();
+        }
+    }
+
+    pub fn ship(&mut self) {
+        if self.status == "Paid" {
+            self.status = "Shipped".to_string();
+        }
+    }
+
+    pub fn complete(&mut self) {
+        if self.status == "Shipped" {
+            self.status = "Completed".to_string();
+        }
+    }
+
+    pub fn get_status(&self) -> String {
+        self.status.clone()
+    }
+}
+```
+  </TabItem>
+</Tabs>
+
 **技巧9: 参数化方法**
+
+这个比校考验研发工程师的抽象功底，需要将条件判断逻辑抽象出来。
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+fn base_charge(last_usage: f64) -> f64 {
+    let mut result = last_usage.min(100.0) * 0.03;
+    if last_usage > 100.0 {
+        result += (last_usage.min(200.0) - 100.0) * 0.05;
+    }
+    if last_usage > 200.0 {
+        result += (last_usage - 200.0) * 0.07;
+    }
+    result
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust
+fn usage_in_range(last_usage: f64, start: f64, end: f64) -> f64 {
+    if last_usage > start {
+        last_usage.min(end) - start
+    } else {
+        0.0
+    }
+}
+
+fn base_charge(last_usage: f64) -> f64 {
+    let result = usage_in_range(last_usage, 0.0, 100.0) * 0.03;
+    let result = result + usage_in_range(last_usage, 100.0, 200.0) * 0.05;
+    let result = result + usage_in_range(last_usage, 200.0, f64::MAX) * 0.07;
+    result
+}
+```
+  </TabItem>
+</Tabs>
 
 **技巧10: 以明确函数取代参数**
 
+开发中可能会遇到根据函数的参数判断执行不同的逻辑，可以弱化函数内部这部分逻辑，以明确用途的函数调用去取代参数。
+
+<Tabs>
+  <TabItem value="tip1_wrong" label="待优化">
+```rust
+pub struct Dimensions {
+    height: i32,
+    width: i32,
+}
+
+impl Dimensions {
+    pub fn new() -> Dimensions {
+        Dimensions { height: 0, width: 0 }
+    }
+
+    pub fn set_value(&mut self, name: &str, value: i32) {
+        if name == "height" {
+            self.height = value;
+        } else if name == "width" {
+            self.width = value;
+        }
+    }
+}
+```
+  </TabItem>
+  <TabItem value="tip2_correct" label="重构后">
+```rust title="直接调用 set_height() 和 set_width() 方法，规避参数类型的判断。"
+pub struct Dimensions {
+    height: i32,
+    width: i32,
+}
+
+impl Dimensions {
+    pub fn new() -> Dimensions {
+        Dimensions { height: 0, width: 0 }
+    }
+
+    pub fn set_height(&mut self, value: i32) {
+        self.height = value;
+    }
+
+    pub fn set_width(&mut self, value: i32) {
+        self.width = value;
+    }
+}
+```
+  </TabItem>
+</Tabs>
 
 ## 六、一些答疑解惑
 
 ### 6.1 高圈复杂度的源码是否意味着可维护性差？
+
+高圈复杂度会间接影响源码的可维护性，但并不意味着高圈复杂度源码的可维护性就一定差。
+
+```swift title="虽然圈复杂度很高，但是结构清晰。"
+enum Message {
+    case MSG_1
+    case MSG_2
+    case MSG_3
+    case MSG_4
+    case MSG_5
+    case MSG_6
+    case MSG_7
+    case MSG_8
+}
+
+func getMessageName(msg: Message) -> String {
+    switch msg {
+    case .MSG_1:
+        return "MSG_1"
+    case .MSG_2:
+        return "MSG_2"
+    case .MSG_3:
+        return "MSG_3"
+    case .MSG_4:
+        return "MSG_4"
+    case .MSG_5:
+        return "MSG_5"
+    case .MSG_6:
+        return "MSG_6"
+    case .MSG_7:
+        return "MSG_7"
+    case .MSG_8:
+        return "MSG_8"
+    }
+}
+```
+
+写低圈复杂度源码是每一位优秀研发工程师的必要习惯。
 
 ### 6.2 圈复杂度相同的源码是否维护性一致？
 
