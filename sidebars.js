@@ -19,86 +19,81 @@ const sidebars = {
   // But you can create a sidebar manually
   StrengthsFinder: [
     {
-      type: 'category',
-      label: '优势分析',
+      type: "category",
+      label: "优势分析",
       items: [
-        'strengths-finder/finding',
-        'strengths-finder/applying',
+        "strengths-finder/finding",
+        "strengths-finder/applying",
         // 'strengths-finder/cliftonStrengths-themes',
       ],
     },
-    'the-one-thing',
+    "the-one-thing",
     {
-      type: 'category',
-      label: '逆向工作（亚马逊）',
+      type: "category",
+      label: "逆向工作（亚马逊）",
       items: [
-        'working-backwards/intro',
-        'working-backwards/buliding-blocks',
-        'working-backwards/hiring',
-        'working-backwards/organizing',
-        'working-backwards/communicating',
+        "working-backwards/intro",
+        "working-backwards/buliding-blocks",
+        "working-backwards/hiring",
+        "working-backwards/organizing",
+        "working-backwards/communicating",
       ],
     },
     {
-      type: 'category',
-      label: 'LeetCode',
+      type: "category",
+      label: "LeetCode",
       items: [
-        'data-structures-algorithms/categories/index',
-        'data-structures-algorithms/base',
-        'data-structures-algorithms/complexity',
+        "data-structures-algorithms/categories/index",
+        "data-structures-algorithms/base",
+        "data-structures-algorithms/complexity",
         {
-          type: 'category',
-          label: '算法专题 (Draft)',
+          type: "category",
+          label: "算法专题 (Draft)",
           items: [
-            'data-structures-algorithms/categories/array',
-            'data-structures-algorithms/categories/string',
-            'data-structures-algorithms/categories/two-pointers',
-            'data-structures-algorithms/categories/linked-list',
-            'data-structures-algorithms/categories/tree',
-            'data-structures-algorithms/categories/dynamic-programming',
+            "data-structures-algorithms/categories/array",
+            "data-structures-algorithms/categories/string",
+            "data-structures-algorithms/categories/two-pointers",
+            "data-structures-algorithms/categories/linked-list",
+            "data-structures-algorithms/categories/tree",
+            "data-structures-algorithms/categories/dynamic-programming",
 
-            'data-structures-algorithms/categories/backtracking',
-            'data-structures-algorithms/categories/depth-first-search',
-            'data-structures-algorithms/categories/breadth-first-search',
-            'data-structures-algorithms/categories/binary-search',
-            'data-structures-algorithms/categories/hash-table',
-            'data-structures-algorithms/categories/sorting',
-            'data-structures-algorithms/categories/bit-manipulation',
-            'data-structures-algorithms/categories/union-find',
+            "data-structures-algorithms/categories/backtracking",
+            "data-structures-algorithms/categories/depth-first-search",
+            "data-structures-algorithms/categories/breadth-first-search",
+            "data-structures-algorithms/categories/binary-search",
+            "data-structures-algorithms/categories/hash-table",
+            "data-structures-algorithms/categories/sorting",
+            "data-structures-algorithms/categories/bit-manipulation",
+            "data-structures-algorithms/categories/union-find",
 
-            'data-structures-algorithms/categories/sliding-window',
-            'data-structures-algorithms/categories/segment-tree',
-            'data-structures-algorithms/categories/binary-indexed-tree',
-
+            "data-structures-algorithms/categories/sliding-window",
+            "data-structures-algorithms/categories/segment-tree",
+            "data-structures-algorithms/categories/binary-indexed-tree",
           ],
         },
-        'data-structures-algorithms/fibonacci',
-
+        "data-structures-algorithms/fibonacci",
       ],
     },
     {
-      type: 'category',
-      label: 'Swift',
-      items: [
-        'swift/explore'
-      ],
-      
-    }
+      type: "category",
+      label: "Swift",
+      items: ["swift/explore", "swift/the_basics"],
+    },
   ],
 
-  Methodology: [{
-    type: 'category',
-    label: '沉淀方法论',
-    items: [
-      'methodology/intro',
-      'methodology/performance',
-      'methodology/resume-identify',
-      'underlying-logic/subject-separation',
-      'methodology/cyclomatic-complexity'
-    ],
-  }]
-
-
+  Methodology: [
+    {
+      type: "category",
+      label: "沉淀方法论",
+      items: [
+        "methodology/intro",
+        "methodology/performance",
+        "methodology/resume-identify",
+        "underlying-logic/subject-separation",
+        "methodology/cyclomatic-complexity",
+      ],
+    },
+  ],
 };
 
 module.exports = sidebars;
