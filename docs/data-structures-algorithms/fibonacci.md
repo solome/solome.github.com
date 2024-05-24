@@ -1,5 +1,7 @@
 # 从一个走台阶故事说起
 
+<img style={{maxWidth: '540px', width: '100%' }} src="https://solome.js.org/static/images-ai/f.png" />
+
 ## 递归
 
 ```js
@@ -53,4 +55,3 @@ console.log(fibonacci(10))
 ### 通项式推导方式一：数列思路
 
 ### 通项式推导方式一：矩阵思路
-
