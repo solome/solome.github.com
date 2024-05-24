@@ -4,7 +4,7 @@ Work with common kinds of data and write basic syntax.
 
 Swift 是一门开发 iOS、iPadOS、macOS、watchOS 和 tvOS 应用的新语言。然而，如果你有 C 或者 Objective-C 开发经验的话，你会发现 Swift 的很多内容都是你熟悉的。
 
-Swift provides many fundamental data types, including `Int` for integers, `Double` for floating-point values, `Bool` for Boolean values, and `String` for text. Swift also provides powerful versions of the three primary collection types, `Array`, `Set`, and `Dictionary`, as described in [Collection Types](./).
+Swift provides many fundamental data types, including `Int` for integers, `Double` for floating-point values, `Bool` for Boolean values, and `String` for text. Swift also provides powerful versions of the three primary collection types, `Array`, `Set`, and `Dictionary`, as described in [Collection Types](#).
 
 Swift uses variables to store and refer to values by an identifying name. Swift also makes extensive use of variables whose values can’t be changed. These are known as constants, and are used throughout Swift to make code safer and clearer in intent when you work with values that don’t need to change.
 
@@ -50,7 +50,7 @@ if environment == "development" {
 // Now maximumNumberOfLoginAttempts has a value, and can be read.
 ```
 
-In this example, the maximum number of login attempts is constant, and its value depends on the environment. In the development environment, it has a value of 100; in any other environment, its value is 10. Both branches of the if statement initialize `maximumNumberOfLoginAttempts` with some value, guaranteeing that the constant always gets a value. For information about how Swift checks your code when you set an initial value this way, see [Constant Declaration](./).
+In this example, the maximum number of login attempts is constant, and its value depends on the environment. In the development environment, it has a value of 100; in any other environment, its value is 10. Both branches of the if statement initialize `maximumNumberOfLoginAttempts` with some value, guaranteeing that the constant always gets a value. For information about how Swift checks your code when you set an initial value this way, see [Constant Declaration](#).
 
 You can declare multiple constants or multiple variables on a single line, separated by commas:
 
@@ -87,7 +87,7 @@ var red, green, blue: Double
 ```
 
 :::note
-It’s rare that you need to write type annotations in practice. If you provide an initial value for a constant or variable at the point that it’s defined, Swift can almost always infer the type to be used for that constant or variable, as described in [Type Safety and Type Inference](./). In the welcomeMessage example above, no initial value is provided, and so the type of the welcomeMessage variable is specified with a type annotation rather than being inferred from an initial value.
+It’s rare that you need to write type annotations in practice. If you provide an initial value for a constant or variable at the point that it’s defined, Swift can almost always infer the type to be used for that constant or variable, as described in [Type Safety and Type Inference](#). In the welcomeMessage example above, no initial value is provided, and so the type of the welcomeMessage variable is specified with a type annotation rather than being inferred from an initial value.
 :::
 
 ### Naming Constants and Variables
@@ -133,7 +133,7 @@ print(friendlyWelcome)
 // Prints "Bonjour!"
 ```
 
-The `print(_:separator:terminator:)` function is a global function that prints one or more values to an appropriate output. In Xcode, for example, the `print(_:separator:terminator:)` function prints its output in Xcode’s “console” pane. The separator and terminator parameter have default values, so you can omit them when you call this function. By default, the function terminates the line it prints by adding a line break. To print a value without a line break after it, pass an empty string as the terminator — for example, `print(someValue, terminator: "")`. For information about parameters with default values, see [Default Parameter Values](./).
+The `print(_:separator:terminator:)` function is a global function that prints one or more values to an appropriate output. In Xcode, for example, the `print(_:separator:terminator:)` function prints its output in Xcode’s “console” pane. The separator and terminator parameter have default values, so you can omit them when you call this function. By default, the function terminates the line it prints by adding a line break. To print a value without a line break after it, pass an empty string as the terminator — for example, `print(someValue, terminator: "")`. For information about parameters with default values, see [Default Parameter Values](#).
 
 Swift uses _string interpolation_ to include the name of a constant or variable as a placeholder in a longer string, and to prompt Swift to replace it with the current value of that constant or variable. Wrap the name in parentheses and escape it with a backslash before the opening parenthesis:
 
@@ -143,7 +143,7 @@ print("The current value of friendlyWelcome is \(friendlyWelcome)")
 ```
 
 :::note
-All options you can use with string interpolation are described in [String Interpolation](./).
+All options you can use with string interpolation are described in [String Interpolation](#).
 :::
 
 ## Comments
@@ -340,7 +340,7 @@ let twoThousandAndOne = twoThousand + UInt16(one)
 ```
 Because both sides of the addition are now of type `UInt16`, the addition is allowed. The output constant (`twoThousandAndOne`) is inferred to be of type `UInt16`, because it’s the sum of two `UInt16` values.
 
-`SomeType`(`ofInitialValue`) is the default way to call the initializer of a Swift type and pass in an initial value. Behind the scenes, `UInt16` has an initializer that accepts a `UInt8` value, and so this initializer is used to make a new `UInt16` from an existing `UInt8`. You can’t pass in any type here, however — it has to be a type for which `UInt16` provides an initializer. Extending existing types to provide initializers that accept new types (including your own type definitions) is covered in [Extensions](./).
+`SomeType`(`ofInitialValue`) is the default way to call the initializer of a Swift type and pass in an initial value. Behind the scenes, `UInt16` has an initializer that accepts a `UInt8` value, and so this initializer is used to make a new `UInt16` from an existing `UInt8`. You can’t pass in any type here, however — it has to be a type for which `UInt16` provides an initializer. Extending existing types to provide initializers that accept new types (including your own type definitions) is covered in [Extensions](#).
 
 ### Integer and Floating-Point Conversions
 
@@ -405,7 +405,7 @@ if turnipsAreDelicious {
 }
 // Prints "Eww, turnips are horrible."
 ```
-Conditional statements such as the if statement are covered in more detail in [Control Flow](./).
+Conditional statements such as the if statement are covered in more detail in [Control Flow](#).
 
 Swift’s type safety prevents non-Boolean values from being substituted for `Bool`. The following example reports a compile-time error:
 
@@ -424,7 +424,7 @@ if i == 1 {
     // this example will compile successfully
 }
 ```
-The result of the `i == 1` comparison is of type `Bool`, and so this second example passes the type-check. Comparisons like `i == 1` are discussed in [Basic Operators](./).
+The result of the `i == 1` comparison is of type `Bool`, and so this second example passes the type-check. Comparisons like `i == 1` are discussed in [Basic Operators](#).
 
 As with other examples of type safety in Swift, this approach avoids accidental errors and ensures that the intention of a particular section of code is always clear.
 
@@ -483,10 +483,10 @@ print("The status code is \(http200Status.statusCode)")
 print("The status message is \(http200Status.description)")
 // Prints "The status message is OK"
 ```
-Tuples are particularly useful as the return values of functions. A function that tries to retrieve a web page might return the (Int, String) tuple type to describe the success or failure of the page retrieval. By returning a tuple with two distinct values, each of a different type, the function provides more useful information about its outcome than if it could only return a single value of a single type. For more information, see [Functions with Multiple Return Values](./).
+Tuples are particularly useful as the return values of functions. A function that tries to retrieve a web page might return the (Int, String) tuple type to describe the success or failure of the page retrieval. By returning a tuple with two distinct values, each of a different type, the function provides more useful information about its outcome than if it could only return a single value of a single type. For more information, see [Functions with Multiple Return Values](#).
 
 :::note
-Tuples are useful for simple groups of related values. They’re not suited to the creation of complex data structures. If your data structure is likely to be more complex, model it as a class or structure, rather than as a tuple. For more information, see [Structures and Classes](./).
+Tuples are useful for simple groups of related values. They’re not suited to the creation of complex data structures. If your data structure is likely to be more complex, model it as a class or structure, rather than as a tuple. For more information, see [Structures and Classes](#).
 :::
 
 
@@ -546,7 +546,7 @@ This separation of optional and non-optional values lets you explicitly mark wha
 When you access an optional value, your code always handles both the `nil` and `non-nil` case. There are several things you can do when a value is missing, as described in the following sections:
 
 - Skip the code that operates on the value when it’s `nil`.
-- Propagate the `nil` value, by returning `nil` or using the `?.` operator described in [Optional Chaining](./).
+- Propagate the `nil` value, by returning `nil` or using the `?.` operator described in [Optional Chaining](#).
 - Provide a fallback value, using the `??` operator.
 - Stop program execution, using the `!` operator.
 
@@ -556,7 +556,7 @@ In Objective-C, `nil` is a pointer to a nonexistent object. In Swift, `nil` isn�
 
 ### Optional Binding
 
-You use optional binding to find out whether an optional contains a value, and if so, to make that value available as a temporary constant or variable. Optional binding can be used with `if`, `guard`, and `while` statements to check for a value inside an optional, and to extract that value into a constant or variable, as part of a single action. For more information about `if`, `guard`, and `while` statements, see [Control Flow](./).
+You use optional binding to find out whether an optional contains a value, and if so, to make that value available as a temporary constant or variable. Optional binding can be used with `if`, `guard`, and `while` statements to check for a value inside an optional, and to extract that value into a constant or variable, as part of a single action. For more information about `if`, `guard`, and `while` statements, see [Control Flow](#).
 
 Write an optional binding for an `if` statement as follows:
 
@@ -566,7 +566,7 @@ if let <#constantName#> = <#someOptional#> {
 }
 ```
 
-You can rewrite the `possibleNumber` example from the [Optionals](./) section to use optional binding rather than forced unwrapping:
+You can rewrite the `possibleNumber` example from the [Optionals](#) section to use optional binding rather than forced unwrapping:
 
 ```swift
 if let actualNumber = Int(possibleNumber) {
@@ -627,7 +627,7 @@ if let firstNumber = Int("4") {
 // Prints "4 < 42 < 100"
 ```
 
-Constants and variables created with optional binding in an if statement are available only within the body of the if statement. In contrast, the constants and variables created with a guard statement are available in the lines of code that follow the guard statement, as described in [Early Exit](./).
+Constants and variables created with optional binding in an if statement are available only within the body of the if statement. In contrast, the constants and variables created with a guard statement are available in the lines of code that follow the guard statement, as described in [Early Exit](#).
 
 
 ### Providing a Fallback Value
@@ -641,7 +641,7 @@ print(greeting)
 // Prints "Hello, friend!"
 ```
 
-For more information about using `??` to provide a fallback value, see [Nil-Coalescing Operator](./).
+For more information about using `??` to provide a fallback value, see [Nil-Coalescing Operator](#).
 
 ### Force Unwrapping
 
@@ -662,7 +662,7 @@ guard let number = convertedNumber else {
 
 Both versions of the code above depend on `convertedNumber` always containing a value. Writing that requirement as part of the code, using either of the approaches above, lets your code check that the requirement is true at runtime.
 
-For more information about enforcing data requirements and checking assumptions at runtime, see [Assertions and Preconditions](./).
+For more information about enforcing data requirements and checking assumptions at runtime, see [Assertions and Preconditions](#).
 
 ### Implicitly Unwrapped Optionals
 
@@ -672,7 +672,7 @@ Sometimes it’s clear from a program’s structure that an optional will always
 
 These kinds of optionals are defined as **implicitly unwrapped optionals**. You write an implicitly unwrapped optional by placing an exclamation point `(String!)` rather than a question mark `(String?)` after the type that you want to make optional. Rather than placing an exclamation point after the optional’s name when you use it, you place an exclamation point after the optional’s type when you declare it.
 
-Implicitly unwrapped optionals are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter. The primary use of implicitly unwrapped optionals in Swift is during class initialization, as described in [Unowned References and Implicitly Unwrapped Optional Properties](./).
+Implicitly unwrapped optionals are useful when an optional’s value is confirmed to exist immediately after the optional is first defined and can definitely be assumed to exist at every point thereafter. The primary use of implicitly unwrapped optionals in Swift is during class initialization, as described in [Unowned References and Implicitly Unwrapped Optional Properties](#).
 
 Don’t use an implicitly unwrapped optional when there’s a possibility of a variable becoming nil at a later point. Always use a normal optional type if you need to check for a nil value during the lifetime of a variable.
 
@@ -764,7 +764,7 @@ In this example, the `makeASandwich()` function will throw an error if no clean 
 
 If no error is thrown, the `eatASandwich()` function is called. If an error is thrown and it matches the `SandwichError.outOfCleanDishes` case, then the `washDishes()` function will be called. If an error is thrown and it matches the `SandwichError.missingIngredients` case, then the `buyGroceries(_:)` function is called with the associated `[String]` value captured by the catch pattern.
 
-Throwing, catching, and propagating errors is covered in greater detail in [Error Handling](./).
+Throwing, catching, and propagating errors is covered in greater detail in [Error Handling](#).
 
 ## Assertions and Preconditions
 
@@ -772,7 +772,7 @@ Throwing, catching, and propagating errors is covered in greater detail in [Erro
 
 You use assertions and preconditions to express the assumptions you make and the expectations you have while coding, so you can include them as part of your code. Assertions help you find mistakes and incorrect assumptions during development, and preconditions help you detect issues in production.
 
-In addition to verifying your expectations at runtime, assertions and preconditions also become a useful form of documentation within the code. Unlike the error conditions discussed in [Error Handling](./) above, assertions and preconditions aren’t used for recoverable or expected errors. Because a failed assertion or precondition indicates an invalid program state, there’s no way to catch a failed assertion. Recovering from an invalid state is impossible. When an assertion fails, at least one piece of the program’s data is invalid — but you don’t know why it’s invalid or whether an additional state is also invalid.
+In addition to verifying your expectations at runtime, assertions and preconditions also become a useful form of documentation within the code. Unlike the error conditions discussed in [Error Handling](#) above, assertions and preconditions aren’t used for recoverable or expected errors. Because a failed assertion or precondition indicates an invalid program state, there’s no way to catch a failed assertion. Recovering from an invalid state is impossible. When an assertion fails, at least one piece of the program’s data is invalid — but you don’t know why it’s invalid or whether an additional state is also invalid.
 
 Using assertions and preconditions isn’t a substitute for designing your code in such a way that invalid conditions are unlikely to arise. However, using them to enforce valid data and state causes your app to terminate more predictably if an invalid state occurs, and helps make the problem easier to debug. When assumptions aren’t checked, you might not notice this kind problem until much later when code elsewhere starts failing visibly, and after user data has been silently corrupted. Stopping execution as soon as an invalid state is detected also helps limit the damage caused by that invalid state.
 
