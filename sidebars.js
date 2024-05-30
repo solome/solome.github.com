@@ -91,6 +91,7 @@ const sidebars = {
         "methodology/resume-identify",
         "underlying-logic/subject-separation",
         "methodology/cyclomatic-complexity",
+        "methodology/anki_useful",
       ],
     },
   ],
