@@ -79,6 +79,31 @@ const sidebars = {
       label: "Swift",
       items: ["swift/explore", "swift/the_basics"],
     },
+    {
+      type: "category",
+      label: "Rust",
+      items: ["rust/toolchain"],
+    },
+    {
+      type: "category",
+      label: "LLM",
+      items: [
+        "llm/overview",
+        "llm/mlp",
+        "llm/cnn",
+        "llm/rnns",
+        "llm/rl",
+        "llm/nlp-lm",
+        "llm/seq2seq-attention",
+        "llm/semi-supervised-sequence-learning",
+        "llm/ELMo",
+        "llm/transformer",
+        "llm/ULM-FiT-Multitask-learning",
+        "llm/GPT-GPT2-GPT3",
+        "llm/prompting",
+        "llm/bert",
+      ],
+    },
   ],
 
   Methodology: [

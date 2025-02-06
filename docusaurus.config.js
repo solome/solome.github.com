@@ -159,7 +159,7 @@ const config = {
         // theme: lightCodeTheme,
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: [ 'swift', 'rust', 'bash'],
+        additionalLanguages: [ 'swift', 'rust', 'bash', 'prolog', 'javascript', 'typescript'],
       },
     }),
     stylesheets: [
