@@ -1,0 +1,31 @@
+.markdown {
+  counter-reset: sup;
+}
+
+.markdown-sup {
+  cursor: pointer;
+  text-decoration: var(--ifm-link-decoration);
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.markdown-sup:hover {
+  color: var(--ifm-link-color);
+}
+.markdown-sup::before {
+  counter-increment: sup;
+  content:"[" counter(sup) "]";
+}
+
+.markdown-sup--title {
+  font-size: 11px;
+  color: gray;
+}
+
+.markdown-sup--title::before {
+  /* counter-increment: sup; */
+  content:"注释 [" counter(sup) "]";
+}
+.markdown-sup--content {
+  font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+  max-width: 320px;
+}

@@ -29,6 +29,7 @@
     "@docusaurus/module-type-aliases": "^3.3.2",
     "@docusaurus/types": "3.0.0",
     "@tsconfig/docusaurus": "^1.0.5",
+    "antd": "^5.23.4",
     "rehype-katex": "7",
     "remark-math": "6",
     "typescript": "^4.6.3"

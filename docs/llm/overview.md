@@ -173,7 +173,7 @@ Title = '表哥'.
 
 **卷积神经网络（Convolutional Neural Network，CNN）** 能够自动提取图像的特征，用于图像分类、目标检测、图像分割等任务——在人脸识别系统、自动驾驶中的交通标志识别领域取得成功。
 
-**循环神经网络（Recurrent Neural Network，RNN）**及其变体 **长短时记忆网络（Long Short-Term Memory network，LSTM）**、**门控循环单元（Gated Recurrent Unit，GRU）** 等在语音识别中得到了广泛应用。它们能够处理语音信号的时序信息，将语音转换为文字。
+**循环神经网络（Recurrent Neural Network，RNN）** 及其变体 **长短时记忆网络（Long Short-Term Memory network，LSTM）**、**门控循环单元（Gated Recurrent Unit，GRU）** 等在语音识别中得到了广泛应用。它们能够处理语音信号的时序信息，将语音转换为文字。
 
 在自然语言处理领域，联结主义被用于文本分类、情感分析、机器翻译、问答系统等任务。例如，基于**注意力机制（Attention Mechanism）** 的神经网络模型在机器翻译中取得了很好的效果，能够更好地处理长序列文本。
 

@@ -68,6 +68,8 @@ function fibonacci(n, prev = 0, next = 1) {
 
 ## 空间换时间
 
+**尾递归**确实是个好的优化思路，只要进行简单的调用方式改造就能将时间复杂度为优化到$O(n)$。
+
 ```js
 const fibonacci = (function () {
   const cache = {}

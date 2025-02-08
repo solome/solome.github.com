@@ -39,6 +39,7 @@ const sidebars = {
         "working-backwards/communicating",
       ],
     },
+    "code-smell",
     {
       type: "category",
       label: "LeetCode",
