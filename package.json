@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.3.2",
+    "@docusaurus/plugin-google-gtag": "^3.7.0",
     "@docusaurus/types": "3.0.0",
     "@tsconfig/docusaurus": "^1.0.5",
     "antd": "^5.23.4",

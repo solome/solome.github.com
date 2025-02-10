@@ -36,10 +36,10 @@ const sidebars = {
         "working-backwards/buliding-blocks",
         "working-backwards/hiring",
         "working-backwards/organizing",
-        "working-backwards/communicating",
+        // "working-backwards/communicating",
       ],
     },
-    "code-smell",
+    /*"code-smell",
     {
       type: "category",
       label: "LeetCode",
@@ -74,7 +74,7 @@ const sidebars = {
         },
         "data-structures-algorithms/fibonacci",
       ],
-    },
+    },*/
     {
       type: "category",
       label: "Swift",
@@ -85,6 +85,7 @@ const sidebars = {
       label: "Rust",
       items: ["rust/toolchain"],
     },
+    /*
     {
       type: "category",
       label: "LLM",
@@ -105,6 +106,7 @@ const sidebars = {
         "llm/bert",
       ],
     },
+    */
   ],
 
   Methodology: [
